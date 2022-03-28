@@ -34,7 +34,7 @@ Binarizes the image for each pixel based on a threshold which is calculated base
 ### BM_THRESHOLD
 Binarizes the image for each pixel based on a unified threshold. If the gray value of the pixel is less than the threshold, it will be black in the binary image, otherwise it will be white. This mode has the following arguments for further customizing.
 - [ImagePreprocessingModesIndex](#imagepreprocessingmodesindex)
-- [BinarizationThreshold](#binarizationThreshold)
+- [BinarizationThreshold](#binarizationthreshold)
 - [LibraryFileName](#libraryfilename)
 - [LibraryParameters](#libraryparameters)
 
@@ -68,8 +68,8 @@ delete pSettings;
 **See Also**      
 - `PublicRuntimeSettings:` [JavaScript]({{ site.js_api }}interface/RuntimeSettings.html) \| [C]({{ site.structs }}PublicRuntimeSettings.html?src=c) \| [C++]({{ site.structs }}PublicRuntimeSettings.html?src=cpp) \| [.NET]({{ site.dotnet_api }}struct/PublicRuntimeSettings.html) \| [Python]({{ site.python_api }}class/PublicRuntimeSettings.html) \| [Java]({{ site.java_api }}class/PublicRuntimeSettings.html) \| [Java-Android]({{ site.android_api }}auxiliary-PublicRuntimeSettings.html) \| [Objective-C & Swift]({{ site.oc_api }}auxiliary-iPublicRuntimeSettings.html)
 - [`BinarizationMode` Enumeration]({{ site.enumerations }}parameter-mode-enums.html#binarizationmode)
-- `GetModeArgument:` [JavaScript]({{ site.cpp_methods }}BarcodeReader.html#getmodeargument) \| [C]({{ site.c_methods }}parameter-and-runtime-settings-basic.html#dbr_getmodeargument) \| [C++]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#getmodeargument) \| [.NET]({{ site.dotnet_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#getmodeargument) \| [Python]({{ site.python_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#get_mode_argument) \| [Java]({{ site.java_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#getmodeargument) \| [Java-Android]({{ site.android_api }}primary-parameter-and-runtime-settings-basic.html#getmodeargument) \| [Objective-C & Swift]({{ site.oc_api }}primary-parameter-and-runtime-settings-basic.html#getmodeargument)
-- `SetModeArgument:` [JavaScript]({{ site.cpp_methods }}BarcodeReader.html#setmodeargument) \| [C]({{ site.c_methods }}parameter-and-runtime-settings-basic.html#dbr_setmodeargument) \| [C++]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#setmodeargument) \| [.NET]({{ site.dotnet_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#setmodeargument) \| [Python]({{ site.python_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#set_mode_argument) \| [Java]({{ site.java_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#setmodeargument) \| [Java-Android]({{ site.android_api }}primary-parameter-and-runtime-settings-basic.html#setmodeargument) \| [Objective-C & Swift]({{ site.oc_api }}primary-parameter-and-runtime-settings-basic.html#setmodeargument)
+- `GetModeArgument:` [JavaScript]({{ site.js_api}}BarcodeReader.html#getmodeargument) \| [C]({{ site.c_methods }}parameter-and-runtime-settings-basic.html#dbr_getmodeargument) \| [C++]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#getmodeargument) \| [.NET]({{ site.dotnet_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#getmodeargument) \| [Python]({{ site.python_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#get_mode_argument) \| [Java]({{ site.java_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#getmodeargument) \| [Java-Android]({{ site.android_api }}primary-parameter-and-runtime-settings-basic.html#getmodeargument) \| [Objective-C & Swift]({{ site.oc_api }}primary-parameter-and-runtime-settings-basic.html#getmodeargument)
+- `SetModeArgument:` [JavaScript]({{ site.js_api}}BarcodeReader.html#setmodeargument) \| [C]({{ site.c_methods }}parameter-and-runtime-settings-basic.html#dbr_setmodeargument) \| [C++]({{ site.cpp_methods }}parameter-and-runtime-settings-basic.html#setmodeargument) \| [.NET]({{ site.dotnet_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#setmodeargument) \| [Python]({{ site.python_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#set_mode_argument) \| [Java]({{ site.java_api }}BarcodeReader/parameter-and-runtime-settings-basic.html#setmodeargument) \| [Java-Android]({{ site.android_api }}primary-parameter-and-runtime-settings-basic.html#setmodeargument) \| [Objective-C & Swift]({{ site.oc_api }}primary-parameter-and-runtime-settings-basic.html#setmodeargument)
 
 
 
@@ -79,7 +79,7 @@ delete pSettings;
 | Key Name | Key Value | Description |
 | -------- | --------- | ----------- |
 | Mode | Any one in Candidate Mode List as string | (Required) Sets a binarization mode.  |
-| BinarizationThreshold | A number from value range of BinarizationThreshold | (Optional) Sets the Argument [BinarizationThreshold](#binarizationThreshold). |
+| BinarizationThreshold | A number from value range of BinarizationThreshold | (Optional) Sets the Argument [BinarizationThreshold](#binarizationthreshold). |
 | BlockSizeX | A number from value range of BlockSizeX | (Optional) Sets the Argument [BlockSizeX](#blocksizex). |
 | BlockSizeY | A number from value range of BlockSizeY | (Optional) Sets the Argument [BlockSizeY](#blocksizey). |
 | EnableFillBinaryVacancy | A number from value range of EnableFillBinaryVacancy | (Optional) Sets the Argument [EnableFillBinaryVacancy](#enablefillbinaryvacancy). |
@@ -111,6 +111,7 @@ delete pSettings;
 
 
 
+<!--
 ## Impacts on Performance
 ### Speed
 The SDK will loop the setting modes one by one until find as many barcodes as `ExpectedBarcodesCount` specified or timeout. The more modes you set, the more time the process may take. Setting an appropriate mode first in order or setting only necessary modes may speed up the process.
@@ -121,6 +122,7 @@ Setting more binarization modes along with different arguments may improve the R
 ### Accuracy
 `BinarizationModes` has no influence on the Accuracy.
 
+-->
 ## Candidate Argument List
 - [BlockSizeX](#blocksizex)
 - [BlockSizeY](#blocksizey)
@@ -128,7 +130,7 @@ Setting more binarization modes along with different arguments may improve the R
 - [ImagePreprocessingModesIndex](#imagepreprocessingmodesindex)
 - [ThresholdCompensation](#thresholdcompensation)
 - [ThreshValueCoefficient](#threshvaluecoefficient)
-- [BinarizationThreshold](#binarizationThreshold)
+- [BinarizationThreshold](#binarizationthreshold)
 - [LibraryFileName](#libraryfilename)
 - [LibraryParameters](#libraryparameters)
  

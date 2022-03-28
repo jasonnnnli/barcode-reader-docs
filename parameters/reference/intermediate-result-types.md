@@ -10,7 +10,7 @@ needGenerateH3Content: true
 
 # IntermediateResultTypes 
 
-`IntermediateResultTypes` is a parameter to specify the types of intermediate result to be kept for further reference. It is a combined value of [`IntermediateResultType` Enumeration]({{ site.enumerations }}format-enums.html#intermediateresulttype) items. No intermediate result will be kept by default
+`IntermediateResultTypes` is a parameter to specify the types of intermediate result to be kept for further reference. It is a combined value of [`IntermediateResultType` Enumeration]({{ site.enumerations }}result-enums.html#intermediateresulttype) items. No intermediate result will be kept by default
     
 ## Setting Methods
 `IntermediateResultTypes` is supported to be set through `RuntimeSetting` or JSON template.
@@ -53,6 +53,7 @@ delete pSettings;
 ```
 
 
+<!--
 ## Impacts on Performance
 ### Speed
 The more types you set, the more time the process may take.
@@ -63,6 +64,7 @@ The more types you set, the more time the process may take.
 ### Accuracy
 `IntermediateResultTypes` has no influence on the Accuracy.
 
+-->
 ## Related Articles
 - [How to set DBR parameters]({{ site.scenario_settings }}how-to-set-parameters.html)
 - [How to obtain and use intermediate results]({{ site.scenario_settings }}intermediate-result.html)
