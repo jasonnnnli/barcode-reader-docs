@@ -71,3 +71,37 @@ jobs:
           local-dir: /home/ubuntu/DBRDocPreview/_site/
           server-dir: /www.dynamsoft.com/barcode-reader/          
           
+
+  Build-Review:
+    if: ${{ github.ref == 'refs/heads/reviewing' }}
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Build the site
+        run: |
+          cd /home/ubuntu
+          [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
+          [ ! -d barcode-reader-docs-js-preview ] && git clone --depth 1 --branch preview https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-preview
+          [ ! -d barcode-reader-docs-mobile-preview ] && git clone --depth 1 --branch preview https://github.com/Dynamsoft/barcode-reader-docs-mobile.git barcode-reader-docs-mobile-preview
+          [ ! -d DBRDocReviewing ] && mkdir -p DBRDocReviewing
+          cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocReviewing/
+          cd barcode-reader-docs-js-preview && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-preview/* ./DBRDocReviewing/
+          cd barcode-reader-docs-mobile-preview && git pull && cd .. && cp -rfp ./barcode-reader-docs-mobile-preview/* ./DBRDocReviewing/
+          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocReviewing/
+          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
+          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocReviewing/_config.yml
+          cd DBRDocReviewing && bundle exec jekyll build --incremental
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_TEST_SITE_SERVER }}
+          username: ${{ secrets.FTP_TEST_SITE_USER }}
+          password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
+          port: 7500 
+          local-dir: /home/ubuntu/DBRDocReviewing/_site/
+          server-dir: /www.dynamsoft.com/barcode-reader/          
+          
