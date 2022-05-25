@@ -84,12 +84,8 @@ jobs:
         run: |
           cd /home/ubuntu
           [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
-          [ ! -d barcode-reader-docs-js-preview ] && git clone --depth 1 --branch preview https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-preview
-          [ ! -d barcode-reader-docs-mobile-preview ] && git clone --depth 1 --branch preview https://github.com/Dynamsoft/barcode-reader-docs-mobile.git barcode-reader-docs-mobile-preview
           [ ! -d DBRDocReviewing ] && mkdir -p DBRDocReviewing
           cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocReviewing/
-          cd barcode-reader-docs-js-preview && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-preview/* ./DBRDocReviewing/
-          cd barcode-reader-docs-mobile-preview && git pull && cd .. && cp -rfp ./barcode-reader-docs-mobile-preview/* ./DBRDocReviewing/
           cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocReviewing/
           sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
           -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocReviewing/_config.yml

@@ -29,7 +29,7 @@ DBR offers hundreds of custom settings that allow fine-tuning of the entire reco
 
 As of version 9.0, DBR supports the following barcode formats:  
 
-| 1D/Linear Barcodes       | 2D Barcodes         | GS1 DataBar             | Postal Codes          | Other Types         |
+| 1D/Linear Barcodes       | 2D Barcodes         | GS1 DataBar             | Postal Codes          | Other Types        |
 |--------------------------|---------------------|-------------------------| --------------------- | ------------------ |
 | Code 39/Code 39 Extended | QR Code             | Omnidirectional         | USPS Intelligent Mail | GS1 Composite Code |
 | Code 93                  | Micro QR Code       | Truncated               | Postnet               | Patch Code         |
@@ -65,21 +65,3 @@ Choose the programming language you use to build your application and learn more
 * [C\# (Windows)]({{site.dotnet}})
 * [C++ (Windows, Linux, macOS)]({{site.cpp}})
 * [C (Windows, Linux, macOS)]({{site.c}})
-
-## Enhancements
-
-### Intermediate Results
-
-DBR returns intermediate results used or generated during the recognition process. These results include raw images, pre-detected regions of interest, preprocessed images, binary images, text regions, contours, and line segments, etc. These results can help speed up other workflows that might need to extract similar information from images.
-
-### Data Matrix Direct Part Marking
-
-DBR supports decoding DPM Data Matrix codes (often used in the automotive, aerospace and electronics manufacturing industries) that are difficult to read due to possible surface defects, poor lighting conditions, and similar colors and contrasts.
-
-### Vector PDF File
-
-DBR can read barcodes in vector PDF files more efficiently than raster PDF files because it can process vectors directly in PDF files, which means no time is wasted on image processing.
-
-### Panorama
-
-DBR-based Dynamsoft Panorama™ is a revolutionary inventory management solution that captures images and stitches them together into a complete panoramic view, allowing workers to view detections results in real-time and spot any missed barcodes.
