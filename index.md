@@ -9,7 +9,7 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
 # Dynamsoft Barcode Reader Documentation
 
 * [Overview]({{ site.introduction }})
-  * [Introduction]({{ site.introduction }}overview.html)
+  * [Introduction]({{ site.introduction }}index.html)
   * [Algorithm Principle]({{ site.introduction }}architecture.html)
   * [How-to Guides]({{ site.how_to }})
   * [Comparison Tools]({{ site.comparison_tools }})
@@ -40,7 +40,7 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
 
 {%- comment -%}
  [Introduction]({{ site.introduction }})
- [Overview]({{ site.introduction }}overview.html)
+ [Overview]({{ site.introduction }}index.html)
  [Principle of Algorithm]({{ site.introduction }}architecture.html)
  [License & Usage Tracking]({{ site.introduction }}licensing/)
  [How-to Guides]({{ site.how_to }})

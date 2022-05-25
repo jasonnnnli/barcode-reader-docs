@@ -9,7 +9,7 @@ needGenerateH3Content: true
 
 # Principles of Dynamsoft Barcode Reader Algorithm
 
-Dynamsoft Barcode Reader (DBR) is a flexible SDK used to implement barcode reading functionality in cross-platform applications. Supported barcode formats include QR Code, Linear(1D), PDF 417, DataMatrix, and [more](overview.md#barcode-formats). 
+Dynamsoft Barcode Reader (DBR) is a flexible SDK used to implement barcode reading functionality in cross-platform applications. Supported barcode formats include QR Code, Linear(1D), PDF 417, DataMatrix, and [more](index.md#barcode-formats). 
 
 Its flexibilities not only fit in most scenarios, which greatly vary in terms of barcode features but also most requirements regarding programming practices. The software architecture and design of DBR can accommodate a variety of application requirements. The barrier of entry to barcode reading is low, allowing customers to start building their application effortlessly, all the while providing various customization options to handle further complicated barcodes. 
 

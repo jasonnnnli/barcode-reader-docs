@@ -1,47 +1,85 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Introduction - Main Page
-description: This is the main page of Dynamsoft Barcode Reader Introduction.
-keywords: introduction
-needAutoGenerateSidebar: false
-breadcrumbText: Introduction
+title: Dynamsoft Barcode Reader Introduction - Overview
+description: This is the overview page of Dynamsoft Barcode Reader Introduction.
+keywords: overview
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
 ---
 
-# Overview
+# Introduction to Dynamsoft Barcode Reader
 
-Dynamsoft Barcode Reader (DBR) SDK enables you to easily implement 1D and 2D barcode scanning into your applications running on different platforms.
+Dynamsoft Barcode Reader (DBR) enables you to embed barcode reading capabilities with enterprise-class performance in your web, mobile, desktop or server applications using just a few lines of code.
 
-## Using DBR in Different Programming Languages
+## Features
 
-- for **web** applications (pure JavaScript/WASM)
+### High performance
 
-    [Enable browser-based barcode scanning with JavaScript](../programming/javascript/user-guide/)
+DBR is carefully designed to provide a good balance of performance between speed, read rate and accuracy when reading barcodes.
 
-- for **desktop and server** applications (including web applications for server-side barcode scanning)
+### Multi-code recognition
 
-    [C](../programming/c/user-guide.md/) \| [C++](../programming/cplusplus/user-guide.md/) \| [.NET](../programming/dotnet/user-guide.md/) \| [Java](../programming/java/user-guide.md/) \| [Python](../programming/python/user-guide.md/)
+DBR can read multiple barcodes of different barcode formats at once.
 
-- for **native mobile** apps
+### Powerful customizability
 
-    [Build an Android app with Java](../programming/android/user-guide.md/)
+DBR offers hundreds of custom settings that allow fine-tuning of the entire recognition process to achieve optimal performance for specific usage scenarios.
 
-    [Build an iOS app with Objective-C or Swift](../programming/objectivec-swift/user-guide.md/)
+## Supported Barcode Formats
 
-## How-To Guides  
+As of version 9.0, DBR supports the following barcode formats:  
 
-- [How-to Guides]({{ site.how_to }})
-- [Customize Parameters for Different Scenarios](../parameters/scenario-settings/)
-- [Test Batch Scanning with Performance Tool]({{ site.introduction }}comparison-tools/batch-test.html)
-- [License Activation](../license-activation/set-trial-license.md/)
+| 1D/Linear Barcodes       | 2D Barcodes         | GS1 DataBar             | Postal Codes          | Other Types         |
+|--------------------------|---------------------|-------------------------| --------------------- | ------------------ |
+| Code 39/Code 39 Extended | QR Code             | Omnidirectional         | USPS Intelligent Mail | GS1 Composite Code |
+| Code 93                  | Micro QR Code       | Truncated               | Postnet               | Patch Code         |
+| Code 128                 | Data Matrix         | Stacked                 | Planet                | Pharmacode         |
+| Codabar                  | PDF417              | Stacked Omnidirectional | Australian Post       |                    |
+| Interleaved 2 of 5       | Micro PDF417        | Limited                 | UK Royal Mail         |                    |
+| EAN-8                    | Aztec Code          | Expanded                |                       |                    |
+| EAN-13                   | MaxiCode (mode 2-5) | Expanded Stacked        |                       |                    |
+| UPC-A                    | DotCode             |                         |                       |                    |
+| UPC-E                    |                     |                         |                       |                    |
+| Industrial 2 of 5        |                     |                         |                       |                    |
+| MSI (Modified Plessey)   |                     |                         |                       |                    |
+| Code 11                  |                     |                         |                       |                    |
 
-## Learn More about DBR
+## Supported Platforms
 
-- [SDK Overview]({{ site.introduction }}overview.html)
-- [Algorithm Principles]({{ site.introduction }}architecture.html)
+| Platforms | Languages                 |
+|-----------|---------------------------|
+| Web       | JavaScript                |
+| iOS       | Swift, Objective-C        |
+| Android   | Java, Kotlin              |
+| Windows   | C, C++, C\#, Python, Java |
+| Linux     | C, C++, Python, Java      |
+| macOS     | C, C++, Python, Java      |
 
+Choose the programming language you use to build your application and learn more about adding barcode reading capabilities with DBR:
 
+* [JavaScript (Web)]({{site.js}})
+* [Java (Android)]({{site.android}})
+* [Object-C or Swift (iOS)]({{site.oc}})
+* [Python (Windows, Linux, macOS)]({{site.python}})
+* [Java (Windows, Linux, macOS)]({{site.java}})
+* [C\# (Windows)]({{site.dotnet}})
+* [C++ (Windows, Linux, macOS)]({{site.cpp}})
+* [C (Windows, Linux, macOS)]({{site.c}})
 
+## Enhancements
 
+### Intermediate Results
 
+DBR returns intermediate results used or generated during the recognition process. These results include raw images, pre-detected regions of interest, preprocessed images, binary images, text regions, contours, and line segments, etc. These results can help speed up other workflows that might need to extract similar information from images.
 
+### Data Matrix Direct Part Marking
 
+DBR supports decoding DPM Data Matrix codes (often used in the automotive, aerospace and electronics manufacturing industries) that are difficult to read due to possible surface defects, poor lighting conditions, and similar colors and contrasts.
+
+### Vector PDF File
+
+DBR can read barcodes in vector PDF files more efficiently than raster PDF files because it can process vectors directly in PDF files, which means no time is wasted on image processing.
+
+### Panorama
+
+DBR-based Dynamsoft Panorama™ is a revolutionary inventory management solution that captures images and stitches them together into a complete panoramic view, allowing workers to view detections results in real-time and spot any missed barcodes.

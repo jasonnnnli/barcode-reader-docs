@@ -120,7 +120,7 @@ Here are some common scanning settings you might find helpful:
 For more scanning settings guide, check out the [How To](#how-to-guide) section.
 
 #### Specify Barcode Type to Read
-By default, the SDK will read all the supported barcode formats except Postal Codes and DotCode from the image. (See [Product Overview]({{ site.introduction }}overview.html) for the full supported barcode list.) 
+By default, the SDK will read all the supported barcode formats except Postal Codes and DotCode from the image. (See [Product Overview]({{ site.introduction }}index.html) for the full supported barcode list.) 
 
 If your full license only covers some barcode formats, you can use `BarcodeFormatIds` and `BarcodeFormatIds_2` to specify the barcode format(s). Check out [`BarcodeFormat`]({{ site.enumerations }}format-enums.html#barcodeformat) and [`BarcodeFormat_2`]({{ site.enumerations }}format-enums.html#barcodeformat_2).
 
