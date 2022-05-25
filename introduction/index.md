@@ -17,6 +17,32 @@ Dynamsoft Barcode Reader (DBR) enables you to embed barcode reading capabilities
 
 DBR is carefully designed to provide a good balance of performance between speed, read rate and accuracy when reading barcodes.
 
+<div style =>
+    <div class="strengthImg">
+    <picture class="strengthPicImg">
+    <source srcset="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview.webp">
+    <img class="strengthInnerPicImg" src="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview.jpg" alt="Barcode Scan SDK">
+    </picture>
+    <i class="whitePlayBtn plybtn" data-cardlink="https://www.youtube.com/embed/eDn0GFWSCNQ"></i>
+    </div>
+
+    <div class="strengthImg">
+    <picture class="strengthPicImg">
+    <source srcset="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview_2.webp">
+    <img class="strengthInnerPicImg" src="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview_2.jpg" alt="Barcode Scan SDK" loading="lazy">
+    </picture>
+    <i class="whitePlayBtn plybtn" data-cardlink="https://www.youtube.com/embed/77VMxU7waas"></i>
+    </div>
+
+    <div class="strengthImg">
+    <picture class="strengthPicImg">
+    <source srcset="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview3.webp">
+    <img class="strengthInnerPicImg" src="https://www.dynamsoft.com/webres/wwwroot/images/banner/DBR/dbr_overview3.jpg" alt="Barcode Scan SDK" loading="lazy">
+    </picture>
+    <i class="whitePlayBtn plybtn" data-cardlink="https://www.youtube.com/embed/IUarUHrP2Io"></i>
+    </div>
+</div>
+
 ### Multi-code recognition
 
 DBR can read multiple barcodes of different barcode formats at once.

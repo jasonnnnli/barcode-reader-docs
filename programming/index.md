@@ -9,13 +9,13 @@ description: Dynamsoft Barcode Reader supports the following programming languag
 
 # Programming
 
-Learn how to use Dynamsoft Barcode Reader SDK in different programming languages:
+Choose the programming language you use to build your application and learn more about adding barcode reading capabilities with DBR:
 
-- [JavaScript]({{ site.js }})
-- [C]({{ site.c }})
-- [C++]({{ site.cpp }})
-- [.NET]({{ site.dotnet }})
-- [Python]({{ site.python }})
-- [Java]({{ site.java }})
-- [Java (Android)]({{ site.android }})
-- [Objective-C & Swift]({{ site.oc }})
+* [JavaScript (Web)]({{site.js}})
+* [Java (Android)]({{site.android}})
+* [Object-C or Swift (iOS)]({{site.oc}})
+* [Python (Windows, Linux, macOS)]({{site.python}})
+* [Java (Windows, Linux, macOS)]({{site.java}})
+* [C\# (Windows)]({{site.dotnet}})
+* [C++ (Windows, Linux, macOS)]({{site.cpp}})
+* [C (Windows, Linux, macOS)]({{site.c}})
