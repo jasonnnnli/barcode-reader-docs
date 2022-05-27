@@ -30,6 +30,8 @@ As of version 9.0, DBR supports the following barcode formats:
 | MSI (Modified Plessey)   |                     |                         |                       |                    |
 | Code 11                  |                     |                         |                       |                    |
 
+[Learn more about these barcode formats](https://www.dynamsoft.com/Products/Barcode-Types.aspx).
+
 ## Supported Platforms
 
 | Platforms | Languages                 |
@@ -45,7 +47,7 @@ As of version 9.0, DBR supports the following barcode formats:
 
 Choose the programming language you use to build your application and learn how to use DBR to add barcode reading capabilities:
 
-* [JavaScript (Web)]({{site.js}})
+* [JavaScript (Web)]({{site.js}}user-guide/)
 * [Java (Android)]({{site.android}})
 * [Object-C or Swift (iOS)]({{site.oc}})
 * [Python (Windows, Linux, macOS)]({{site.python}})
