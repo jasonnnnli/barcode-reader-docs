@@ -85,12 +85,12 @@ jobs:
         run: |
           cd /home/ubuntu
           [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
-          [ ! -d DBRDocReviewing ] && mkdir -p DBRDocReviewing
-          cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocReviewing/
-          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocReviewing/
+          [ ! -d DBRDocRestructured ] && mkdir -p DBRDocRestructured
+          cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocRestructured/
+          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocRestructured/
           sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
-          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocReviewing/_config.yml
-          cd DBRDocReviewing && bundle exec jekyll build --incremental
+          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructured/_config.yml
+          cd DBRDocRestructured && bundle exec jekyll build --incremental
 
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -99,6 +99,6 @@ jobs:
           username: ${{ secrets.FTP_TEST_SITE_USER }}
           password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
           port: 7500 
-          local-dir: /home/ubuntu/DBRDocReviewing/_site/
+          local-dir: /home/ubuntu/DBRDocRestructured/_site/
           server-dir: /www.dynamsoft.com/barcode-reader-review/
           
