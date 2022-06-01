@@ -74,6 +74,8 @@ image_parameters: /barcode-reader/parameters/reference/image-parameter/
 scenario_settings: /barcode-reader/parameters/scenario-settings/
 enumerations: /barcode-reader/parameters/enum/
 
+understanding: /barcode-reader/understanding/
+
 faqs: /barcode-reader/faq/
 how_to: /barcode-reader/faq/how-to-guide/
 
