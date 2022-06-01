@@ -37,12 +37,3 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
 * [FAQ]({{ site.faq }})
   * [General]({{ site.faq_general }}index.html)
   * [JavaScript]({{ site.faq_js }}index.html)
-
-{%- comment -%}
- [Introduction]({{ site.introduction }})
- [Overview]({{ site.introduction }}index.html)
- [Principle of Algorithm]({{ site.introduction }}architecture.html)
- [License & Usage Tracking]({{ site.introduction }}licensing/)
- [How-to Guides]({{ site.how_to }})
- Enhancements
-{%- endcomment -%}

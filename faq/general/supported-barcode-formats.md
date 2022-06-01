@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: What barcode types are supported by Dynamsoft Barcode Reader?
+title: What barcode formats are supported by Dynamsoft Barcode Reader?
 keywords: Dynamsoft Barcode Reader, FAQ, DBR Introduction, General, formats
-description: What barcode types are supported by Dynamsoft Barcode Reader?
+description: What barcode formats are supported by Dynamsoft Barcode Reader?
 needAutoGenerateSidebar: false
 ---
 
 # FAQ - General
 
-## What barcode types are supported by Dynamsoft Barcode Reader?
+## What barcode formats are supported by Dynamsoft Barcode Reader?
 
-The full list of supported barcode formats can be found [here](https://www.dynamsoft.com/barcode-reader/introduction/index.html?ver=latest#barcode-formats).
+The full list of supported barcode formats can be found [here]({{site.introduction}}index.html#supported-barcode-formats).
