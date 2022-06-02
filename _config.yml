@@ -12,7 +12,6 @@ introduction: /barcode-reader/introduction/
 programming: /barcode-reader/programming/
 parameters: /barcode-reader/parameters/
 license_activation: /barcode-reader/license-activation/
-enhancements: /barcode-reader/enhancements/
 release_notes: /barcode-reader/release-notes/
 performance: /barcode-reader/performance/
 faq: /barcode-reader/faq/
@@ -101,14 +100,47 @@ defaults:
       path: "programming/javascript"
     values:
       category: "js-repo"
+      editon: "js"
   - scope:
       path: "programming/android"
     values:
       category: "mobile-repo"
+      editon: "mobile"
   - scope:
       path: "programming/objectivec-swift"
     values:
       category: "mobile-repo"
+      editon: "mobile"
+  - scope:
+      path: "programming/c"
+    values:
+      category: "original-repo"
+      editon: "desktop"
+  - scope:
+      path: "programming/cplusplus"
+    values:
+      category: "original-repo"
+      editon: "desktop"
+  - scope:
+      path: "programming/c-cplusplus"
+    values:
+      category: "original-repo"
+      editon: "desktop"
+  - scope:
+      path: "programming/dotnet"
+    values:
+      category: "original-repo"
+      editon: "desktop"
+  - scope:
+      path: "programming/python"
+    values:
+      category: "original-repo"
+      editon: "desktop"
+  - scope:
+      path: "programming/java"
+    values:
+      category: "original-repo"
+      editon: "desktop"
   - scope:
       path: ""
     values:

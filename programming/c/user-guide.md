@@ -69,7 +69,7 @@ Let's start by creating a console application which demonstrates how to use the 
     
     >Please replace `<insert DBR license key here>` with a valid DBR licensekey. There are two ways to obtain one:
     >- Search `DBR_InitLicense` and find the license from `[INSTALLATION FOLDER]/Samples/BarcodeReaderDemo/BarcodeReaderDemo.cpp`.
-    >- Request a trial license from <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=docs" target="_blank">Customer Portal</a>. 
+    >- Request a trial license from <a href="https://www.dynamsoft.com/customer/license/trialLicense?utm_source=guide&product=dbr&package=desktop" target="_blank">Customer Portal</a>. 
 
 2. Create an instance of Dynamsoft Barcode Reader.
 
@@ -155,42 +155,14 @@ Please change all `[INSTALLATION FOLDER]` in above code snippet to your unpackin
 >The SDK supports both x86 and x64, please set the platform based on your needs.
 
 #### For Linux/ARM/Mac
-1. Create a file named `Makefile` with following content and put it in the same directory as the file `DBRCSample.c`.
-
-    ```makefile
-    CC=gcc
-    CCFLAGS=-c
-
-    DBR_LIB_PATH=../Lib/Linux
-    DBR_INCLUDE_PATH=../Include
-
-    LDFLAGS=-lDynamsoftBarcodeReader -L $(DBR_LIB_PATH) -Wl,-rpath=$(DBR_LIB_PATH) -Wl,-rpath=./
-
-    TARGET=DBRCSample
-    OBJECT=DBRCSample.o
-    SOURCE=DBRCSample.c
-
-    # build rule for target.
-    $(TARGET): $(OBJECT)
-        $(CC) -o $(TARGET) $(OBJECT) $(LDFLAGS)
-
-    # target to build an object file
-    $(OBJECT): $(SOURCE)
-        $(CC) $(CCFLAGS) -I $(DBR_INCLUDE_PATH) $(SOURCE)
-
-    # the clean target
-    .PHONY : clean
-    clean: 
-        rm -f $(OBJECT) $(TARGET)
-    ```
-
-2. Open a terminal and change to the target directory where `Makefile` located in. Build the sample:
+1. Open a terminal and change to the target directory where `DBRCSample.c` located in. Build the sample:
 
     ```bash
-    make
+    gcc -o DBRCSample DBRCSample.c -lDynamsoftBarcodeReader -L ../Lib/Linux -Wl,-rpath=../Lib/Linux
     ```
-
-3. Run the program `DBRCSample`.
+    > Please replace `Linux` to `ARM32` or `ARM64` based on your platform.
+ 
+2. Run the program `DBRCSample`.
 
     ```bash
     ./DBRCSample
