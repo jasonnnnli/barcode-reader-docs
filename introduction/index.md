@@ -47,14 +47,19 @@ As of version 9.0, DBR supports the following barcode formats:
 
 Choose the programming language you use to build your application and learn how to use DBR to add barcode reading capabilities:
 
-* Web
-  * [JavaScript]({{site.js}}user-guide/)
-* Mobile
-  * [Java (Android)]({{site.android}})
-  * [Object-C or Swift (iOS)]({{site.oc}})
-* Server / Desktop
-  * [Python]({{site.python}})
-  * [Java]({{site.java}})
-  * [C\#]({{site.dotnet}})
-  * [C++]({{site.cpp}})
-  * [C]({{site.c}})
+### Web
+
+* [JavaScript]({{site.js}}user-guide/)
+
+### Mobile
+
+* [Java (Android)]({{site.android}})
+* [Object-C or Swift (iOS)]({{site.oc}})
+
+### Server / Desktop
+
+* [Python]({{site.python}})
+* [Java]({{site.java}})
+* [C\#]({{site.dotnet}})
+* [C++]({{site.cpp}})
+* [C]({{site.c}})
