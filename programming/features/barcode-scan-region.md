@@ -40,7 +40,11 @@ To update the setting via `PublicRuntimeSettings`:
 >```javascript
 // Obtain current runtime settings of `reader` instance.
 let settings = await scanner.getRuntimeSettings();
-
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_ONED | Dynamsoft.DBR.EnumBarcodeFormat.BF_QR_CODE;
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
@@ -48,7 +52,11 @@ await scanner.updateRuntimeSettings(settings);
 >```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
-
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 settings.barcodeFormatIds = EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_ONED;
 // Update the settings.
 reader.updateRuntimeSettings(settings);
