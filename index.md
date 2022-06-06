@@ -9,8 +9,6 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
 # Dynamsoft Barcode Reader Documentation
 
 * [Introduction]({{ site.introduction }})
-  * [How-to Guides]({{ site.how_to }})
-  * [Comparison Tools]({{ site.comparison_tools }})
 
 <hr>
 DEVELOPMENT
