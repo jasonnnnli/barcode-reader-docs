@@ -106,7 +106,7 @@ jobs:
           cd DBRDocRestructuredJS && bundle exec jekyll build --incremental
 
           cd /home/ubuntu
-          mv -R /DBRDocRestructuredJS/_site/ /DBRDocRestructured/_site/web/
+          mv /DBRDocRestructuredJS/_site/ /DBRDocRestructured/_site/web/
 
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
