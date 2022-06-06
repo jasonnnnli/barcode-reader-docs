@@ -8,32 +8,41 @@ description: Dynamsoft Barcode Reader SDK Documentation Homepage
 
 # Dynamsoft Barcode Reader Documentation
 
-* [Overview]({{ site.introduction }})
-  * [Introduction]({{ site.introduction }}index.html)
-  * [Algorithm Principle]({{ site.introduction }}architecture.html)
+* [Introduction]({{ site.introduction }})
   * [How-to Guides]({{ site.how_to }})
   * [Comparison Tools]({{ site.comparison_tools }})
 
-* [Programming]({{ site.programming }})
-  * [JavaScript]({{ site.js }})
-  * [C]({{ site.c }})
-  * [C++]({{ site.cpp }})
-  * [.NET]({{ site.dotnet }})
+<hr>
+DEVELOPMENT
+<hr>
+
+* [Web (Client Side)]({{ site.js }})
+* Mobile
+  * [Android]({{ site.android }})
+  * [iOS]({{ site.oc }})
+* Server / Desktop
   * [Python]({{ site.python }})
   * [Java]({{ site.java }})
-  * [Java (Android)]({{ site.android }})
-  * [Objective-C & Swift]({{ site.oc }})
+  * [.NET]({{ site.dotnet }})
+  * [C++]({{ site.cpp }})
+  * [C]({{ site.c }})
 
-* [Parameters]({{ site.parameters }})
-  * [Reference]({{ site.parameters_reference }})
-  * [Enumerations]({{ site.enumerations }})
-  * [Scenario Settings]({{ site.scenario_settings }})
+<hr>
+UNDERSTANDING DBR
+<hr>
 
-* [License Activation]({{ site.license_activation }})
+* [Algorithm Principles]({{ site.understanding }}architecture.html)
+* [Template Structure]({{ site.understanding }}structure-and-interfaces-of-parameters.html)
+* [Parameter Reference]({{ site.parameters_reference }})
+* [Performance]({{ site.performance }})
+
+<hr>
+USEFUL RESOURCES
+<hr>
+
+* [Release Notes]({{ site.release_notes }})
+* [License]({{ site.license_activation }})
   * [Set Trial License]({{ site.license_activation }}set-trial-license.html)
   * [Set Full License in version 8]({{ site.license_activation }}set-full-license.html)
   * [Set Full License in version 7]({{ site.license_activation }}set-full-license-7.html)
-
 * [FAQ]({{ site.faq }})
-  * [General]({{ site.faq_general }}index.html)
-  * [JavaScript]({{ site.faq_js }}index.html)
