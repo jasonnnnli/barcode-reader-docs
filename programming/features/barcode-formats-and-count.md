@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader SDK - Barcode formats and count
+title: Barcode Formats and Count - Dynamsoft Barcode Reader SDK
 description: This page describes how to set barcode formats and count in Dynamsoft Barcode Reader SDK.
-keywords: Barcode formats and count
+keywords: Barcode Formats, Expected Count
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
