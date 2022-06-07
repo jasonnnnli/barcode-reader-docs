@@ -81,39 +81,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
-      - name: Build the site
+      - name: clear space
         run: |
           cd /home/ubuntu
           [ -d DBRDocRestructured ] && rm -rf DBRDocRestructured
           [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing
-          [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
-          [ ! -d DBRDocRestructured ] && mkdir -p DBRDocRestructured
-          cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocRestructured/
-          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocRestructured/
-          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
-          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructured/_config.yml
-          cd DBRDocRestructured && bundle exec jekyll build --incremental
-
-          cd /home/ubuntu
           [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
-          [ ! -d barcode-reader-docs-js-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-reviewing
-          [ ! -d DBRDocRestructuredJS ] && mkdir -p DBRDocRestructuredJS
-          cd barcode-reader-docs-js-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-reviewing/* ./DBRDocRestructuredJS/
-          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocRestructuredJS/
-          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
-          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructuredJS/_config.yml
-          cd DBRDocRestructuredJS && bundle exec jekyll build --incremental
-
-          mv /home/ubuntu/DBRDocRestructuredJS/_site/ /home/ubuntu/DBRDocRestructured/_site/web/
-
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_TEST_SITE_SERVER }}
-          username: ${{ secrets.FTP_TEST_SITE_USER }}
-          password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
-          port: 7500 
-          local-dir: /home/ubuntu/DBRDocRestructured/_site/
-          server-dir: /www.dynamsoft.com/barcode-reader-review/docs/
-          
