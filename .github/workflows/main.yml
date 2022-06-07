@@ -88,3 +88,33 @@ jobs:
           [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing
           [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
+
+      - name: Build the site
+        run: |
+          mkdir -p DBRDocRestructured
+          mkdir -p DBRDocRestructuredJS
+          [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
+          [ ! -d barcode-reader-docs-js-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-reviewing
+          cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocRestructured/
+          cd barcode-reader-docs-js-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-reviewing/* ./DBRDocRestructuredJS/
+          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocRestructured/
+          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DBRDocRestructuredJS/
+          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
+          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructured/_config.yml
+          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
+          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructuredJS/_config.yml
+          cd DBRDocRestructured && bundle exec jekyll build --incremental && cd ..
+          cd DBRDocRestructuredJS && bundle exec jekyll build --incremental && cd ..
+
+          mv ./DBRDocRestructuredJS/_site/* ./DBRDocRestructured/_site/web/
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_TEST_SITE_SERVER }}
+          username: ${{ secrets.FTP_TEST_SITE_USER }}
+          password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
+          port: 7500 
+          local-dir: /home/ubuntu/DBRDocRestructured/_site/
+          server-dir: /www.dynamsoft.com/barcode-reader-review/docs/
+          
