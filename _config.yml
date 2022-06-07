@@ -17,7 +17,7 @@ performance: /barcode-reader-review/docs/understanding/performance/
 faq: /barcode-reader-review/docs/faq/
 
 faq_general: /barcode-reader-review/docs/faq/general/
-faq_js: /barcode-reader-review/docs/faq/javascript/
+faq_js: /barcode-reader-review/docs/web/programming/javascript/faq/
 
 comparison_tools: /barcode-reader-review/docs/understanding/performance/comparison-tools/
 
@@ -34,9 +34,9 @@ cpp_api: /barcode-reader-review/docs/programming/cplusplus/api-reference/
 cpp_methods: /barcode-reader-review/docs/programming/cplusplus/api-reference/cbarcodereader-methods/
 cpp_release_notes: /barcode-reader-review/docs/programming/cplusplus/release-notes/
 
-js: /barcode-reader-review/docs/programming/javascript/
-js_api: /barcode-reader-review/docs/programming/javascript/api-reference/
-js_release_notes: /barcode-reader-review/docs/programming/javascript/release-notes/
+js: /barcode-reader-review/docs/web/programming/javascript/
+js_api: /barcode-reader-review/docs/web/programming/javascript/api-reference/
+js_release_notes: /barcode-reader-review/docs/web/programming/javascript/release-notes/
 
 dotnet: /barcode-reader-review/docs/programming/dotnet/
 dotnet_api: /barcode-reader-review/docs/programming/dotnet/api-reference/
@@ -99,7 +99,7 @@ defaults:
     values:
       category: "original-repo"
   - scope:
-      path: "programming/javascript"
+      path: "web/programming/javascript"
     values:
       category: "js-repo"
       editon: "js"
