@@ -91,6 +91,7 @@ jobs:
 
       - name: Build the site
         run: |
+          cd /home/ubuntu
           mkdir -p DBRDocRestructured
           mkdir -p DBRDocRestructuredJS
           [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
