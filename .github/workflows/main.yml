@@ -108,6 +108,7 @@ jobs:
           cd DBRDocRestructured && bundle exec jekyll build --incremental && cd ..
           cd DBRDocRestructuredJS && bundle exec jekyll build --incremental && cd ..
 
+          mkdir -p ./DBRDocRestructured/_site/web/
           mv ./DBRDocRestructuredJS/_site/* ./DBRDocRestructured/_site/web/
 
       - name: Sync files
