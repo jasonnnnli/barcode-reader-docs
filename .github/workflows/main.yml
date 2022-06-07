@@ -83,10 +83,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: clear space
         run: |
-          cd /home/ubuntu
+          cd /home/ubuntu 
           [ -d DBRDocRestructured ] && rm -rf DBRDocRestructured
-          [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing
-          [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS
+          [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing 
+          [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS 
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
 
       - name: Build the site
