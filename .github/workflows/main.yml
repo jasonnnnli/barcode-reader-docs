@@ -88,6 +88,7 @@ jobs:
           [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing 
           [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS 
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
+          cd /home/ubuntu
 
       - name: Build the site
         run: |
