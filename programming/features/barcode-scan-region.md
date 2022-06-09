@@ -65,16 +65,22 @@ reader.updateRuntimeSettings(settings);
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
-
-settings.barcodeFormatIds = EnumBarcodeFormatQRCODE | EnumBarcodeFormatONED;
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
 >```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
-
-settings.barcodeFormatIds = EnumBarcodeFormat.ONED | EnumBarcodeFormat.QRCODE
+settings.region.regionTop = 10
+settings.region.regionBottom = 90
+settings.region.regionLeft = 10
+settings.region.regionRight = 90
+settings.region.regionMeasuredByPercentage = 1
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
@@ -83,8 +89,11 @@ PublicRuntimeSettings settings;
 char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
 DBR_GetRuntimeSettings(reader, &settings);
-
-settings.barcodeFormatIds = BF_QR_CODE | BF_ONED;
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 // Update the settings.
 DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
 ```
@@ -93,23 +102,33 @@ PublicRuntimeSettings settings;
 char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
 reader.GetRuntimeSettings(&settings);
-
-settings.barcodeFormatIds = BF_QR_CODE | BF_ONED;
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 // Update the settings.
 reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
 ```
 >```c#
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.GetRuntimeSettings();
-
-settings.BarcodeFormatIds = (int)(EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_ONED);
+settings.Region.RegionTop = 10;
+settings.Region.RegionBottom = 90;
+settings.Region.RegionLeft = 10;
+settings.Region.RegionRight = 90;
+settings.Region.RegionMeasuredByPercentage = 1;
 // Update the settings.
 reader.UpdateRuntimeSettings(settings);
 ```
 >```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
-
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
 settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
 // Update the settings.
 reader.updateRuntimeSettings(settings);
@@ -118,8 +137,11 @@ reader.updateRuntimeSettings(settings);
 ```python
 # Obtain current runtime settings of `reader` instance.
 settings = reader.get_runtime_settings()
-
-settings.barcode_format_ids = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE
+settings.region.region_top = 10
+settings.region.region_bottom = 90
+settings.region.region_left = 10
+settings.region.region_right = 90
+settings.region.region_measured_by_percentage = 1
 # Update the settings.
 reader.update_runtime_settings(settings)
 ```

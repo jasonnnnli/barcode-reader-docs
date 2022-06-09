@@ -36,6 +36,11 @@ DBR may not be able to handle such cases well by default, but you can configure 
    >- Python
    >
 >```javascript
+// Obtain current runtime settings of `reader` instance.
+let settings = await scanner.getRuntimeSettings();
+// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.furtherModes.deformationResistingModes = 
+// Update the settings.
+await scanner.updateRuntimeSettings(settings);
 ```
 >```java
 // Obtain current runtime settings of `reader` instance.
