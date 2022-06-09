@@ -38,7 +38,8 @@ DBR may not be able to handle such cases well by default, but you can configure 
 >```javascript
 // Obtain current runtime settings of `reader` instance.
 let settings = await scanner.getRuntimeSettings();
-// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.furtherModes.deformationResistingModes = 
+// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
+settings.furtherModes.deformationResistingModes = [Dynamsoft.DBR.EnumDeformationResistingMode.DRM_GENERAL];
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
@@ -46,7 +47,7 @@ await scanner.updateRuntimeSettings(settings);
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
-settings.furtherModes.deformationResistingModes = new int[]{EnumBarcodeComplementMode.DRM_GENERAL};
+settings.furtherModes.deformationResistingModes = new int[]{EnumDeformationResistingMode.DRM_GENERAL};
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
@@ -55,7 +56,7 @@ NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
 // Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
-settings.iFurtherModes.deformationResistingModes = @[@(EnumBarcodeComplementModeGeneral)];
+settings.iFurtherModes.deformationResistingModes = @[@(EnumDeformationResistingModeGeneral)];
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
@@ -63,11 +64,19 @@ settings.iFurtherModes.deformationResistingModes = @[@(EnumBarcodeComplementMode
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
 // Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
-settings.iFurtherModes.deformationResistingModes = [EnumBarcodeComplementMode.general]
+settings.iFurtherModes.deformationResistingModes = [EnumDeformationResistingMode.general]
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
 >```c
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
+// Obtain current runtime settings of `reader` instance.
+DBR_GetRuntimeSettings(reader, &settings);
+// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
+settings.furtherModes.deformationResistingModes[0] = DRM_GENERAL;
+// Update the settings.
+DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
 ```
 >```cpp
 PublicRuntimeSettings settings;
@@ -80,16 +89,28 @@ settings.furtherModes.deformationResistingModes[0] = DRM_GENERAL;
 reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
 ```
 >```c#
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
+settings.FurtherModes.DeformationResistingModes[0] = DRM_GENERAL;
+// Update the settings.
+reader.UpdateRuntimeSettings(settings);
 ```
 >```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
-settings.furtherModes.deformationResistingModes = new int[]{EnumBarcodeComplementMode.DRM_GENERAL};
+settings.furtherModes.deformationResistingModes = new int[]{EnumDeformationResistingMode.DRM_GENERAL};
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
 >```python
+# Obtain current runtime settings of `reader` instance.
+settings = reader.get_runtime_settings()
+# Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
+settings.further_modes.deformation_resisting_modes[0] = EnumDeformationResistingMode.DRM_GENERAL
+# Update the settings.
+reader.update_runtime_settings(settings)
 ```
 
 > Note:

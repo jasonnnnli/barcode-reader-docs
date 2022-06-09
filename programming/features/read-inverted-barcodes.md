@@ -14,7 +14,7 @@ Generally, the barcode is dark on a light background. But in some situations, th
 
 ![Dark Background Barcode][1]
 
-Such kind of barcodes can be decoded if `GTM_INVERTED` of `GrayscaleTransformationMode` is enabled.
+Decoding inverted barcode is not enabled by default. To decode the inverted barcodes, you have to enable `GTM_INVERTED` in the `GrayscaleTransformationMode`.
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -28,11 +28,17 @@ Such kind of barcodes can be decoded if `GTM_INVERTED` of `GrayscaleTransformati
    >- Python
    >
 >```javascript
+// Obtain current runtime settings of `reader` instance.
+let settings = await scanner.getRuntimeSettings();
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
+settings.furtherModes.grayscaleTransformationModes = [Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_ORIGINAL, Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_INVERTED];
+// Update the settings.
+await scanner.updateRuntimeSettings(settings);
 ```
 >```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
-// Update the GrayscaleTransformationModes, add GTM_INVERTED to the mode.
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
 settings.furtherModes.grayscaleTransformationModes = new int[]{EnumGrayscaleTransformationMode.GTM_ORIGINAL, EnumGrayscaleTransformationMode.GTM_INVERTED};
 // Update the settings.
 reader.updateRuntimeSettings(settings);
@@ -41,6 +47,7 @@ reader.updateRuntimeSettings(settings);
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
 settings.iFurtherModes.grayscaleTransformationModes = @[@(EnumGrayscaleTransformationModeOriginal),@(EnumGrayscaleTransformationModeInverted)];
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
@@ -48,35 +55,64 @@ settings.iFurtherModes.grayscaleTransformationModes = @[@(EnumGrayscaleTransform
 >```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
-// Update the GrayscaleTransformationModes, add GTM_INVERTED to the mode.
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
 settings.iFurtherModes.grayscaleTransformationModes = [EnumGrayscaleTransformationMode.original, EnumGrayscaleTransformationMode.inverted]
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
 >```c
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
+// Obtain current runtime settings of `reader` instance.
+DBR_GetRuntimeSettings(reader, &settings);
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
+settings.furtherModes.grayscaleTransformationModes[0] = GTM_ORIGINAL;
+settings.furtherModes.grayscaleTransformationModes[1] = GTM_INVERTED;
+// Update the settings.
+DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
 ```
 >```cpp
 PublicRuntimeSettings settings;
 char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
 reader.GetRuntimeSettings(&settings);
-// Update the GrayscaleTransformationModes, add GTM_INVERTED to the mode.
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
 settings.furtherModes.grayscaleTransformationModes[0] = GTM_ORIGINAL;
 settings.furtherModes.grayscaleTransformationModes[1] = GTM_INVERTED;
 // Update the settings.
 reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
 ```
 >```c#
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
+settings.FurtherModes.GrayscaleTransformationModes[0] = GTM_ORIGINAL;
+settings.FurtherModes.GrayscaleTransformationModes[1] = GTM_INVERTED;
+// Update the settings.
+reader.UpdateRuntimeSettings(settings);
 ```
 >```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
-// Update the GrayscaleTransformationModes, add GTM_INVERTED to the mode.
+// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
 settings.furtherModes.grayscaleTransformationModes = new int[]{EnumGrayscaleTransformationMode.GTM_ORIGINAL, EnumGrayscaleTransformationMode.GTM_INVERTED};
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
 >```python
+# Obtain current runtime settings of `reader` instance.
+settings = reader.get_runtime_settings()
+# Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
+settings.further_modes.grayscale_transformation_modes[0] = EnumGrayscaleTransformationMode.GTM_ORIGINAL
+settings.further_modes.grayscale_transformation_modes[1] = EnumGrayscaleTransformationMode.GTM_INVERTED
+# Update the settings.
+reader.update_runtime_settings(settings)
 ```
+
+**Remarks**
+
+- When only `GTM_GENERAL` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan general barcodes.
+- When only `GTM_INVERTED` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan inverted barcodes.
+- When `GTM_GENERAL` is enabled as the first mode and `GTM_INVERTED` is enabled as the second mode in `GrayscaleTransformationModes`, the barcode reader will try to decode general barcodes first. If the count of decoded barcodes does not reach the expected number, the barcode reader will then try decoding the inverted barcodes.
 
 [1]: assets/read-barcodes-with-different-colors/dark-background-barcode.png
