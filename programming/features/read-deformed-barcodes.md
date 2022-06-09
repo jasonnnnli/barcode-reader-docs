@@ -13,8 +13,8 @@ noTitleIndex: true
 As shown below, the barcodes on the surface of some flexible packaging or cylindrical objects tend to be distorted and deformed.
 
 <div align="center">
-    <p><img src="assets/deformed-barcodes.png" width="80%" alt="deformed-barcodes"></p>
-    <p>Deformed Barcodes</p>
+   <p><img src="assets/deformed-barcodes.png" width="80%" alt="deformed-barcodes"></p>
+   <p>Deformed Barcodes</p>
 </div>
 
 DBR may not be able to handle such cases well by default, but you can configure the anti-deformation mode via parameter [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) to decode the deformed barcodes. Since DBR does not turn on anti-deformation modes by default, you need to add `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html).
