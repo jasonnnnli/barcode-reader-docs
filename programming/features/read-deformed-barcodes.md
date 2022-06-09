@@ -12,15 +12,23 @@ noTitleIndex: true
 
 As shown below, the barcodes on the surface of some flexible packaging or cylindrical objects tend to be distorted and deformed.
 
-![Deformation sample image1][1]
-![after deformation qr][3]
-![Deformation sample image2][2]
-![Deformation sample image2][4]
+<div align="center">
+    <p><img src="assets/deformed-barcodes.png" width="80%" alt="deformed-barcodes"></p>
+    <p>Deformed Barcodes</p>
+</div>
 
-DBR may not be able to handle such cases well by default, but you can configure the anti-deformation mode via parameter [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) to decode the deformed barcodes. Since DBR does not turn on anti-deformation modes by default, you need to add `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html). By the way, multiple modes can also be set at the same time. For example, if DRM_SKIP and DRM_GENERAL are configured at the same time:
+DBR may not be able to handle such cases well by default, but you can configure the anti-deformation mode via parameter [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) to decode the deformed barcodes. Since DBR does not turn on anti-deformation modes by default, you need to add `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html).
+
+Multiple modes can also be set at the same time. For example, if DRM_SKIP and DRM_GENERAL are configured at the same time:
 
 - The anti-deformation will not be enabled in the first round of barcode decoding
 - If the decoded barcode results doesn't reach the number of `expectedBarcodeCount`, the anti-deformation will be enabled in the second round of barcode decoding.
+
+If `DRM_GENERAL` of `DeformationResistingModes` still can't fullfil your requirements, you can try the following specific modes:
+
+- `DRM_BROAD_WARP`: Resists deformation when the barcode is warped gently.
+- `DRM_LOCAL_REFERENCE`: Resists deformation for barcodes with minor deformation in local modules.
+- `DRM_DEWRINKLE`: Resists deformation for barcodes on a wrinkled surface.
 
 **Code Snippet**
 
@@ -116,8 +124,3 @@ reader.update_runtime_settings(settings)
 > Note:
 >
 > `DeformationResistingModes` only works for QR Code and DataMatrix codes.
-
-[1]:assets\resist-deformation\resist-deformation-sample1.jpg
-[2]:assets\resist-deformation\resist-deformation-sample2.png
-[3]:assets\resist-deformation\after-drm-qr.png
-[4]:assets\resist-deformation\after-drm-dm.png
