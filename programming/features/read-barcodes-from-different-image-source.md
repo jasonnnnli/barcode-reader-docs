@@ -17,12 +17,141 @@ The DBR algorithm provides multiple ways to read images from different sources. 
 
 ## Read from File
 
-Python
-
+<div class="sample-code-prefix template2"></div>
+   >- JavaScript
+   >- Android
+   >- Objective-C
+   >- Swift
+   >- C
+   >- C++
+   >- C#
+   >- Java
+   >- Python
+   >
+>```javascript
+```
+>```java
+try{
+   TextResult[] result = reader.decodeFile(Environment.getExternalStorageDirectory().toString()+"your file path");
+} catch (BarcodeReaderException ex) {
+   ex.printStackTrace();
+}
+```
+>```objc
+NSArray<iTextResult*>* barcodeResults = [barcodeReader decodeFileWithName:@"your file path" error:&error];
+```
+>```swift
+let barcodeResults = try? barcodeReader.decodeFileWithName("your file path")
+```
+>```c
+int errorCode = DBR_DecodeFile(barcodeReader, "C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
+```
+>```c++
+int errorCode = reader->DecodeFile("C:\\Program Files (x86)\\Dynamsoft\\{Version number}\\Images\\AllSupportedBarcodeTypes.tif", "");
+```
+>```c#
+try{
+   TextResult[] result = reader.DecodeFile(@"C:\Program Files (x86)\Dynamsoft\{Version number}\Images\AllSupportedBarcodeTypes.tif", "");
+} catch (BarcodeReaderException exp) {
+   Console.WriteLine(exp.Message);
+}
+```
+>```java
+try{
+   TextResult[] result = reader.decodeFile("your file path", "");
+} catch (BarcodeReaderException ex) {
+   ex.printStackTrace();
+}
+```
+>
 ```python
-results = dbr.decode_file(image_path)
+try:
+   results = dbr.decode_file(image_path)
+   except BarcodeReaderError as bre:
+      print(bre)
 ```
 
+## Read File in Memory
+
+<div class="sample-code-prefix template2"></div>
+   >- JavaScript
+   >- Android
+   >- Objective-C
+   >- Swift
+   >- C
+   >- C++
+   >- C#
+   >- Java
+   >- Python
+   >
+>```javascript
+```
+>```java
+try{
+} catch (BarcodeReaderException ex) {
+   ex.printStackTrace();
+}
+```
+>```objc
+UIImage *image = [[UIImage alloc] init];
+NSArray<iTextResult*>* barcodeResults = [_barcodeReader decodeImage:image error:nil];
+```
+>```swift
+let frameImage = dce.getFrameFromBuffer(true).toUIImage()
+let barcodeResults = try? barcodeReader.decodeImage(frameImage)
+```
+>```c
+```
+>```c++
+```
+>```c#
+try{
+} catch (BarcodeReaderException exp) {
+   Console.WriteLine(exp.Message);
+}
+```
+>```java
+private static byte[] getFileBytes(String filePath) {
+   byte[] buffer = null;
+   FileInputStream fis = null;
+   ByteArrayOutputStream bos = null;
+   try {
+      fis = new FileInputStream(new File(filePath));
+      bos = new ByteArrayOutputStream();
+      byte[] tempBuffer = new byte[1024];
+      int iReadSize;
+      while ((iReadSize = fis.read(tempBuffer)) != -1) {
+         bos.write(tempBuffer, 0, iReadSize);
+      }
+      buffer = bos.toByteArray();
+   } catch (IOException ex) {
+      ex.printStackTrace();
+   } finally {
+      if (null != bos) {
+         try {
+            bos.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+      if (null != fis) {
+         try {
+            fis.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+   }
+   return buffer;
+}
+byte[] bytes = getFileBytes(filePath);
+try{
+   TextResult[] result = reader.decodeFileInMemory(bytes, "");
+} catch (BarcodeReaderException ex) {
+   ex.printStackTrace();
+}
+```
+>
 ```python
 # 3.2 Decoding with file bytes array
 with open(image_path,"rb") as f:
@@ -30,72 +159,9 @@ with open(image_path,"rb") as f:
 results = dbr.decode_file_stream(bytearray(bytes))
 ```
 
-Java
-
-```java
-TextResult[] result = reader.decodeFile("your file path", "");
-```
-
-```java
-private static byte[] getFileBytes(String filePath) {
-    byte[] buffer = null;
-    FileInputStream fis = null;
-    ByteArrayOutputStream bos = null;
-    try {
-        fis = new FileInputStream(new File(filePath));
-        bos = new ByteArrayOutputStream();
-        byte[] tempBuffer = new byte[1024];
-        int iReadSize;
-        while ((iReadSize = fis.read(tempBuffer)) != -1) {
-            bos.write(tempBuffer, 0, iReadSize);
-        }
-        buffer = bos.toByteArray();
-    } catch (IOException ex) {
-        ex.printStackTrace();
-    } finally {
-        if (null != bos) {
-            try {
-                bos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        if (null != fis) {
-            try {
-                fis.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    return buffer;
-}
-byte[] bytes = getFileBytes(filePath);
-TextResult[] result = reader.decodeFileInMemory(bytes, "");
-```
-
-OC
-
-```objc
-NSArray<iTextResult*>* barcodeResults = [barcodeReader decodeFileWithName:@"your file path" error:&error];
-```
-
-```objc
-DCEFrame *frame = [_cameraEnhancer get ];
-UIImage *image = [[UIImage alloc] init];
-NSArray<iTextResult*>* barcodeResults = [_barcodeReader decodeImage:image error:nil];
-```
-
 Swift
 
-```swift
-let barcodeResults = try? barcodeReader.decodeFileWithName("your file path")
-```
 
-```swift
-let frameImage = dce.getFrameFromBuffer(true).toUIImage()
-let barcodeResults = try? barcodeReader.decodeImage(frameImage)
-```
 
 ## Read from Memory
 

@@ -12,7 +12,10 @@ noTitleIndex: true
 
 Generally, the barcode is dark on a light background. But in some situations, the barcodes are inverted - light barcodes on a dark background, as shown below.
 
-![Dark Background Barcode][1]
+<div align="center">
+   <p><img src="assets/inverted-barcodes.png" width="70%" alt="inverted-barcodes"></p>
+   <p>Inverted Barcodes</p>
+</div>
 
 Decoding inverted barcode is not enabled by default. To decode the inverted barcodes, you have to enable `GTM_INVERTED` in the `GrayscaleTransformationMode`.
 
@@ -114,5 +117,3 @@ reader.update_runtime_settings(settings)
 - When only `GTM_GENERAL` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan general barcodes.
 - When only `GTM_INVERTED` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan inverted barcodes.
 - When `GTM_GENERAL` is enabled as the first mode and `GTM_INVERTED` is enabled as the second mode in `GrayscaleTransformationModes`, the barcode reader will try to decode general barcodes first. If the count of decoded barcodes does not reach the expected number, the barcode reader will then try decoding the inverted barcodes.
-
-[1]: assets/read-barcodes-with-different-colors/dark-background-barcode.png
