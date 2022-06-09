@@ -8,25 +8,12 @@ needAutoGenerateSidebar: false
 
 # FAQ - General
 
-## What are the different DBR editions and how do I choose the one I need?
+## There are many editions of DBR, what are the differences? Which one should I use?
 
-Based on the same algorithm, DBR is packaged into the following different editions depending on the language used:
+The edition of the SDK depends on the application environment/type, which is one of: a desktop app, native mobile app, web app (server-side), or web app (client-side).
 
-* [JavaScript (Web)]({{site.js}}user-guide/)
-* [Java (Android)]({{site.android}})
-* [Object-C / Swift (iOS)]({{site.oc}})
-* [Python (Windows, Linux, macOS)]({{site.python}})
-* [Java (Windows, Linux, macOS)]({{site.java}})
-* [C\# (Windows)]({{site.dotnet}})
-* [C++ (Windows, Linux, macOS)]({{site.cpp}})
-* [C (Windows, Linux, macOS)]({{site.c}})
-
-You can choose one of the editions based on your application type and the language you intend to use:
-
-* Web application: JavaScript edition
-* Mobile application: Object-C / Swift edition | Java for Android edition
-* Desktop application: Python | Java | C\# | C++ | C edition
-* Desktop application: (embedded – e.g. raspberry pi): Windows/Linux edition
+- desktop app: Windows/Linux edition
+- desktop app (embedded – e.g. raspberry pi): Windows/Linux edition
 - native mobile app: iOS/Android edition
 - webapp (server-side): Windows/Linux edition
 - webapp (client-side): JavaScript edition

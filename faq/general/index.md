@@ -8,9 +8,11 @@ needAutoGenerateSidebar: false
 
 # FAQ - General
 
-<a href="{{site.faq_general}}supported-barcode-formats.html" target="_blank">What barcode formats are supported by Dynamsoft Barcode Reader?</a>
+<a href="{{site.faq_general}}what-is-dbr.html" target="_blank">What is Dynamsoft Barcode Reader SDK and what business needs can it meet?</a>
 
-<a href="{{site.faq_general}}different-editions-of-dbr.html" target="_blank">What are the different DBR editions and how do I choose the one I need?</a>
+<a href="{{site.faq_general}}supported-barcode-formats.html" target="_blank">What barcode types are supported by Dynamsoft Barcode Reader?</a>
+
+<a href="{{site.faq_general}}different-editions-of-dbr.html" target="_blank">There are many editions of DBR, what are the differences? Which one should I use?</a>
 
 <a href="{{site.faq_general}}dbr-free-trial.html" target="_blank">How to get a free trial of the SDK? How many days does the free trial allow? Can I extend my trial if I need more time? If so, how?</a>
 
