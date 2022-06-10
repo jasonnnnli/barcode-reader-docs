@@ -93,6 +93,8 @@ baseurl: "/barcode-reader-review/docs"
 plugins:
   - jemoji
 
+edition: algorithm
+
 defaults:
   - scope:
       path: ""
