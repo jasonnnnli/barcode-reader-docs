@@ -93,12 +93,13 @@ try{
 }
 ```
 >```objc
-UIImage *image = [[UIImage alloc] init];
+// Input a file path to transfer the image to a UIImage.
+UIImage *image = [[UIImage alloc] initWithContentsOfFile:@"The file path."];
 NSArray<iTextResult*>* barcodeResults = [_barcodeReader decodeImage:image error:nil];
 ```
 >```swift
-let frameImage = dce.getFrameFromBuffer(true).toUIImage()
-let barcodeResults = try? barcodeReader.decodeImage(frameImage)
+let uiimage = UIImage.init(contentsOfFile:"")
+let barcodeResults = try? barcodeReader.decodeImage(uiimage)
 ```
 >```c
 ```
