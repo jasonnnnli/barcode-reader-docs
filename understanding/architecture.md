@@ -27,7 +27,7 @@ In this article, we will present the architectures and their corresponding contr
 The algorithm of DBR includes a flow of 5 stages at the top level, as illustrated in Figure 1, where localization, partition, and decoding are the three core stages. DBR is designed to deal with a variety of barcode scenarios and qualities and offers many customizable parameters to increase its versatility. Furthermore, the architecture of the algorithm and its parameters solidifies the agility to meet new requirements.
 
 <div align="center">
-   <p><img src="assets/architecture/top-level-flow-of-dbr-algorithm.png" alt="Top Level Flow of DBR Algorithm" width="30%" /></p>
+   <p><img src="{{site.understanding}}/assets/architecture/top-level-flow-of-dbr-algorithm.png" alt="Top Level Flow of DBR Algorithm" width="30%" /></p>
    <p>Figure 1 – Top Level Flow of DBR Algorithm</p>
 </div>
 
