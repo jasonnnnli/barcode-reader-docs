@@ -93,56 +93,59 @@ baseurl: "/barcode-reader-review/docs"
 plugins:
   - jemoji
 
+edition: algorithm
+
 defaults:
   - scope:
       path: ""
     values:
       category: "original-repo"
+      edition: "algorithm"
   - scope:
       path: "web/programming/javascript"
     values:
       category: "js-repo"
-      editon: "js"
+      edition: "js"
   - scope:
       path: "programming/android"
     values:
       category: "mobile-repo"
-      editon: "mobile"
+      edition: "mobile"
   - scope:
       path: "programming/objectivec-swift"
     values:
       category: "mobile-repo"
-      editon: "mobile"
+      edition: "mobile"
   - scope:
       path: "programming/c"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: "programming/cplusplus"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: "programming/c-cplusplus"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: "programming/dotnet"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: "programming/python"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: "programming/java"
     values:
       category: "original-repo"
-      editon: "desktop"
+      edition: "desktop"
   - scope:
       path: ""
     values:

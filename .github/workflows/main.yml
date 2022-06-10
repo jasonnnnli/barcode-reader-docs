@@ -88,6 +88,7 @@ jobs:
           [ -d barcode-reader-docs-reviewing ] && rm -rf barcode-reader-docs-reviewing 
           [ -d DBRDocRestructuredJS ] && rm -rf DBRDocRestructuredJS 
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
+          [ -d Docs-Template-Repo-preview ] && rm -rf Docs-Template-Repo-preview
           cd /home/ubuntu
 
       - name: Build the site
@@ -97,6 +98,7 @@ jobs:
           mkdir -p DBRDocRestructuredJS
           [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
           [ ! -d barcode-reader-docs-js-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-reviewing
+          [ ! -d Docs-Template-Repo-preview ] && git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-preview
           cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocRestructured/
           cd barcode-reader-docs-js-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-reviewing/* ./DBRDocRestructuredJS/
           cd Docs-Template-Repo-preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-preview/* ./DBRDocRestructured/
