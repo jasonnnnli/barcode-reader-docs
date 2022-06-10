@@ -15,6 +15,7 @@ Dynamsoft Barcode Reader (DBR) is a flexible SDK used to implement barcode readi
 Its flexibilities not only fit in most scenarios, which greatly vary in terms of barcode features but also most requirements regarding programming practices. The software architecture and design of DBR can accommodate a variety of application requirements. The barrier of entry to barcode reading is low, allowing customers to start building their application effortlessly, all the while providing various customization options to handle further complicated barcodes.
 
 DBR powers your software development from the following aspects:
+
 (1) performance of reading barcodes,
 (2) agility of dealing with unpredictable-featured barcodes,
 (3) integration of multipurpose image processing,
