@@ -3,6 +3,7 @@ layout: default-layout
 title: Performance Optimization - Dynamsoft Barcode Reader SDK
 description: This is the Performance Optimization index page for Dynamsoft Barcode Reader.
 keywords: performance optimization
+breadcrumbText: Performance
 needGenerateH3Content: false
 permalink: /performance/index.html
 ---
