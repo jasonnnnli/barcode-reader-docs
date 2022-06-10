@@ -1,12 +1,20 @@
+useGroupedVersion: true
+
 version_info_list_algorithm:
-  - latest version
-  - 9.0.0
-  - 8.8.0
-  - 8.6.0
-  - 8.4.0
-  - 8.2.0
-  - 8.1.2
-  - 8.1.0
-  - 8.0.0
-  - 7.6.0
-  - 7.5.0
+  - value: latest version
+  - value: 9.x
+    child:
+      - 9.0.0
+  - value: 8.x
+    child:
+      - 8.8.0
+      - 8.6.0
+      - 8.4.0
+      - 8.2.0
+      - 8.1.2
+      - 8.1.0
+      - 8.0.0
+  - value: 7.x
+    child:
+      - 7.6.0
+      - 7.5.0
