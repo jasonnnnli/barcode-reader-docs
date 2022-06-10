@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Read Barcode from Video Streaming - Dynamsoft Barcode Reader SDK
-description: This page describes how to read barcode from video streaming in Dynamsoft Barcode Reader SDK.
+description: This page describes how to read barcodes from video streaming in Dynamsoft Barcode Reader SDK.
 keywords: Different Source
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
@@ -12,7 +12,7 @@ noTitleIndex: true
 
 DBR provides several processing interfaces for video streams, which facilitates the processing of video frame queues and multi-threading.
 
-DBR creates a queue to be processed to store the video frame currently being processed, and then create a decoding thread to process the queue. The decoding thread takes the latest frame in the queue for processing each time, and then moves it out of the queue after decoding to perform the next processing. The results will be put into a result queue. If the length of the queue to be processed reaches the maximum value you set, the decoding thread will exit the current processing frame as soon as possible, and empty the queue to be processed, and then waiting for new frames to join the queue and restart processing to prevent a frame from taking too long.
+DBR creates a queue to be processed to store the video frame currently being processed and then creates a decoding thread to process the queue. The decoding thread takes the latest frame in the queue for processing each time and then moves it out of the queue after decoding to perform the next processing. The results will be put into a result queue. If the length of the queue to be processed reaches the maximum value you set, the decoding thread will exit the current processing frame as soon as possible, empty the queue to be processed, and then wait for new frames to join the queue and restart processing to prevent a frame from taking too long.
 
 DBR also provides the feature to filter blurred frames. When enabled, DBR will calculate the sharpness of the image frames in the queue to be processed, and the frames whose sharpness is lower than the threshold you set will be removed. The main APIs are as follows
 
@@ -29,7 +29,7 @@ DBR also provides the feature to filter blurred frames. When enabled, DBR will c
 - [`InitFrameDecodingParameters`]
   Init `FrameDecodingParameters` object
 - [`FrameDecodingParameters`]
-  Defines a struct to configure the frame decoding parameters.The structure provides a series of configuration parameters for users to configure the processing method of DBR involving video streams. The main fields are as follows
+  Defines a struct to configure the frame decoding parameters. The structure provides a series of configuration parameters for users to configure the processing method of DBR involving video streams. The main fields are as follows:
   - `maxQueueLength`
     The maximum number of frames waiting for decoding
   - `maxResultQueueLength`

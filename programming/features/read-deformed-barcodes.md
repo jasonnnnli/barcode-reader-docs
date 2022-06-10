@@ -22,9 +22,9 @@ DBR may not be able to handle such cases well by default, but you can configure 
 Multiple modes can also be set at the same time. For example, if DRM_SKIP and DRM_GENERAL are configured at the same time:
 
 - The anti-deformation will not be enabled in the first round of barcode decoding
-- If the decoded barcode results doesn't reach the number of `expectedBarcodeCount`, the anti-deformation will be enabled in the second round of barcode decoding.
+- If the decoded barcode results don't reach the number of `expectedBarcodeCount`, the anti-deformation will be enabled in the second round of barcode decoding.
 
-If `DRM_GENERAL` of `DeformationResistingModes` still can't fullfil your requirements, you can try the following specific modes:
+If `DRM_GENERAL` of `DeformationResistingModes` still can't fulfill your requirements, you can try the following specific modes:
 
 - `DRM_BROAD_WARP`: Resists deformation when the barcode is warped gently.
 - `DRM_LOCAL_REFERENCE`: Resists deformation for barcodes with minor deformation in local modules.

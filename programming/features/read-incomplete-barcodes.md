@@ -10,12 +10,12 @@ noTitleIndex: true
 
 # Read Incomplete Barcodes
 
-In some case, due to misprinting, barcodes may have incomplete parts. For example, a QR code that is missing the position detection pattern (See the sample image below). In this case, you can enable the barcode completion logic in Dynamsoft Barcode Reader(DBR) by turning on [`BarcodeComplementModes`]({{ site.parameters_reference }}barcode-complement-modes.html). DBR will then automatically attempt to complete and correct the location information that is incorrect or lost due to misprinting according to the structure characteristics of the corresponding barcode type. The barcode completion logic only supports QR code and Data Matrix at present. `BarcodeComplementModes` is disabled by default, you can enable it based on your requirements.
+In some cases, due to misprinting, barcodes may have incomplete parts. For example, a QR code that is missing the position detection pattern (See the sample image below). In this case, you can enable the barcode completion logic in Dynamsoft Barcode Reader(DBR) by turning on [`BarcodeComplementModes`]({{ site.parameters_reference }}barcode-complement-modes.html). DBR will then automatically attempt to complete and correct the location information that is incorrect or lost due to misprinting according to the structural characteristics of the corresponding barcode type. The barcode completion logic only supports QR code and Data Matrix at present. `BarcodeComplementModes` is disabled by default, you can enable it based on your requirements.
 
 Multiple modes can also be set at the same time. For example, if `BCM_SKIP` and `BCM_GENERAL` are configured at the same time:
 
 - The barcode complement will not be enabled in the first round of barcode decoding
-- If the decoded barcode results doesn't reach the number of `expectedBarcodeCount`, the barcode complement will be enabled in the second round of barcode decoding.
+- If the decoded barcode results don't reach the number of `expectedBarcodeCount`, the barcode complement will be enabled in the second round of barcode decoding.
 
 Here are two examples with imcomplete barcodes  
 

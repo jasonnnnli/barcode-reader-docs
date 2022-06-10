@@ -114,6 +114,6 @@ reader.update_runtime_settings(settings)
 
 **Remarks**
 
-- When only `GTM_GENERAL` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan general barcodes.
-- When only `GTM_INVERTED` is enabled in `GrayscaleTransformationModes`, the barcode reader only scan inverted barcodes.
+- When only `GTM_GENERAL` is enabled in `GrayscaleTransformationModes`, the barcode reader only scans general barcodes.
+- When only `GTM_INVERTED` is enabled in `GrayscaleTransformationModes`, the barcode reader only scans inverted barcodes.
 - When `GTM_GENERAL` is enabled as the first mode and `GTM_INVERTED` is enabled as the second mode in `GrayscaleTransformationModes`, the barcode reader will try to decode general barcodes first. If the count of decoded barcodes does not reach the expected number, the barcode reader will then try decoding the inverted barcodes.
