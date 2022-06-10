@@ -6,7 +6,7 @@ Keywords: accuracy
 needAutoGenerateSidebar: true
 noTitleIndex: false
 breadcrumbText: Accuracy
-permalink: /understanding/accuracy.html
+permalink: /performance/accuracy.html
 ---
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

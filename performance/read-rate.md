@@ -3,7 +3,8 @@ layout: default-layout
 title: Dynamsoft Barcode Reader Performance - Read Rate
 description: This page shows how the Dynamsoft Barcode Reader SDK is designed to improve read rate
 keywords: Read Rate
-permalink: /understanding/read-rate.html
+breadcrumbText: Read Rate
+permalink: /performance/read-rate.html
 ---
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

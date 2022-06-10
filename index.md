@@ -29,8 +29,8 @@ DEVELOPMENT
 UNDERSTANDING DBR
 <hr>
 
-* [Algorithm Principles]({{ site.understanding }}architecture.html)
-* [Template Structure]({{ site.understanding }}structure-and-interfaces-of-parameters.html)
+* [Algorithm Principles]({{ site.introduction }}architecture.html)
+* [Template Structure]({{ site.parameters }}structure-and-interfaces-of-parameters.html)
 * [Parameter Reference]({{ site.parameters_reference }})
 * [Performance]({{ site.performance }})
 
