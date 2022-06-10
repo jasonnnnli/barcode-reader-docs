@@ -13,13 +13,13 @@ programming: /barcode-reader-review/docs/programming/
 parameters: /barcode-reader-review/docs/parameters/
 license_activation: /barcode-reader-review/docs/license-activation/
 release_notes: /barcode-reader-review/docs/release-notes/
-performance: /barcode-reader-review/docs/understanding/performance/
+performance: /barcode-reader-review/docs/performance/
 faq: /barcode-reader-review/docs/faq/
 
 faq_general: /barcode-reader-review/docs/faq/general/
 faq_js: /barcode-reader-review/docs/web/programming/javascript/faq/
 
-comparison_tools: /barcode-reader-review/docs/understanding/performance/comparison-tools/
+comparison_tools: /barcode-reader-review/docs/performance/comparison-tools/
 
 c_cplusplus: /barcode-reader-review/docs/programming/c-cplusplus/
 structs: /barcode-reader-review/docs/programming/c-cplusplus/struct/
@@ -73,8 +73,6 @@ parameters_reference: /barcode-reader-review/docs/parameters/reference/
 image_parameters: /barcode-reader-review/docs/parameters/reference/image-parameter/
 scenario_settings: /barcode-reader-review/docs/parameters/scenario-settings/
 enumerations: /barcode-reader-review/docs/parameters/enum/
-
-understanding: /barcode-reader-review/docs/understanding/
 
 faqs: /barcode-reader-review/docs/faq/
 how_to: /barcode-reader-review/docs/faq/how-to-guide/
