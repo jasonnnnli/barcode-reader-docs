@@ -3,7 +3,7 @@ repositoryUrlJS: https://github.com/dynamsoft-docs/barcode-reader-docs-js/blob/m
 repositoryUrlMobile: https://github.com/dynamsoft-docs/barcode-reader-docs-mobile/blob/main
 repository: dynamsoft-docs/barcode-reader-docs
 docFullPath: https://www.dynamsoft.com/barcode-reader-review/docs/
-firstLevelUrl: /barcode-reader-review/docs/
+firstLevelUrl: /barcode-reader-review/docs
 docHomePage: /barcode-reader-review/docs/introduction/
 
 useVersionTree: true
