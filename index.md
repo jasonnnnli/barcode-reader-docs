@@ -41,6 +41,6 @@ USEFUL RESOURCES
 * [Release Notes]({{ site.release_notes }})
 * [License]({{ site.license_activation }})
   * [Set Trial License]({{ site.license_activation }}set-trial-license.html)
-  * [Set Full License in version 8]({{ site.license_activation }}set-full-license.html)
+  * [Set Full License in version 8]({{ site.license_activation }}set-full-license-8.html)
   * [Set Full License in version 7]({{ site.license_activation }}set-full-license-7.html)
-* [FAQ]({{ site.faq }})
+* [FAQ]({{ site.faq }}general/)

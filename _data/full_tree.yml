@@ -4,11 +4,9 @@ tree_file_list:
   - sidelist-development.html
   - sidelist-understanding.html
   - sidelist-useful.html
-  - sidelist-parameters/parameters-enumerations.html
   - sidelist-parameters/parameters-references.html
-  - sidelist-parameters/parameters-scenario-settings.html
   - sidelist-parameters/parameters-template-structure.html
-  - sidelist-parameters.html
+  - introduction-comparison-tools.html
   - sidelist-performance.html
   - sidelist-release-notes.html
   - sidelist-license-activation.html
