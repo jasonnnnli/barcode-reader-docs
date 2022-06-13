@@ -10,19 +10,19 @@ noTitleIndex: true
 
 # Read a Specific Area/Region
 
-DBR will locate the code region and decode in the entire image by default. However, if only specific regions are required when decoding the barcode, you can define a Region Of Interest (ROI) by the parameter `RegionDefinition`. After defining a specific region, DBR will only decode barcodes within that region. Of course, this is very conducive to increasing the speed.
+DBR will locate the code region and decode the entire image by default. However, if only specific regions are required when decoding the barcode, you can define a Region Of Interest (ROI) by the parameter `RegionDefinition`. After defining a specific region, DBR will only decode barcodes within that region. Of course, this is very conducive to increasing the speed.
 
 ## Single Region Specification
 
-`RegionDefinition` is the struct that designed to specify the ROI.
+`RegionDefinition` is the struct that is designed to specify the ROI.
 
 - `regionTop`: The y coordinate of the Top border of the region.
 - `regionBottom`: The y coordinate of the Bottom border of the region.
 - `regionLeft`: The x coordinate of the left border of the region.
 - `regionRight`: The x coordinate of the right border of the region.
-- `MeasureByPercentage`: If measured by percentage, the above values will be recognized as percentage (1 to 100). Otherwise, the above values will be recognized as pixel length.
+- `MeasureByPercentage`: If measured by percentage, the above values will be recognized as percentages (1 to 100). Otherwise, the above values will be recognized as pixel length.
 
-You can either configure these settings via `PublicRuntimeSettings` struct or via a JSON template.
+You can either configure these settings via the `PublicRuntimeSettings` struct or via a JSON template.
 
 To update the setting via `PublicRuntimeSettings`:
 
