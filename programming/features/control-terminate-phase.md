@@ -7,7 +7,7 @@ needAutoGenerateSidebar: false
 breadcrumbText: Termination Control
 ---
 
-# Control the termination of a decoding process
+# Control when to terminate a decoding process
 
 Typically, DBR will terminate a decoding process after the barcode is decoded or the process has failed. In some cases we may want the process to terminate early. To do this, we use either the parameter [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) or the parameter [ `Timeout` ]({{ site.parameters_reference }}time-out.html). The former specifies the stage to terminate the process, the latter specifies the maximum time allowed for the process.
 
