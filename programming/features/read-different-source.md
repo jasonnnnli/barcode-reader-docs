@@ -12,10 +12,11 @@ noTitleIndex: true
 
 The DBR algorithm provides multiple ways to read images from different sources. This article will introduce the following methods.
 
-- Read from File
-- Read from Memory
+- `DecodeFile`: Decode barcodes from a still image. You have to specify the file path when using this method to decode the barcodes.
+- `DecodeFileInMemory`: Decode barcodes from an image file in memory.
+- `DecodeBuffer`: Decode barcodes with buffered image data and the width, height, strides and pixel format of the image.
 
-## Read from File
+## DecodeFile
 
 <div class="sample-code-prefix template2"></div>
    >- C
@@ -52,16 +53,42 @@ try:
       print(bre)
 ```
 
-## Read from Memory
+## DecodeFileInMemory
 
-DecodeBuffer is the method designed for decoding barcodes from the memory buffer containing image pixels in a defined format. This API is generally used in video stream decoding. After obtaining a frame of image data, you can invoke this API to decode the frame. The required parameters are as follows:
+`DecodeFileInMemory` is the method designed for decoding barcodes from the raw image data in bytes. The required parameters are as follows:
+
+- `fileBytes`: The image data in bytes. It contains the image pixel data, pixel format and the size of the image.
+- `templateName`: The barcode decoding template name.
+
+<div class="sample-code-prefix template2"></div>
+   >- C
+   >- C++
+   >- C#
+   >- Java
+   >- Python
+   >
+>```c
+```
+>```c++
+```
+>```c#
+```
+>```java
+```
+>
+```python
+```
+
+## DecodeBuffer
+
+`DecodeBuffer` is the method designed for decoding barcodes from the memory buffer containing image pixels in a defined format. This API is generally used in video stream decoding. After obtaining a frame of image data, you can invoke this API to decode the frame. The required parameters are as follows:
 
 - BufferBytes: The array of bytes that contains the image data.
 - Width: The width of the image (in pixel).
 - Height: The height of the image (in pixel).
 - Stride: The stride (or scan width) of the image.
 - Format: The image pixel format used in the image byte array. View all available templates in `EnumImagePixelFormat`
-- TemplateName: The template name. It indicates which barcode decoding template you are going to use when decoding the buffer. 
+- TemplateName: The template name. It indicates which barcode decoding template you are going to use when decoding the buffer.
 
 <div class="sample-code-prefix template2"></div>
    >- C
