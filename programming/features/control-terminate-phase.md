@@ -13,16 +13,7 @@ Typically, DBR will terminate a decoding process after the barcode is decoded or
 
 ## TerminatePhase
 
-This parameter can specify a certain stage to terminate the decoding. The main stages are:
-
-* Region pre-detection
-* Image preprocessing
-* Image binarization
-* Barcode localization
-* Barcode type identification
-* Barcode decoding/recognition  
-
-By default, the decoding process will only terminate after all these stages are completed. To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
+This parameter can specify a certain stage to terminate the decoding. By default, the decoding process will only terminate after all these stages are completed and the barcode is recognized (TP_BARCODE_RECOGNIZED). To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
 
 |Enumeration name|Notes|
 |---|----|
@@ -68,28 +59,30 @@ The following code illustrates how it's done:
 <div id='scannerV' style="width:50vw;height:50vh"></div>
 <div id='cvses'></div>
 <script>
-// display intermediate result canvases
-(async () => {
-    let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
-    document.getElementById('scannerV').appendChild(scanner.getUIElement());
-    let rs = await scanner.getRuntimeSettings();
-    // Specify which results you'd like to show
-    rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
-    await scanner.updateRuntimeSettings(rs);
-    scanner.onUniqueRead = async (txt, result) => {
-        try {
-            // Show the intermediate results (images drawn in canvases)
-            let cvss = await scanner.getIntermediateCanvas();
-            for (let cvs of cvss) {
-                document.getElementById('cvses').appendChild(cvs);
+    // display intermediate result canvases
+    (async() => {
+        let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+        document.getElementById('scannerV').appendChild(scanner.getUIElement());
+        let rs = await scanner.getRuntimeSettings();
+        rs.terminatePhase = Dynamsoft.DBR.EnumTerminatePhase.TP_IMAGE_BINARIZED;
+        rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
+        await scanner.updateRuntimeSettings(rs);
+        const interval = setInterval(async(txt, result) => {
+            try {
+                let cvss = await scanner.getIntermediateCanvas();
+                if (cvss.length > 0) {
+                    for (let cvs of cvss) {
+                        document.getElementById('cvses').appendChild(cvs);
+                    }
+                    scanner.destroyContext();
+                    clearInterval(interval);
+                }
+            } catch (ex) {
+                console.error(ex);
             }
-            scanner.destroyContext();
-        } catch (ex) {
-            console.error(ex);
-        }
-    };
-    await scanner.show();
-})();
+        }, 1000);
+        await scanner.show();
+    })();
 </script>
 ```
 >
@@ -124,7 +117,7 @@ NOT SURE C++
 NOT SURE C
 ```
 
->AGO
+> AGO
 
 ## Timeout
 
