@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 >```swift
 var barcodeReader:DynamsoftBarcodeReader! = nil
 ...
+// Add DBRTextResultListener to the viewController
 class ViewController: UIViewController, DBRTextResultListener {
    // Add function configureDBR and add the following code.
    func configurationDBR() {
