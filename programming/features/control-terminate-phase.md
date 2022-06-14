@@ -55,10 +55,7 @@ The following code illustrates how it's done:
    >- C++
    >- C
 >
-```html
-<div id='scannerV' style="width:50vw;height:50vh"></div>
-<div id='cvses'></div>
-<script>
+``````JavaScript
     // display intermediate result canvases
     (async() => {
         let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
@@ -83,7 +80,6 @@ The following code illustrates how it's done:
         }, 1000);
         await scanner.show();
     })();
-</script>
 ```
 >
 ```java
