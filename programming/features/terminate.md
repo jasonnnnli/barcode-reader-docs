@@ -22,20 +22,20 @@ This parameter can specify a certain stage to terminate the decoding. The main s
 * Barcode type identification
 * Barcode decoding/recognition  
 
-By default, the decoding process will only terminate after all these stages are completed. To terminate early, assign one of the following values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html):
+By default, the decoding process will only terminate after all these stages are completed. To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
 
 |Enumeration name|Note|
 |---|----|
-|TP_REGION_PREDETECTED|Terminate after Region Pre-detected|
-|TP_IMAGE_PREPROCESSED|Terminate after Image Preprocessed|
-|TP_IMAGE_BINARIZED|Terminate after Image binarized|
-|TP_BARCODE_LOCALIZED|Terminate after Barcode localized|
-|TP_BARCODE_TYPE_DETERMINED|Terminate after Barcode type identified|
-|TP_BARCODE_RECOGENIZED|Terminate after Barcode recognized |
+|TP_REGION_PREDETECTED | Terminate after the barcode region is pre-detected|
+|TP_IMAGE_PREPROCESSED | Terminate after the image is preprocessed|
+|TP_IMAGE_BINARIZED | Terminate after the image is binarized|
+|TP_BARCODE_LOCALIZED | Terminate after the barcode zone is localized|
+|TP_BARCODE_TYPE_DETERMINED | Terminate after the barcode type is identified|
+|TP_BARCODE_RECOGNIZED | Terminate after the barcode is recognized, the default value. |
 
-After the termination, use [ `IntermediateResult` ]({{ site.structs }}IntermediateResult.html) to obtain information from the process.
+After the termination, we can acquire information generated in the process as `Intermediate Results`.
 
-The following code snippets illustrat how it is done:
+The following code illustrates how it's done:
 
 <div class="sample-code-prefix template2"></div>
    >- Javascript
@@ -49,7 +49,7 @@ The following code snippets illustrat how it is done:
    >- C
 >
 ```javascript
-// Obtain current runtime settings of `reader` instance.
+// Obtains the current runtime settings.
 let runtimeSettings = await scanner.getRuntimeSettings();
 // Specify the barcode formats by enumeration values.
 // The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
