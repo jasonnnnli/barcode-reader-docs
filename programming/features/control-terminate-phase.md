@@ -24,16 +24,32 @@ This parameter can specify a certain stage to terminate the decoding. The main s
 
 By default, the decoding process will only terminate after all these stages are completed. To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
 
-|Enumeration name|Note|
+|Enumeration name|Notes|
 |---|----|
-|TP_REGION_PREDETECTED | Terminate after the barcode region is pre-detected|
-|TP_IMAGE_PREPROCESSED | Terminate after the image is preprocessed|
-|TP_IMAGE_BINARIZED | Terminate after the image is binarized|
-|TP_BARCODE_LOCALIZED | Terminate after the barcode zone is localized|
-|TP_BARCODE_TYPE_DETERMINED | Terminate after the barcode type is identified|
+|TP_REGION_PREDETECTED | Terminate after the barcode region is pre-detected. |
+|TP_IMAGE_PREPROCESSED | Terminate after the image is preprocessed. |
+|TP_IMAGE_BINARIZED | Terminate after the image is binarized. |
+|TP_BARCODE_LOCALIZED | Terminate after the barcode zone is localized. |
+|TP_BARCODE_TYPE_DETERMINED | Terminate after the barcode type is identified. |
 |TP_BARCODE_RECOGNIZED | Terminate after the barcode is recognized, the default value. |
 
-After the termination, we can acquire information generated in the process as `Intermediate Results`.
+After the termination, we can acquire information generated in the process as `Intermediate Results` which include the following:
+
+> Note that for the JavaScript Edition, the intermediate result is only available when it is presented as an image.
+
+| Enumeration name | Notes | Available in JavaScript Edition |
+| IRT_NO_RESULT  | No information at all. | NA |
+| IRT_ORIGINAL_IMAGE  | The original image processed by the barcode reader. | Yes |
+| IRT_COLOUR_CONVERTED_GRAYSCALE_IMAGE  | Converted grayscale image based on the original image. | Yes |
+| IRT_TRANSFORMED_GRAYSCALE_IMAGE  | Transformed grayscale image (e.g. color inversion). | Yes |
+| IRT_PREDETECTED_REGION  | The coordinates of the predetected region. | No |
+| IRT_PREPROCESSED_IMAGE  | The preprocessed image. | Yes |
+| IRT_BINARIZED_IMAGE  | The binarized image. | Yes |
+| IRT_TEXT_ZONE  | Coordinates of the zones of text found on the image. | No |
+| IRT_CONTOUR  | Contours found on the image that surrounds different areas on the image. | No |
+| IRT_LINE_SEGMENT  | Detected line segments. | No |
+| IRT_TYPED_BARCODE_ZONE  | Coordinates of the barcode zones with determined barcode type(s). | No |
+| IRT_PREDETECTED_QUADRILATERAL  | Coordinates of the predetected quadrilaterals. | No |
 
 The following code illustrates how it's done:
 
@@ -48,59 +64,67 @@ The following code illustrates how it's done:
    >- C++
    >- C
 >
-```javascript
-// Obtains the current runtime settings.
-let runtimeSettings = await scanner.getRuntimeSettings();
-// Specify the barcode formats by enumeration values.
-// The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
-// Some special formats are listed in the second group (barcodeFormatIds_2).
-runtimeSettings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_ONED | Dynamsoft.DBR.EnumBarcodeFormat.BF_QR_CODE;
-// Update the settings.
-await scanner.updateRuntimeSettings(runtimeSettings);
+```html
+<div id='scannerV' style="width:50vw;height:50vh"></div>
+<div id='cvses'></div>
+<script>
+// display intermediate result canvases
+(async () => {
+    let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+    document.getElementById('scannerV').appendChild(scanner.getUIElement());
+    let rs = await scanner.getRuntimeSettings();
+    // Specify which results you'd like to show
+    rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
+    await scanner.updateRuntimeSettings(rs);
+    scanner.onUniqueRead = async (txt, result) => {
+        try {
+            // Show the intermediate results (images drawn in canvases)
+            let cvss = await scanner.getIntermediateCanvas();
+            for (let cvs of cvss) {
+                document.getElementById('cvses').appendChild(cvs);
+            }
+            scanner.destroyContext();
+        } catch (ex) {
+            console.error(ex);
+        }
+    };
+    await scanner.show();
+})();
+</script>
 ```
 >
 ```java
-NOT SURE
+NOT SURE JAVA-ANDROID
 ```
 >
 ```objc
-NOT SURE
+NOT SURE OBJC
 ```
 >
 ```swift
-NOT SURE
+NOT SURE SWIFT
 ```
 >
 ```python
-NOT SURE
+NOT SURE PYTHON
 ```
 >
 ```java
-NOT SURE
+NOT SURE JAVA
 ```
 >
 ```c#
-NOT SURE
+NOT SURE C#
 ```
 >
 ```c++
-char sError[512];
-TextResultArray* paryResult = NULL;
-PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings();
-CBarcodeReader* reader = new CBarcodeReader();
-reader->InitLicense("input your license");
-reader->GetRuntimeSettings(runtimeSettings); //Configure runtimesettings  
-runtimeSettings->terminatePhase = TP_BARCODE_RECOGNIZED; //Specify terminate phase
-reader->UpdateRuntimeSettings(runtimeSettings, sError, 512); //Update runtimesettings  
-reader->DecodeFile("input your file path", ""); //Decoding
-reader->GetAllTextResults(&paryResult); //Get results  
-dynamsoft::dbr:: CBarcodeReader:: FreeTextResults(&paryResult);
-delete runtimeSettings;
-delete reader;
+NOT SURE C++
 ```
 >```c
-NOT SURE
+NOT SURE C
 ```
+
+>AGO
 
 ## Timeout
 
