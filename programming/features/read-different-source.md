@@ -71,6 +71,7 @@ DecodeBuffer is the method designed for decoding barcodes from the memory buffer
    >- Python
    >
 >```c
+barcodeReader = DBR_CreateInstance();
 int errorCode = DBR_DecodeBuffer(barcodeReader, pBufferBytes, iWidth, iHeight, iStride, format, "");
 ```
 >```c++
