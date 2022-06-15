@@ -44,6 +44,43 @@ After the termination, we can acquire information generated in the process as `I
 
 The following code illustrates how it's done:
 
+```html
+
+<html>
+<body>
+    <script src="dist9.0.2/dbr.js"></script>
+    <div id='scannerV' style="width:50vw;height:50vh"></div>
+    <div id='cvses'></div>
+    <script>
+        // display intermediate result canvases
+        (async() => {
+            let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+            document.getElementById('scannerV').appendChild(scanner.getUIElement());
+            let rs = await scanner.getRuntimeSettings();
+            rs.terminatePhase = Dynamsoft.DBR.EnumTerminatePhase.TP_IMAGE_BINARIZED;
+            rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
+            await scanner.updateRuntimeSettings(rs);
+            const interval = setInterval(async(txt, result) => {
+                try {
+                    let cvss = await scanner.getIntermediateCanvas();
+                    if (cvss.length > 0) {
+                        for (let cvs of cvss) {
+                            document.getElementById('cvses').appendChild(cvs);
+                        }
+                        scanner.destroyContext();
+                        clearInterval(interval);
+                    }
+                } catch (ex) {
+                    console.error(ex);
+                }
+            }, 1000);
+            await scanner.show();
+        })();
+    </script>
+</body>
+</html>
+```
+
 <div class="sample-code-prefix template2"></div>
    >- Javascript
    >- Android
