@@ -56,7 +56,7 @@ The following code illustrates how it's done:
    >- C
 >
 ```html
-<!DOCTYPE html>
+
 <html>
 <body>
     <script src="dist9.0.2/dbr.js"></script>
