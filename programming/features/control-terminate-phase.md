@@ -55,7 +55,7 @@ The following code illustrates how it's done:
    >- C++
    >- C
 >
-``````JavaScript
+```javascript
     // display intermediate result canvases
     (async() => {
         let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
