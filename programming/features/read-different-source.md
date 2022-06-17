@@ -68,6 +68,22 @@ try:
    >- Python
    >
 >```c
+barcodeReader = DBR_CreateInstance();
+FILE* fp;
+fopen_s(&fp, "../../../images/AllSupportedBarcodeTypes.png", "rb");
+if (fp == NULL) {
+   perror("");
+   return NULL;
+}
+fseek(fp, 0, SEEK_END);
+long int fileSize = ftell(fp);
+rewind(fp);
+unsigned char* fileByte = NULL;
+fileByte = (unsigned char*)malloc(fileSize + 1);
+fread(fileByte, 1, fileSize, fp);
+fileByte[fileSize] = '\0';
+fclose(fp);
+errorCode = DBR_DecodeFileInMemory(barcodeReader, fileByte, fileSize, "");
 ```
 >```c++
 FILE* fp;
