@@ -2,8 +2,8 @@
 layout: default-layout
 title: Control the termination phase of DBR
 description: This article describes how to use runtime settings to make DBR terminate at a certain stage.
+needAutoGenerateSidebar: true
 keywords: terminate timeout
-needAutoGenerateSidebar: false
 breadcrumbText: Termination Control
 ---
 
@@ -11,9 +11,11 @@ breadcrumbText: Termination Control
 
 Typically, DBR will terminate a decoding process after the barcode is decoded or the process has failed. In some cases we may want the process to terminate early. To do this, we use either the parameter [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) or the parameter [ `Timeout` ]({{ site.parameters_reference }}time-out.html). The former specifies the stage to terminate the process, the latter specifies the maximum time allowed for the process.
 
-## TerminatePhase
+## Use RuntimeSettings
 
-This parameter can specify a certain stage to terminate the decoding. By default, the decoding process will only terminate after all these stages are completed and the barcode is recognized (TP_BARCODE_RECOGNIZED). To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
+### TerminatePhase
+
+This parameter specifies a certain stage to terminate the decoding. By default, the decoding process will only terminate after all these stages are completed and the barcode is recognized (TP_BARCODE_RECOGNIZED). To terminate early, assign one of the first 5 values to [ `TerminatePhase` ]({{ site.parameters_reference }}terminate-phase.html) in the following table:
 
 |Enumeration name|Notes|
 |---|----|
@@ -54,32 +56,43 @@ The following code illustrates how it's done:
    >- C#
    >- C++
    >- C
+   >
 >
-``````JavaScript
-    // display intermediate result canvases
-    (async() => {
-        let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
-        document.getElementById('scannerV').appendChild(scanner.getUIElement());
-        let rs = await scanner.getRuntimeSettings();
-        rs.terminatePhase = Dynamsoft.DBR.EnumTerminatePhase.TP_IMAGE_BINARIZED;
-        rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
-        await scanner.updateRuntimeSettings(rs);
-        const interval = setInterval(async(txt, result) => {
-            try {
-                let cvss = await scanner.getIntermediateCanvas();
-                if (cvss.length > 0) {
-                    for (let cvs of cvss) {
-                        document.getElementById('cvses').appendChild(cvs);
+```html
+
+<html>
+<body>
+    <script src="dist9.0.2/dbr.js"></script>
+    <div id='scannerV' style="width:50vw;height:50vh"></div>
+    <div id='cvses'></div>
+    <script>
+        // display intermediate result canvases
+        (async() => {
+            let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+            document.getElementById('scannerV').appendChild(scanner.getUIElement());
+            let rs = await scanner.getRuntimeSettings();
+            rs.terminatePhase = Dynamsoft.DBR.EnumTerminatePhase.TP_IMAGE_BINARIZED;
+            rs.intermediateResultTypes = Dynamsoft.DBR.EnumIntermediateResultType.IRT_ORIGINAL_IMAGE | Dynamsoft.DBR.EnumIntermediateResultType.IRT_BINARIZED_IMAGE;
+            await scanner.updateRuntimeSettings(rs);
+            const interval = setInterval(async() => {
+                try {
+                    let cvss = await scanner.getIntermediateCanvas();
+                    if (cvss.length > 0) {
+                        for (let cvs of cvss) {
+                            document.getElementById('cvses').appendChild(cvs);
+                        }
+                        scanner.destroyContext();
+                        clearInterval(interval);
                     }
-                    scanner.destroyContext();
-                    clearInterval(interval);
+                } catch (ex) {
+                    console.error(ex);
                 }
-            } catch (ex) {
-                console.error(ex);
-            }
-        }, 1000);
-        await scanner.show();
-    })();
+            }, 1000);
+            await scanner.show();
+        })();
+    </script>
+</body>
+</html>
 ```
 >
 ```java
@@ -113,32 +126,90 @@ NOT SURE C++
 NOT SURE C
 ```
 
-> AGO
+### Timeout
 
-## Timeout
+This parameter controls the timeout for an individual decoding process in milliseconds. When the timeout occurs, the decoding will be terminated.
 
-This parameter will control the timeout for DBR algorithm in milliseconds, values ranging from[0, 0x7fffffff]. Default value is 10000. When DBR times out, it will terminate and return an error code related to the timeout. When dealing with multiple images, the user needs to consider a comprehensive timeout value to balance the trade-off between speed and accuracy for each image. The following code snippet illustrates how to set the [ `Timeout` ]({{ site.parameters_reference }}time-out.html):
+The allowed values are 0 to 0x7fffffff. The default value is 10000.
 
+The timeout setting is helpful in multi-image decoding situations where some images may take a long time to process. With proper timeout, we can balance the tradeoff between speed and read rate.
+
+> The timeout setting is especially useful when decoding barcodes from consecutive video frames, where the same barcode appears in multiple frame images, and it takes much less time to read it in a clear frame, meaning blurry frames should be skipped fast.
+
+The following code illustrates how to set `Timeout`:
+
+<div class="sample-code-prefix template2"></div>
+   >- Javascript
+   >- Android
+   >- Objective-C
+   >- Swift
+   >- Python
+   >- Java
+   >- C#
+   >- C++
+   >- C
+   >
+>
+```javascript
+(async() => {
+    let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+    let rs = await scanner.getRuntimeSettings();
+    rs.timeout = 1000; //Set timeout to 1000
+    await scanner.updateRuntimeSettings(rs);
+    scanner.onUniqueRead = (txt, result) => {
+        alert(txt);
+    };
+    await scanner.show();
+})();
+```
+>
+```java
+NOT SURE JAVA-ANDROID
+```
+>
+```objc
+NOT SURE OBJC
+```
+>
+```swift
+NOT SURE SWIFT
+```
+>
+```python
+NOT SURE PYTHON
+```
+>
+```java
+NOT SURE JAVA
+```
+>
+```c#
+NOT SURE C#
+```
+>
 ```c++
-char sError[512]; 
-TextResultArray* paryResult = NULL; 
-PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings(); 
-CBarcodeReader* reader = new CBarcodeReader(); 
-reader->InitLicense("input your license"); 
-reader->GetRuntimeSettings(runtimeSettings); //Configure runtimesettings   
+char sError[512];
+TextResultArray* paryResult = NULL;
+PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings();
+CBarcodeReader* reader = new CBarcodeReader();
+reader->InitLicense("input your license");
+reader->GetRuntimeSettings(runtimeSettings); //Configure runtimesettings
 runtimeSettings->timeout = 1000; //set timeout
-reader->UpdateRuntimeSettings(runtimeSettings, sError, 512); //Update runtimesettings     
+reader->UpdateRuntimeSettings(runtimeSettings, sError, 512); //Update runtimesettings
 reader->DecodeFile("input your file path", ""); //Decoding  
-reader->GetAllTextResults(&paryResult); //Get results     
-dynamsoft::dbr:: CBarcodeReader:: FreeTextResults(&paryResult); 
-delete runtimeSettings; 
-delete reader; 
-
+reader->GetAllTextResults(&paryResult); //Get results
+dynamsoft::dbr:: CBarcodeReader:: FreeTextResults(&paryResult);
+delete runtimeSettings;
+delete reader;
+```
+>```c
+NOT SURE C
 ```
 
-## Template
+## Use A Template
 
-You could also set the [`TerminatePhase`]({{ site.parameters_reference }}terminate-phase.html)parameter via the JSON settings template. In the below JSON template, we set TerminatePhase to TP_BARCODE_LOCALIZED, so that the algorithm terminates once the barcode(s) are localized. In this case, the value of [`Timeout`]({{ site.parameters_reference }}time-out.html)is 1000, which means if the time consumed exceeds 1000 milliseconds, the DBR algorithm will terminate.
+The following shows a snippet on how to set `TerminatePhase` to `IRT_BINARIZED_IMAGE` and `Timeout` to `1000` in a template:
+
 ```json
 {
     "ImageParameter": {
@@ -149,3 +220,5 @@ You could also set the [`TerminatePhase`]({{ site.parameters_reference }}termina
     "Version": "3.0"
 }
 ```
+
+Read more on [Use a template over RuntimeSettings](#use-template-over-runtimesettings.md).
