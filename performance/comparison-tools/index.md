@@ -9,7 +9,13 @@ breadcrumbText: Comparison Tools
 
 # How to test the barcode reading performance
 
-- [Performance Tool]({{ site.introduction }}comparison-tools/batch-test.html)
+Dynamsoft provides tools for measuring the performance of barcode reading operations.
+
+For now, there is only one tool for batch test.
+
+- [Performance Measurement - Batch Test Tool]({{ site.introduction }}comparison-tools/batch-test.html)
+
+More tools will be posted here as they become available.
 
 {%- comment -%}
 - [Interactive Test]({{ site.introduction }}comparison-tools/interactive-test.html)

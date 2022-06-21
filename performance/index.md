@@ -15,3 +15,4 @@ This section covers the following topics:
 * [How to Boost Barcode Reading Speed](speed.md)
 * [How to Boost Barcode Read Rate](read-rate.md)
 * [How to Boost Barcode Reading Accuracy](accuracy.md)
+* [How to Batch Test Barcode Reading Performance](comparison-tools/batch-test.md)
