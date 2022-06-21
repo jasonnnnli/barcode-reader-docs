@@ -57,7 +57,7 @@ try:
 
 `DecodeFileInMemory` is the method designed for decoding barcodes from the raw image data in bytes. The required parameters are as follows:
 
-- `fileBytes`: The image data in bytes. It contains the image pixel data, pixel format and the size of the image.
+- `fileBytes`: The image data in bytes. When images are read in memory, they are transferred into byte data.
 - `templateName`: The barcode decoding template name.
 
 <div class="sample-code-prefix template2"></div>
@@ -68,15 +68,94 @@ try:
    >- Python
    >
 >```c
+barcodeReader = DBR_CreateInstance();
+FILE* fp;
+fopen_s(&fp, "../../../images/AllSupportedBarcodeTypes.png", "rb");
+if (fp == NULL) {
+   perror("");
+   return NULL;
+}
+fseek(fp, 0, SEEK_END);
+long int fileSize = ftell(fp);
+rewind(fp);
+unsigned char* fileByte = NULL;
+fileByte = (unsigned char*)malloc(fileSize + 1);
+fread(fileByte, 1, fileSize, fp);
+fileByte[fileSize] = '\0';
+fclose(fp);
+errorCode = DBR_DecodeFileInMemory(barcodeReader, fileByte, fileSize, "");
 ```
 >```c++
+FILE* fp;
+fopen_s(&fp, path, "rb");
+if (fp == NULL) {
+   perror("");
+   return NULL;
+}
+fseek(fp, 0, SEEK_END);
+long int fileSize = ftell(fp);
+rewind(fp);
+unsigned char* fileByte = NULL;
+fileByte = new unsigned char[fileSize + 1];
+fread(fileByte, 1, fileSize, fp);
+fileByte[fileSize] = '\0';
+fclose(fp);
+int errorCode = reader->DecodeFileInMemory(fileByte, fileSize, "");
 ```
 >```c#
+try{
+   TextResult[] results = null;
+   FileStream fileStream = new FileStream("your-file-path", FileMode.Open, FileAccess.Read);
+   byte[] byteBuffer = new byte[fileStream.Length];
+   fileStream.Read(byteBuffer, 0, (int)fileStream.Length);
+   fileStream.Close();
+   results = dbr.DecodeFileInMemory(byteBuffer, "");
+} catch (BarcodeReaderException exp) {
+   Console.WriteLine(exp.Message);
+}
 ```
 >```java
+private static byte[] getFileBytes(String filePath) {
+   byte[] buffer = null;
+   FileInputStream fis = null;
+   ByteArrayOutputStream bos = null;
+   try {
+      fis = new FileInputStream(new File(filePath));
+      bos = new ByteArrayOutputStream();
+      byte[] tempBuffer = new byte[1024];
+      int iReadSize;
+      while ((iReadSize = fis.read(tempBuffer)) != -1) {
+         bos.write(tempBuffer, 0, iReadSize);
+      }
+      buffer = bos.toByteArray();
+   } catch (IOException ex) {
+      ex.printStackTrace();
+   } finally {
+      if (null != bos) {
+         try {
+            bos.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+      if (null != fis) {
+         try {
+            fis.close();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+   }
+   return buffer;
+}
+TextResult[] result = reader.decodeFileInMemory(getFileBytes("your-file-path"), "");
 ```
 >
 ```python
+// Read the image file and transfer it into byte
+with open(image_path,"rb") as f:
+   bytes = f.read()
+results = dbr.decode_file_stream(bytearray(bytes))
 ```
 
 ## DecodeBuffer
@@ -87,7 +166,7 @@ try:
 - Width: The width of the image (in pixel).
 - Height: The height of the image (in pixel).
 - Stride: The stride (or scan width) of the image.
-- Format: The image pixel format used in the image byte array. View all available templates in `EnumImagePixelFormat`
+- Format: The image pixel format used in the image byte array. View all available templates in `EnumImagePixelFormat`.
 - TemplateName: The template name. It indicates which barcode decoding template you are going to use when decoding the buffer.
 
 <div class="sample-code-prefix template2"></div>
