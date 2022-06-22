@@ -4,6 +4,7 @@ title: Can I read barcodes from existing files?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, existing file
 description: Can I read barcodes from existing files?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/read-from-existing-files.html
 ---
 
 # FAQ - JavaScript

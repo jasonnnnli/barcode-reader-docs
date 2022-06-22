@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - OneDCodeDetails Class
 description: This page shows the OneDCodeDetails Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: OneDCodeDetails, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/OneDCodeDetails-v7.6.0.html
 ---
 
 # OneDCodeDetails

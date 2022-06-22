@@ -5,6 +5,7 @@ keywords: programming
 needAutoGenerateSidebar: false
 breadcrumbText: Programming
 description: Dynamsoft Barcode Reader supports the following programming languages - .NET, Android, C, C++, Java, JavaScript, Objective-C & Swift, Python
+permalink: /programming/
 ---
 
 # Programming

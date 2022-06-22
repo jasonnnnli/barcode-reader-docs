@@ -4,6 +4,7 @@ title: How to use the JavaScript SDK in offline mode?
 keywords: Dynamsoft Barcode Reader, FAQ, Sales & Licensing, offline mode use
 description: How to use the JavaScript SDK in offline mode?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/javascript-sdk-offline-mode-use.html
 ---
 
 # FAQ - JavaScript

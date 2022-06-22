@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader for Python Language - Release Notes v9.x
 description: This is the release notes page of Dynamsoft Barcode Reader for Python Language v9.x.
 keywords: release notes, python
 needGenerateH3Content: false
+permalink: /programming/python/release-notes/python-9.html
 ---
 
 # Release Notes for Python SDK - 9.x

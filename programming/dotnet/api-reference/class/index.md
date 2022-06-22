@@ -5,6 +5,7 @@ description: This page shows all Auxiliary Classes of Dynamsoft Barcode Reader f
 keywords: class, api reference, .Net
 needAutoGenerateSidebar: false
 breadcrumbText: Auxiliary Class
+permalink: /programming/dotnet/api-reference/class/
 ---
 
 # .Net API Reference - Auxiliary Classes

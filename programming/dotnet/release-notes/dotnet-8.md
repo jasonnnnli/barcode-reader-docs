@@ -6,6 +6,7 @@ keywords: release notes, .net
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/dotnet/release-notes/dotnet-8.html
 ---
 
 # Release Notes for .NET SDK - 8.x

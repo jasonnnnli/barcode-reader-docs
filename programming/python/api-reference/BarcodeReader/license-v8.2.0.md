@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader License Met
 description: This page shows BarcodeReader License Methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: init_license, init_license_from_server, init_license_from_license_content, output_license_to_string, license methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
+permalink: /programming/python/api-reference/BarcodeReader/license-v8.2.0.html
 ---
 
 

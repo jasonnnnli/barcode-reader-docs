@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader FAQ - JavaScript
 keywords: faq, javascript
 description: Dynamsoft Barcode Reader FAQ - JavaScript
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/
 ---
 
 # FAQ - JavaScript

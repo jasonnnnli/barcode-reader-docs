@@ -5,6 +5,7 @@ description: This is the architecture page of Dynamsoft Barcode Reader Introduct
 keywords: architecture, principles
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
+permalink: /introduction/architecture.html
 ---
 
 # Principles of Dynamsoft Barcode Reader Algorithm

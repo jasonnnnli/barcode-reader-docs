@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C++ API Reference - CBarcodeReader Methods
 description: This page shows CBarcodeReader methods of Dynamsoft Barcode Reader for C++ Language.
 keywords: methods, CBarcodeReader, api reference, c++
 needAutoGenerateSidebar: true
+permalink: /programming/cplusplus/api-reference/cbarcodereader-methods/index-v8.9.3.html
 ---
 
 # class dynamsoft::dbr::CBarcodeReader

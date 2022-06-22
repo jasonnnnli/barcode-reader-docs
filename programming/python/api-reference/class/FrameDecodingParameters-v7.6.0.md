@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - FrameDecodingParameters C
 description: This page shows the FrameDecodingParameters Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: FrameDecodingParameters, class, api reference, python
 needAutoGenerateSidebar: false
+permalink: /programming/python/api-reference/class/FrameDecodingParameters-v7.6.0.html
 ---
 
 

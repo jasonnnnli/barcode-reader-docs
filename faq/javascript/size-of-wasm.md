@@ -4,6 +4,7 @@ title: What is the size of the JavaScript SDK (.wasm)?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, wasm, size of javascript sdk
 description: What is the size of the JavaScript SDK (.wasm)?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/size-of-wasm.html
 ---
 
 # FAQ - JavaScript

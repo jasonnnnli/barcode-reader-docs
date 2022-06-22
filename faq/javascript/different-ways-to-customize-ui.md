@@ -4,6 +4,7 @@ title: What are the different ways to customize the UI?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, customize ui
 description: What are the different ways to customize the UI?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/different-ways-to-customize-ui.html
 ---
 
 # FAQ - JavaScript

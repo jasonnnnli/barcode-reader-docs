@@ -4,6 +4,7 @@ title: How to upgrade from an old to new version?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, upgrade, version
 description: How to upgrade from an old to new version?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/upgrade-old-to-new.html
 ---
 
 # FAQ - JavaScript

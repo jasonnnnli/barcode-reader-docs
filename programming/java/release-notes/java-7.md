@@ -6,6 +6,7 @@ keywords: release notes, java
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/java/release-notes/java-7.html
 ---
 
 # Release Notes for Java SDK - 7.6.0 and below

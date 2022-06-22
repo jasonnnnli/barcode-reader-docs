@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader for Python SDK AP
 keywords: api reference, python
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
+permalink: /programming/python/api-reference/index-v7.6.0.html
 ---
 
 # Dynamsoft Barcode Reader SDK - Python API Reference

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader for C Language - Main Page
 description: This is the main page of Dynamsoft Barcode Reader for C Language.
 keywords: c
 breadcrumbText: C
+permalink: /programming/c/
 ---
 
 # Documentation - C Language

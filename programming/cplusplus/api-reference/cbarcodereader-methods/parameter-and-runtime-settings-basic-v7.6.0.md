@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C++ API Reference - CBarcodeReader Parameter and
 description: This page shows CBarcodeReader basic Runtime Settings methods of Dynamsoft Barcode Reader for C++ Language.
 keywords: SetModeArgument, GetModeArgument, GetRuntimeSettings, UpdateRuntimeSettings, ResetRuntimeSettings, parameter and runtime settings basic methods, CBarcodeReader, api reference, c++
 needAutoGenerateSidebar: true
+permalink: /programming/cplusplus/api-reference/cbarcodereader-methods/parameter-and-runtime-settings-basic-v7.6.0.html
 ---
 
 

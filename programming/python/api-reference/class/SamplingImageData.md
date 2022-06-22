@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - SamplingImageData Class
 description: This page shows the SamplingImageData Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: SamplingImageData, class, api reference, python
 needAutoGenerateSidebar: false
+permalink: /programming/python/api-reference/class/SamplingImageData.html
 ---
 
 

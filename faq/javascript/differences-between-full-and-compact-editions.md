@@ -4,6 +4,7 @@ title: What are the differences between the compact edition and the full edition
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, compact edition, full edition
 description: What are the differences between the compact edition and the full edition?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/differences-between-full-and-compact-editions.html
 ---
 
 # FAQ - JavaScript

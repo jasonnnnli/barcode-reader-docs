@@ -4,6 +4,7 @@ title: How to check the version of the JS SDK I am currently using?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, check version, current version
 description: How to check the version of the JS SDK I am currently using?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/check-current-version.html
 ---
 
 # FAQ - JavaScript

@@ -5,6 +5,7 @@ description: This page shows all Structs of Dynamsoft Barcode Reader for C & C++
 keywords: struct, c, c++
 needAutoGenerateSidebar: false
 breadcrumbText: Struct
+permalink: /programming/c-cplusplus/struct/index-v7.6.0.html
 ---
 
 

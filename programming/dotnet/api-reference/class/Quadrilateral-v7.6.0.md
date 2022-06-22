@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - Quadrilateral Class
 description: This page shows the Quadrilateral Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: Quadrilateral, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/Quadrilateral-v7.6.0.html
 ---
 
 

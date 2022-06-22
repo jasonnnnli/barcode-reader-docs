@@ -6,6 +6,7 @@ keywords: release notes, .net
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/dotnet/release-notes/dotnet-7.html
 ---
 
 # Release Notes for .NET SDK - 7.6.0 and below

@@ -4,6 +4,7 @@ title: What file/image formats are supported when reading barcodes from files in
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, files supported, pdf
 description: What file/image formats are supported when reading barcodes from files in local memory?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/formats-supported-for-existing-files.html
 ---
 
 # FAQ - JavaScript

@@ -4,6 +4,7 @@ title: Do we have to call loadWasm proactively?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, loadWasm
 description: Do we have to call loadWasm proactively?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/call-loadWasm-proactively.html
 ---
 
 # FAQ - JavaScript

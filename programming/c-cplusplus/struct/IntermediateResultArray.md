@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C & C++ Struct - IntermediateResultArray
 description: This page shows the IntermediateResultArray struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: IntermediateResultArray, struct, c, c++
 needAutoGenerateSidebar: false
+permalink: /programming/c-cplusplus/struct/IntermediateResultArray.html
 ---
 
 

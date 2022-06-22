@@ -6,6 +6,7 @@ keywords: user guide, .Net
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/dotnet/user-guide-v8.1.0.html
 ---
 
 # User Guide for Windows Edition - .Net

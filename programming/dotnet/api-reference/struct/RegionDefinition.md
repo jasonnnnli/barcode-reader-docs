@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - RegionDefinition Struct
 description: This page shows the RegionDefinition Struct of Dynamsoft Barcode Reader for .NET SDK.
 keywords: RegionDefinition, struct, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/struct/RegionDefinition.html
 ---
 
 

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader - Upgrade Instruction - C
 description: This page shows how to upgrade to latest version.
 keywords: Upgrade, how-to guides
 needAutoGenerateSidebar: false
+permalink: /programming/c/upgrade-instruction.html
 ---
 
 

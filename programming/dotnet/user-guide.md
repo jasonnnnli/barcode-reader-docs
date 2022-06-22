@@ -6,6 +6,7 @@ keywords: user guide, .Net
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/dotnet/user-guide.html
 ---
 
 # User Guide for .Net

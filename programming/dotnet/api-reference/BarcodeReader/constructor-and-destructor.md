@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader Constructor a
 description: This page shows BarcodeReader Constructor and Destructor of Dynamsoft Barcode Reader for .NET SDK.
 keywords: BarcodeReader, Dispose, api reference, .Net
 needAutoGenerateSidebar: true
+permalink: /programming/dotnet/api-reference/BarcodeReader/constructor-and-destructor.html
 ---
 
 # Constructor and Destructor

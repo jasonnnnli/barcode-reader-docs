@@ -5,6 +5,7 @@ description: This page shows Dynamsoft Barcode Reader Parameter Reference for Mi
 keywords: MinRatioOfBarcodeZoneWidthToHeight, parameter reference, parameter
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
+permalink: /parameters/reference/min-ratio-of-barcode-zone-width-to-height.html
 ---
 
 

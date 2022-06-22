@@ -5,6 +5,7 @@ description: This page shows all methods of Dynamsoft Barcode Reader for C Langu
 keywords: methods, api reference, c
 needAutoGenerateSidebar: false
 breadcrumbText: Methods
+permalink: /programming/c/api-reference/methods/index-v7.6.0.html
 ---
 
 # Dynamsoft Barcode Reader SDK - C Methods

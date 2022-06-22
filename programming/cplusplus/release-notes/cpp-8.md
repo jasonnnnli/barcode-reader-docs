@@ -6,6 +6,7 @@ keywords: release notes, cpp
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/cplusplus/release-notes/cpp-8.html
 ---
 
 # Release Notes for C++ SDK - 8.x

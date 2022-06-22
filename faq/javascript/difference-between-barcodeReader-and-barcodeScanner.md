@@ -4,6 +4,7 @@ title: What is the difference between BarcodeReader class and the BarcodeScanner
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, barcodeReader, barcodeScanner
 description: What is the difference between BarcodeReader class and the BarcodeScanner class? Can they be used interchangeably?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/difference-between-barcodeReader-and-barcodeScanner.html
 ---
 
 # FAQ - JavaScript

@@ -6,6 +6,7 @@ keywords: release notes, python
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/python/release-notes/python-8.html
 ---
 
 # Release Notes for Python SDK - 8.x

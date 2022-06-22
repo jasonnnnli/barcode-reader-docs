@@ -4,6 +4,7 @@ title: When is a new license required in per-device licensing model?
 keywords: Dynamsoft Barcode Reader, FAQ, Sales & Licensing, per-device, new license
 description: When is a new license required in per-device licensing model?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/new-license-required-per-device-licensing.html
 ---
 
 # FAQ - JavaScript

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C Language API Reference - License Methods
 description: This page shows the license methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_InitLicense, DBR_InitLicenseFromServer, DBR_InitLicenseFromLicenseContent, DBR_OutputLicenseToString, DBR_OutputLicenseToStringPtr, DBR_FreeLicenseString, license methods, api reference, c
 needAutoGenerateSidebar: true
+permalink: /programming/c/api-reference/methods/license-v7.6.0.html
 ---
 
 # C API Reference - License Methods

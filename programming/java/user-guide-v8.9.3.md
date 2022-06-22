@@ -6,6 +6,7 @@ keywords: user guide, java
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/java/user-guide-v8.9.3.html
 ---
 
 

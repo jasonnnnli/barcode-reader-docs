@@ -5,6 +5,7 @@ description: This page shows all Classes of Dynamsoft Barcode Reader for .NET SD
 keywords: class, api reference, .Net
 needAutoGenerateSidebar: false
 breadcrumbText: Class
+permalink: /programming/dotnet/api-reference/class/index-v7.6.0.html
 ---
 
 # Dynamsoft Barcode Reader SDK - .Net Class

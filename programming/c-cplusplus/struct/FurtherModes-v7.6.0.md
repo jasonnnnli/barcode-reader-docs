@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C & C++ Struct - FurtherModes
 description: This page shows the FurtherModes struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: FurtherModes, struct, c, c++
 needAutoGenerateSidebar: false
+permalink: /programming/c-cplusplus/struct/FurtherModes-v7.6.0.html
 ---
 
 

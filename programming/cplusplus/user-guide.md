@@ -6,6 +6,7 @@ keywords: user guide, c++
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/cplusplus/user-guide.html
 ---
 
 # User Guide for C++ Language

@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader Introduction.
 keywords: introduction
 needAutoGenerateSidebar: false
 breadcrumbText: Introduction
+permalink: /introduction/
 ---
 
 # Introduction

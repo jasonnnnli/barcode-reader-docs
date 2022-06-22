@@ -4,6 +4,7 @@ title: How to read the text info usually located around a barcode image?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, text info, barcode image
 description: How to read the text info usually located around a barcode image?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/read-text-from-barcode-image.html
 ---
 
 # FAQ - JavaScript

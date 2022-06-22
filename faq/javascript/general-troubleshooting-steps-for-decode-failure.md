@@ -4,6 +4,7 @@ title: What are the general troubleshooting steps if an image fails to decode wi
 keywords: Dynamsoft Barcode Reader, FAQ, Troubleshooting / User Cases, general troubleshooting, decode fails
 description: What are the general troubleshooting steps if an image fails to decode with Dbr JS?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/general-troubleshooting-steps-for-decode-failure.html
 ---
 
 # FAQ - JavaScript

@@ -5,6 +5,7 @@ description: This is the release notes page of Dynamsoft Barcode Reader for Pyth
 keywords: release notes, python
 needAutoGenerateSidebar: false
 breadcrumbText: Release Notes
+permalink: /programming/python/release-notes/
 ---
 
 # Release Notes for Python SDK

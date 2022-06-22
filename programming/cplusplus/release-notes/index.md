@@ -5,6 +5,7 @@ description: This is the release notes page of Dynamsoft Barcode Reader for C++ 
 keywords: release notes, c++
 needAutoGenerateSidebar: false
 breadcrumbText: Release Notes
+permalink: /programming/cplusplus/release-notes/
 ---
 
 # C++ SDK - Release Notes

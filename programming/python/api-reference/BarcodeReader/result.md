@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Result Meth
 description: This page shows Result methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: GetIntermediateResults, result methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
+permalink: /programming/python/api-reference/BarcodeReader/result.html
 ---
 
 

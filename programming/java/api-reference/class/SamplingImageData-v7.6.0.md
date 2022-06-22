@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - SamplingImageData Class
 description: This page shows the SamplingImageData Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: SamplingImageData, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/SamplingImageData-v7.6.0.html
 ---
 
 

@@ -4,6 +4,7 @@ title: How to get the logs for the SDK?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, logs
 description: How to get the logs for the SDK?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/get-sdk-logs.html
 ---
 
 # FAQ - JavaScript

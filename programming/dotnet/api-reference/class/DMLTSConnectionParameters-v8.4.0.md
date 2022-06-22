@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - DMLTSConnectionParameters C
 description: This page shows the DMLTSConnectionParameters Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: DMLTSConnectionParameters, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/DMLTSConnectionParameters-v8.4.0.html
 ---
 
 

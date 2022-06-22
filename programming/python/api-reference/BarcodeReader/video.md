@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Video Metho
 description: This page shows Video methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: start_video_mode, append_video_frame, stop_video_mode, init_frame_decoding_parameters, get_length_of_frame_queue, video methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
+permalink: /programming/python/api-reference/BarcodeReader/video.html
 ---
 
 # Python API Reference - BarcodeReader Video Methods

@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader for .NET SDK API 
 keywords: api reference, .Net
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
+permalink: /programming/dotnet/api-reference/index-v7.6.0.html
 ---
 
 # Dynamsoft Barcode Reader SDK - .Net API Reference

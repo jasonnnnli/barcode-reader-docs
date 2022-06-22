@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader for Java SDK API 
 keywords: api reference, java
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
+permalink: /programming/java/api-reference/index-v7.6.0.html
 ---
 
 

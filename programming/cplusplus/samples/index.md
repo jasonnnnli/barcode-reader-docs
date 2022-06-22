@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader SDK C++ Edition - Samples
 description: Sample list page of Dynamsoft Barcode Reader C++ Edition.
 keywords: c++
 needAutoGenerateSidebar: false
+permalink: /programming/cplusplus/samples/
 ---
 
 # Samples and Demos - C++ Edition

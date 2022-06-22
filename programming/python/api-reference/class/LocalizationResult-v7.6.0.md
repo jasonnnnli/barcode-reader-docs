@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - LocalizationResult Class
 description: This page shows the LocalizationResult Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: LocalizationResult, class, api reference, python
 needAutoGenerateSidebar: false
+permalink: /programming/python/api-reference/class/LocalizationResult-v7.6.0.html
 ---
 
 

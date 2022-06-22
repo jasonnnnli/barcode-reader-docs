@@ -5,6 +5,7 @@ description: This page shows the DMDLSConnectionParameters Class of Dynamsoft Ba
 keywords: DMDLSConnectionParameters, class, api reference, python
 needAutoGenerateSidebar: false
 pageStartVer: 8.6
+permalink: /programming/python/api-reference/class/DMDLSConnectionParameters-v8.9.3.html
 ---
 
 

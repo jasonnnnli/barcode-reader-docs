@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - PDF417Details Class
 description: This page shows the PDF417Details Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: PDF417Details, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/PDF417Details-v7.6.0.html
 ---
 
 

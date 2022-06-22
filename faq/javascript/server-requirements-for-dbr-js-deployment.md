@@ -4,6 +4,7 @@ title: What are the server requirements for Dbr JS deployment?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, server requirements, deployment
 description: What are the server requirements for Dbr JS deployment?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/server-requirements-for-dbr-js-deployment.html
 ---
 
 # FAQ - JavaScript

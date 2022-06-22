@@ -5,6 +5,7 @@ description: This is the release notes page of Dynamsoft Barcode Reader for Java
 keywords: release notes, java
 needAutoGenerateSidebar: false
 breadcrumbText: Release Notes
+permalink: /programming/java/release-notes/
 ---
 
 # Release Notes for Java SDK

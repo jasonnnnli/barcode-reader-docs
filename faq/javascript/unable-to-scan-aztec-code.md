@@ -4,6 +4,7 @@ title: Why am I unable to scan an Aztec code in the helloworld sample?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, hello world sample, aztec code
 description: Why am I unable to scan an Aztec code in the helloworld sample?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/unable-to-scan-aztec-code.html
 ---
 
 # FAQ - JavaScript

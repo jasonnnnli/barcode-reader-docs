@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - PublicRuntimeSettings Class
 description: This page shows the PublicRuntimeSettings Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: PublicRuntimeSettings, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/PublicRuntimeSettings-v8.0.0.html
 ---
 
 

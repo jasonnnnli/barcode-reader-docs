@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C Language API Reference - Callbacks
 description: This is the callbacks of Dynamsoft Barcode Reader for C Language.
 keywords: CB_Error, CB_IntermediateResult, CB_TextResult, Callbacks, api reference, c
 needAutoGenerateSidebar: true
+permalink: /programming/c/api-reference/function-pointer.html
 ---
 
 # Callbacks

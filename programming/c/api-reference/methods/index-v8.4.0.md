@@ -5,6 +5,7 @@ description: This page shows all functions of Dynamsoft Barcode Reader for C Lan
 keywords: functions, api reference, c
 needAutoGenerateSidebar: false
 breadcrumbText: Functions
+permalink: /programming/c/api-reference/methods/index-v8.4.0.html
 ---
 
 # Global Functions

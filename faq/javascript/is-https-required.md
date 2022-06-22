@@ -4,6 +4,7 @@ title: Is HTTPs absolutely required?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, HTTPS
 description: Is HTTPs absolutely required?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/is-https-required.html
 ---
 
 # FAQ - JavaScript

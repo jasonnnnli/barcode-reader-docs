@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader for C++ API Refer
 keywords: api reference, c++
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
+permalink: /programming/cplusplus/api-reference/index-v8.9.3.html
 ---
 
 # C++ Language API Reference

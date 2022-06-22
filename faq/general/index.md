@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader FAQ - General
 keywords: faq, general
 description: Dynamsoft Barcode Reader FAQ - General
 needAutoGenerateSidebar: false
+permalink: /faq/general/
 ---
 
 # FAQ - General

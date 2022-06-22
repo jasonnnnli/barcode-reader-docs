@@ -4,6 +4,7 @@ title: What are the pros and cons of using the CDN?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, CDN
 description: What are the pros and cons of using the CDN?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/pros-and-cons-of-cdn.html
 ---
 
 # FAQ - JavaScript

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C Language API Reference - Decode Methods
 description: This page shows the Decode methods of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_DecodeFile, DBR_DecodeFileInMemory, DBR_DecodeBuffer, DBR_DecodeBase64String, DBR_DecodeDIB, decode methods, api reference, c
 needAutoGenerateSidebar: true
+permalink: /programming/c/api-reference/methods/decode-v7.6.0.html
 ---
 
 

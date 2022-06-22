@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - BarcodeReader Decode Meth
 description: This page shows BarcodeReader Decode Methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: decode_file, decode_buffer, decode_file_stream, decode methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
+permalink: /programming/python/api-reference/BarcodeReader/decode-v7.6.0.html
 ---
 
 

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - Advanced Settings Methods
 description: This page shows advanced Runtime Settings methods of Dynamsoft Barcode Reader for Python SDK.
 keywords: init_runtime_settings_with_file, init_runtime_settings_with_string, append_template_file_to_runtime_settings, append_template_string_to_runtime_settings, get_all_template_names, output_settings_to_json_file, output_settings_to_json_string, Advanced Settings Methods, BarcodeReader, api reference, python
 needAutoGenerateSidebar: true
+permalink: /programming/python/api-reference/BarcodeReader/parameter-and-runtime-settings-advanced.html
 ---
 
 # Advanced Settings Methods

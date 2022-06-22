@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C++ API Reference - Function Pointer
 description: This page shows the callbacks of Dynamsoft Barcode Reader for C++ Language.
 keywords: CB_Error, CB_IntermediateResult, CB_TextResult, callbacks, api reference, c++
 needAutoGenerateSidebar: true
+permalink: /programming/cplusplus/api-reference/function-pointer.html
 ---
 
 

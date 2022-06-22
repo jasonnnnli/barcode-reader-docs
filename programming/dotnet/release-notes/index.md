@@ -5,6 +5,7 @@ description: This is the release notes page of Dynamsoft Barcode Reader for .NET
 keywords: release notes, .net, dotnet
 needAutoGenerateSidebar: false
 breadcrumbText: Release Notes
+permalink: /programming/dotnet/release-notes/
 ---
 
 # Release Notes for .NET SDK

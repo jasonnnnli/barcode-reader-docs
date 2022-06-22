@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReader License Metho
 description: This page shows BarcodeReader license methods of Dynamsoft Barcode Reader for .NET SDK.
 keywords: InitLicenseFromServer, InitLicenseFromLicenseContent, OutputLicenseToString, license methods, BarcodeReader, api reference, .Net
 needAutoGenerateSidebar: true
+permalink: /programming/dotnet/api-reference/BarcodeReader/license-v7.6.0.html
 ---
 
 

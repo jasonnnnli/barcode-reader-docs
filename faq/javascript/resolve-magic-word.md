@@ -4,6 +4,7 @@ title: How to resolve the expected magic word error that occurs when using DBR J
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, Magic Word, MIME
 description: How to resolve the expected magic word error that occurs when using DBR JS?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/resolve-magic-word.html
 ---
 
 # FAQ - JavaScript

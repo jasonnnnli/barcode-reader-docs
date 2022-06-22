@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader SDK C Language - Samples
 description: Sample list page of Dynamsoft Barcode Reader C Language.
 keywords: c
 needAutoGenerateSidebar: false
+permalink: /programming/c/samples/
 ---
 
 # Samples and Demos - C Language

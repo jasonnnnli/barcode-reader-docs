@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader for C++ Language - Release Notes v9.x
 description: This is the release notes page of Dynamsoft Barcode Reader for C++ Language v9.x.
 keywords: release notes, c++
 needGenerateH3Content: false
+permalink: /programming/cplusplus/release-notes/cpp-9.html
 ---
 
 # Release Notes for C++ SDK - 9.x

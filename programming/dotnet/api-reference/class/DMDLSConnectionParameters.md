@@ -5,6 +5,7 @@ description: This page shows the DMDLSConnectionParameters Class of Dynamsoft Ba
 keywords: DMDLSConnectionParameters, class, api reference, .Net
 needAutoGenerateSidebar: false
 pageStartVer: 8.6
+permalink: /programming/dotnet/api-reference/class/DMDLSConnectionParameters.html
 ---
 
 

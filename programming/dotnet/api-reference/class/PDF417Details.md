@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - PDF417Details Class
 description: This page shows the PDF417Details Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: PDF417Details, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/PDF417Details.html
 ---
 
 

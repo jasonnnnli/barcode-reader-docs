@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C Language API Reference - License Functions
 description: This page shows the license functions of Dynamsoft Barcode Reader for C Language.
 keywords: DBR_InitLicense, license functions, api reference, c
 needAutoGenerateSidebar: true
+permalink: /programming/c/api-reference/methods/license.html
 ---
 
 # License Functions

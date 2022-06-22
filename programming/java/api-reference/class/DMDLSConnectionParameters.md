@@ -5,6 +5,7 @@ description: This page shows the DMDLSConnectionParameters Class of Dynamsoft Ba
 keywords: DMDLSConnectionParameters, class, api reference, java
 needAutoGenerateSidebar: false
 pageStartVer: 8.6
+permalink: /programming/java/api-reference/class/DMDLSConnectionParameters.html
 ---
 
 

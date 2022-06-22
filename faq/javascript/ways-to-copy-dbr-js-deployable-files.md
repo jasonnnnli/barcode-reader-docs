@@ -4,6 +4,7 @@ title: How to get a copy of Dbr JS deployable files (source code, etc.) ?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, deployable files
 description: How to get a copy of Dbr JS deployable files (source code, etc.) ?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/ways-to-copy-dbr-js-deployable-files.html
 ---
 
 # FAQ - JavaScript

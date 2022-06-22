@@ -6,6 +6,7 @@ keywords: user guide, python
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/python/user-guide-v8.9.3.html
 ---
 
 # User Guide for Python

@@ -4,6 +4,7 @@ title: How to change the domain binding of your product key?
 keywords: Dynamsoft Barcode Reader, FAQ, JavaScript, tech basic, domain binding, product key
 description: How to change the domain binding of your product key?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/change-domain-binding-of-product-key.html
 ---
 
 # FAQ - JavaScript

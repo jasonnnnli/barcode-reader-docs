@@ -4,6 +4,7 @@ title: How to get intermediate result images?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, intermediate result images
 description: How to get intermediate result images?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/get-intermediate-result-images.html
 ---
 
 # FAQ - JavaScript

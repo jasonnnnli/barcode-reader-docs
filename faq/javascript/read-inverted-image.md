@@ -4,6 +4,7 @@ title: How to read an inverted barcode?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, inverted barcode
 description: How to read an inverted barcode?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/read-inverted-image.html
 ---
 
 # FAQ - JavaScript

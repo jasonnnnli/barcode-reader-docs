@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - Delegates
 description: This page shows Delegates of Dynamsoft Barcode Reader for .NET SDK.
 keywords: CB_Error, CB_IntermediateResult, CB_TextResult, delegates, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/function-pointer.html
 ---
 
 

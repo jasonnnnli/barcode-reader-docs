@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - TextResult Class
 description: This page shows the TextResult Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: TextResult, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/TextResult.html
 ---
 
 

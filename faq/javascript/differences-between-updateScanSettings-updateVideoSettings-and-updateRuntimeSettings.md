@@ -4,6 +4,7 @@ title: What are the differences between updateScanSettings/updateVideoSettings/u
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, updateScanSettings, updateVideoSettings, updateRuntimeSettings
 description: What are the differences between updateScanSettings/updateVideoSettings/updateRuntimeSettings?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/differences-between-updateScanSettings-updateVideoSettings-and-updateRuntimeSettings.html
 ---
 
 # FAQ - JavaScript

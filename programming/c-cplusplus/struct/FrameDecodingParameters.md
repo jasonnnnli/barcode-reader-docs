@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C & C++ Struct - FrameDecodingParameters
 description: This page shows the FrameDecodingParameters struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: FrameDecodingParameters, struct, c, c++
 needAutoGenerateSidebar: false
+permalink: /programming/c-cplusplus/struct/FrameDecodingParameters.html
 ---
 
 

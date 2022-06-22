@@ -4,6 +4,7 @@ title: How does license tracking work with the three standard licensing options 
 keywords: Dynamsoft Barcode Reader, FAQ, Sales & Licensing, license tracking
 description: How does license tracking work with the three standard licensing options - Per Scan, Per Device, Per Concurrent Device?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/how-license-tracking-works.html
 ---
 
 # FAQ - JavaScript

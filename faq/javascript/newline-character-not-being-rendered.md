@@ -4,6 +4,7 @@ title: Why are newline characters not being rendered when displaying the barcode
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, newline character, barcode result
 description: Why are newline characters not being rendered when displaying the barcode results in a textbox?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/newline-character-not-being-rendered.html
 ---
 
 # FAQ - JavaScript

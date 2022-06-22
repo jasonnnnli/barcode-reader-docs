@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - RegionOfInterest Class
 description: This page shows the RegionOfInterest Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: RegionOfInterest, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/RegionOfInterest.html
 ---
 
 

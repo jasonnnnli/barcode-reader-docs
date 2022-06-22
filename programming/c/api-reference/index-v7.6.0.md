@@ -5,6 +5,7 @@ description: This is the main page of Dynamsoft Barcode Reader for C Language AP
 keywords: api reference, c
 needAutoGenerateSidebar: false
 breadcrumbText: API Reference
+permalink: /programming/c/api-reference/index-v7.6.0.html
 ---
 
 # Dynamsoft Barcode Reader SDK - C API Reference

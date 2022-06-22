@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader FAQ
 keywords: faq
 description: Dynamsoft Barcode Reader FAQ Homepage
 needAutoGenerateSidebar: true
+permalink: /faq/
 ---
 
 # DBR FAQ

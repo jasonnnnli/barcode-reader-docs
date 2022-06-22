@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - Contour Class
 description: This page shows the Contour Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: Contour, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/Contour.html
 ---
 
 

@@ -6,6 +6,7 @@ keywords: release notes, cpp
 needAutoGenerateSidebar: true
 needGenerateH3Content: false
 noTitleIndex: true
+permalink: /programming/cplusplus/release-notes/cpp-7.html
 ---
 
 # Release Notes for C++ - 7.6.0 and below

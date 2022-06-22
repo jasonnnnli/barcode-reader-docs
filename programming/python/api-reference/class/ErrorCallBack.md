@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Python API Reference - ErrorCallBack Class
 description: This page shows the ErrorCallBack Class of Dynamsoft Barcode Reader for Python SDK.
 keywords: ErrorCallBack, class, api reference, python
 needAutoGenerateSidebar: false
+permalink: /programming/python/api-reference/class/ErrorCallBack.html
 ---
 
 

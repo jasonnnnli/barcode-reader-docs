@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - ExtendedResult Class
 description: This page shows the ExtendedResult Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: ExtendedResult, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/ExtendedResult.html
 ---
 
 

@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - IntermediateResult Class
 description: This page shows the IntermediateResult Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: IntermediateResult, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/IntermediateResult.html
 ---
 
 

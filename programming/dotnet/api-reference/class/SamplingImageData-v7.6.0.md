@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - SamplingImageData Class
 description: This page shows the SamplingImageData Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: SamplingImageData, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/SamplingImageData-v7.6.0.html
 ---
 
 

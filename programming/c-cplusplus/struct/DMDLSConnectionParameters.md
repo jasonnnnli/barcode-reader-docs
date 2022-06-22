@@ -5,6 +5,7 @@ description: This page shows the DM_DLSConnectionParameters struct of Dynamsoft 
 keywords: DM_DLSConnectionParameters, struct, c, c++
 needAutoGenerateSidebar: false
 pageStartVer: 8.6
+permalink: /programming/c-cplusplus/struct/DMDLSConnectionParameters.html
 ---
 
 

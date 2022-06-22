@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C & C++ Struct - DataMatrixDetails
 description: This page shows the DataMatrixDetails struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: DataMatrixDetails, struct, c, c++
 needAutoGenerateSidebar: false
+permalink: /programming/c-cplusplus/struct/DataMatrixDetails.html
 ---
 
 

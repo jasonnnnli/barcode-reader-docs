@@ -4,6 +4,7 @@ title: How to avoid incorrect barcode results?
 keywords: Dynamsoft Barcode Reader, FAQ, JavaScript, Troubleshooting / User Cases, avoid incorrect barcode results
 description: How to avoid incorrect barcode results?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/avoid-incorrect-barcode-results.html
 ---
 
 # FAQ - JavaScript

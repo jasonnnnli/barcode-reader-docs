@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C & C++ Struct - RegionDefinition
 description: This page shows the RegionDefinition struct of Dynamsoft Barcode Reader for C & C++ Language.
 keywords: RegionDefinition, struct, c, c++
 needAutoGenerateSidebar: false
+permalink: /programming/c-cplusplus/struct/RegionDefinition-v7.6.0.html
 ---
 
 

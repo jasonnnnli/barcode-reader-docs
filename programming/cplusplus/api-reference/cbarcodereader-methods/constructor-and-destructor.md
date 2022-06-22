@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader C++ API Reference - CBarcodeReader Constructor a
 description: This page shows CBarcodeReader constructor and destructor of Dynamsoft Barcode Reader for C++ Language.
 keywords: CBarcodeReader, ~CBarcodeReader, constructor and destructor, api reference, c++
 needAutoGenerateSidebar: true
+permalink: /programming/cplusplus/api-reference/cbarcodereader-methods/constructor-and-destructor.html
 ---
 
 # Constructor and Destructor

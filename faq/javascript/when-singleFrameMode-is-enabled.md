@@ -4,6 +4,7 @@ title: When is singleFrameMode enabled?
 keywords: Dynamsoft Barcode Reader, FAQ, tech basic, singleFrameMode
 description: When is singleFrameMode enabled?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/when-singleFrameMode-is-enabled.html
 ---
 
 # FAQ - JavaScript

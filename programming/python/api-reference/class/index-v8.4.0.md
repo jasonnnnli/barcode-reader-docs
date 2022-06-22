@@ -5,6 +5,7 @@ description: This page shows all Classes of Dynamsoft Barcode Reader for Python 
 keywords: class, api reference, python
 needAutoGenerateSidebar: false
 breadcrumbText: Class
+permalink: /programming/python/api-reference/class/index-v8.4.0.html
 ---
 
 # Python API Reference - Auxiliary Classes

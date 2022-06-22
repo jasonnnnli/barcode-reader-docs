@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - BarcodeReader Result Method
 description: This page shows BarcodeReader Result methods of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: getIntermediateResults, result methods, BarcodeReader, api reference, java
 needAutoGenerateSidebar: true
+permalink: /programming/java/api-reference/BarcodeReader/result.html
 ---
 
 

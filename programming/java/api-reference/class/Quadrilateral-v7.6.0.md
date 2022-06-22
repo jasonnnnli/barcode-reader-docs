@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Java API Reference - Quadrilateral Class
 description: This page shows the Quadrilateral Class of Dynamsoft Barcode Reader for Java SDK API Reference.
 keywords: Quadrilateral, class, api reference, java
 needAutoGenerateSidebar: false
+permalink: /programming/java/api-reference/class/Quadrilateral-v7.6.0.html
 ---
 
 

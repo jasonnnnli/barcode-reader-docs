@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader .NET API Reference - BarcodeReaderException Clas
 description: This page shows the BarcodeReaderException Class of Dynamsoft Barcode Reader for .NET SDK.
 keywords: BarcodeReaderException, class, api reference, .Net
 needAutoGenerateSidebar: false
+permalink: /programming/dotnet/api-reference/class/BarcodeReaderException.html
 ---
 
 

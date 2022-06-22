@@ -4,6 +4,7 @@ title: What are the differences between the 'speed', 'coverage', 'balance, and '
 keywords: Dynamsoft Barcode Reader, FAQ, Troubleshooting / User Cases, speed, coverage
 description: What are the differences between the 'speed', 'coverage', 'balance, and 'single' runtime templates?
 needAutoGenerateSidebar: false
+permalink: /faq/javascript/difference-between-bestspeed-and-bestcoverage.html
 ---
 
 # FAQ - JavaScript

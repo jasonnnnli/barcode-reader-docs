@@ -5,6 +5,7 @@ description: This is the user guide of Dynamsoft Barcode Reader for .NET SDK.
 keywords: user guide, .Net
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
+permalink: /programming/dotnet/user-guide-v7.6.0.html
 ---
 
 # User Guide for Windows Edition - .Net

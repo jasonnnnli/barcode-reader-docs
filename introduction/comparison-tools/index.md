@@ -5,6 +5,7 @@ description: This page shows Dynamsoft Barcode Reader Comparison Tools.
 keywords: comparison tools
 needAutoGenerateSidebar: true
 breadcrumbText: Comparison Tools
+permalink: /introduction/comparison-tools/
 ---
 
 # How to test the barcode reading performance

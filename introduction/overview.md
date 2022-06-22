@@ -5,6 +5,7 @@ description: This is the overview page of Dynamsoft Barcode Reader Introduction.
 keywords: overview
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
+permalink: /introduction/overview.html
 ---
 
 # Overview of Dynamsoft Barcode Reader  

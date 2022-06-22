@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader Parameter Reference - Main Page
 description: Dynamsoft Barcode Reader Parameter Reference - Main Page
 keywords: parameter reference, parameters
 needAutoGenerateSidebar: false
+permalink: /parameters/reference/index-v7.6.0.html
 ---
 
 
