@@ -6,6 +6,7 @@ keywords: Barcode Formats, Expected Count
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/features/barcode-formats-and-count.html
 ---
 
 # Specify Barcode Formats and Count

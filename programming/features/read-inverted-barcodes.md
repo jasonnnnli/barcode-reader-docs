@@ -6,6 +6,7 @@ keywords: Inverted Barcodes
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/features/read-inverted-barcodes.html
 ---
 
 # Read Inverted Barcodes

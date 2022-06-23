@@ -6,6 +6,7 @@ keywords: Deformed Barcode
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/features/read-deformed-barcodes.html
 ---
 
 # Read Deformed Barcodes

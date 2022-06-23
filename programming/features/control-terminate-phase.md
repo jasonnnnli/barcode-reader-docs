@@ -5,6 +5,7 @@ description: This article describes how to use runtime settings to make DBR term
 needAutoGenerateSidebar: true
 keywords: terminate timeout
 breadcrumbText: Termination Control
+permalink: /programming/features/control-terminate-phase.html
 ---
 
 # Control when to terminate a decoding process

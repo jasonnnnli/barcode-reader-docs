@@ -6,6 +6,7 @@ keywords: Incomplete Barcodes
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
+permalink: /programming/features/read-incomplete-barcodes.html
 ---
 
 # Read Incomplete Barcodes
