@@ -5,6 +5,7 @@ description: This page shows how to test barcode reading performance.
 keywords: batch test, comparison tools
 needAutoGenerateSidebar: true
 ---
+
 # How to Batch Test Barcode Reading Performance
 
 This guide introduces how to use the BatchDecode program by Dynamsoft for barcode reading performance testing. Using the BatchDecode program, you can get a report of the images performance testing. The program can test not only DBR but also other barcode reader SDK. It's a convenient tool to evaluate different SDK performance.

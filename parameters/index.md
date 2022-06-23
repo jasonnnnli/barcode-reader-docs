@@ -6,7 +6,6 @@ needAutoGenerateSidebar: false
 breadcrumbText: Parameters
 ---
 
-
 # Parameters
 
 Dynamsoft Barcode Reader provides rich template parameters that you can customize and optimize for different usage scenarios for best scanning performance.
@@ -23,4 +22,3 @@ Dynamsoft Barcode Reader provides rich template parameters that you can customiz
 ## Customization
 
 - [Scenario Settings]({{ site.scenario_settings }})
-
