@@ -4,6 +4,7 @@ title: Dynamsoft Barcode Reader How-to Guides - Scan in Multiple Threads
 description: This page shows how to use Dynamsoft Barcode Reader in multiple threads.
 keywords: multiple threads, how-to guides
 needAutoGenerateSidebar: false
+permalink: /introduction/how-to-guide/scan-in-multiple-threads.html
 ---
 
 
