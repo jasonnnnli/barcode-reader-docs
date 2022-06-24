@@ -4,12 +4,12 @@ title: Dynamsoft Barcode Reader FAQ - General
 keywords: faq, general
 description: Dynamsoft Barcode Reader FAQ - General
 needAutoGenerateSidebar: false
-permalink: /faq/general/
+permalink: /faq/general/index.html
 ---
 
 # FAQ - General
 
-<a href="what-is-dbr.html" target="_blank">What is Dynamsoft Barcode Reader SDK and what business needs can it meet?</a>
+[What is Dynamsoft Barcode Reader SDK and what business needs can it meet?](what-is-dbr.md)
 
 <a href="supported-barcode-formats.html" target="_blank">What barcode types are supported by Dynamsoft Barcode Reader?</a>
 
