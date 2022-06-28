@@ -91,10 +91,13 @@ class ViewController: UIViewController {
 Initialize Dynamsoft Barcode Reader and bind the Camera Enhancer to the Barcode Reader. The barcode reader will continuously receive video frames when the video barcode decoding thread is enabled.
 
 <div class="sample-code-prefix template2"></div>
+   >- JavaScript
    >- Android
    >- Objective-C
    >- Swift
    >
+>```js
+```
 >```java
 public class MainActivity extends AppCompatActivity {
    BarcodeReader mBarcodeReader;

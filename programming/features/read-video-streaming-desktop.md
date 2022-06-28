@@ -53,3 +53,21 @@ DBR also provides the feature to filter blurred frames. When enabled, DBR will c
     The frequency of calling `AppendFrame` per second. DBR will refer to this value when performing fuzzy frame filtering logic. If it is not set, then DBR will estimate based on the frequency of calling `AppendFrame`.
 
 The following example demonstrates these interfaces. In this example, we use opencv to read camera data and call DBR’s video streaming interface to decode.
+
+<div class="sample-code-prefix template2"></div>
+   >- C
+   >- C++
+   >- C#
+   >- Java
+   >- Python
+   >
+>```c
+```
+>```cpp
+```
+>```c#
+```
+>```java
+```
+>```python
+```
