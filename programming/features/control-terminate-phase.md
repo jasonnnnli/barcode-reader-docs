@@ -58,7 +58,7 @@ The following code illustrates how it's done:
    >- C
    >
 >
-```javaScript
+```javascript
 // Obtains current runtime settings of DBR.
 let rs = await scanner.getRuntimeSettings();
 // Sets the termination phase.
