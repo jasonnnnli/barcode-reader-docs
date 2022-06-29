@@ -32,11 +32,11 @@ The feature to decode such inverted barcodes is not enabled by default. To enabl
    >- Python
    >
 >```javascript
-// Obtain the current runtime settings of DBR.
+// Obtains the current runtime settings of DBR.
 let settings = await scanner.getRuntimeSettings();
-// Add GTM_INVERTED to grayscaleTransformationModes.
+// Adds GTM_INVERTED to grayscaleTransformationModes.
 settings.furtherModes.grayscaleTransformationModes = [Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_ORIGINAL, Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_INVERTED];
-// Update the settings.
+// Updates the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
 >```java

@@ -1,21 +1,21 @@
 ---
 layout: default-layout
-title: Read Inverted Barcodes - Dynamsoft Barcode Reader SDK
-description: This page describes how to read inverted barcodes in Dynamsoft Barcode Reader SDK.
-keywords: Inverted Barcodes
+title: Read Dense Barcodes - Dynamsoft Barcode Reader SDK
+description: This page describes how to read dense barcodes in Dynamsoft Barcode Reader SDK.
+keywords: Dense Barcodes
 needAutoGenerateSidebar: true
 needGenerateH3Content: true
 noTitleIndex: true
-permalink: /programming/features/read-inverted-barcodes.html
+permalink: /programming/features/read-dense-barcodes.html
 ---
 
-# Read Inverted Barcodes
+# Read Dense Barcodes
 
-Generally, the barcode is dark on a light background. But in some situations, the barcodes are inverted - light barcodes on a dark background, as shown below.
+//describe the case and image characters
 
 <div align="center">
-   <p><img src="assets/inverted-barcodes.png" width="70%" alt="inverted-barcodes"></p>
-   <p>Inverted Barcodes</p>
+   <p><img src="assets/dense-barcodes.png" width="70%" alt="Dense Barcodes"></p>
+   <p>Dense Barcodes</p>
 </div>
 
 Decoding inverted barcode is not enabled by default. To decode the inverted barcodes, you have to enable `GTM_INVERTED` in the `GrayscaleTransformationMode`.

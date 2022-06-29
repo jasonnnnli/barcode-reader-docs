@@ -32,11 +32,11 @@ By default, DBR may not handle such cases well. To get such images decoded, enab
    >- Python
    >
 >```javascript
-// Obtain the current runtime settings of DBR.
+// Obtains the current runtime settings of DBR.
 let settings = await scanner.getRuntimeSettings();
-// Add DRM_GENERAL to deformationResistingModes.
+// Adds DRM_GENERAL to deformationResistingModes.
 settings.furtherModes.deformationResistingModes = [Dynamsoft.DBR.EnumDeformationResistingMode.DRM_GENERAL];
-// Update the settings.
+// Updates the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
 >```java

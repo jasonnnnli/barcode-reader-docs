@@ -34,11 +34,11 @@ Check out the following code snippet on how to configure `BarcodeComplementModes
    >- Python
    >
 >```javascript
-// Obtain current runtime settings of DBT.
+// Obtains current runtime settings of DBT.
 let settings = await scanner.getRuntimeSettings();
-// Add BCM_GENERAL to barcodeComplementModes.
-settings.furtherModes.deformationResistingModes = [Dynamsoft.DBR.EnumBarcodeComplementMode.BCM_GENERAL];
-// Update the settings.
+// Adds BCM_GENERAL to barcodeComplementModes.
+settings.furtherModes.barcodeComplementModes = [Dynamsoft.DBR.EnumBarcodeComplementMode.BCM_GENERAL];
+// Updates the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
 >```java
