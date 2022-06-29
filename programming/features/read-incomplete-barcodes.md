@@ -11,21 +11,16 @@ permalink: /programming/features/read-incomplete-barcodes.html
 
 # Read Incomplete Barcodes
 
-In some cases, due to misprinting, barcodes may have incomplete parts. For example, a QR code that is missing the position detection pattern (See the sample image below). In this case, you can enable the barcode completion logic in Dynamsoft Barcode Reader(DBR) by turning on [`BarcodeComplementModes`]({{ site.parameters_reference }}barcode-complement-modes.html). DBR will then automatically attempt to complete and correct the location information that is incorrect or lost due to misprinting according to the structural characteristics of the corresponding barcode type. The barcode completion logic only supports QR code and Data Matrix at present. `BarcodeComplementModes` is disabled by default, you can enable it based on your requirements.
-
-Multiple modes can also be set at the same time. For example, if `BCM_SKIP` and `BCM_GENERAL` are configured at the same time:
-
-- The barcode complement will not be enabled in the first round of barcode decoding
-- If the decoded barcode results don't reach the number of `expectedBarcodeCount`, the barcode complement will be enabled in the second round of barcode decoding.
-
-Here are two examples with imcomplete barcodes  
+In some cases, barcodes may have incomplete sections due to typographical errors as shown below.
 
 <div align="center">
    <p><img src="assets/incomplete-barcodes.png" width="70%" alt="incomplete-barcodes"></p>
    <p>Incomplete Barcodes</p>
 </div>
 
-**Code Snippet**
+In this case, you can enable the barcode completion logic in DBR using [`BarcodeComplementModes`]({{ site.parameters_reference }}barcode-complement-modes.html). After that, DBR will attempt to complete and correct the barcode according to the structural characteristics of the corresponding barcode type.
+
+Check out the following code snippet on how to configure `BarcodeComplementModes`.
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -39,9 +34,9 @@ Here are two examples with imcomplete barcodes
    >- Python
    >
 >```javascript
-// Obtain current runtime settings of `reader` instance.
+// Obtain current runtime settings of DBT.
 let settings = await scanner.getRuntimeSettings();
-// Add BCM_GENERAL to the barcodeComplementModes to decode incomplete barcodes.
+// Add BCM_GENERAL to barcodeComplementModes.
 settings.furtherModes.deformationResistingModes = [Dynamsoft.DBR.EnumBarcodeComplementMode.BCM_GENERAL];
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
@@ -115,3 +110,7 @@ settings.further_modes.barcode_complement_modes[0] = EnumBarcodeComplementMode.B
 # Update the settings.
 reader.update_runtime_settings(settings)
 ```
+
+> NOTE:
+>
+> The barcode completion logic only supports QR code and Data Matrix at present.

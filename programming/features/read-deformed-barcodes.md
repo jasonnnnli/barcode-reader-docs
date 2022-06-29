@@ -13,7 +13,10 @@ permalink: /programming/features/read-deformed-barcodes.html
 
 As shown below, barcodes on the surface of some flexible packaging or cylindrical objects tend to be distorted and deformed.
 
-![Deformed Barcodes](assets/deformed-barcodes.png)
+<div align="center">
+   <p><img src="assets/deformed-barcodes.png" width="70%" alt="Deformed Barcodes"></p>
+   <p>Deformed Barcodes</p>
+</div>
 
 By default, DBR may not handle such cases well. To get such images decoded, enable deformation resistance by adding `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) as shown in the code snippet below:
 
