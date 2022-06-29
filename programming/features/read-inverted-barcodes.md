@@ -13,10 +13,7 @@ permalink: /programming/features/read-inverted-barcodes.html
 
 Generally, the barcode is dark on a light background. But in some situations, the barcodes are inverted - light barcodes on a dark background, as shown below.
 
-<div align="center">
-   <p><img src="assets/inverted-barcodes.png" width="70%" alt="inverted-barcodes"></p>
-   <p>Inverted Barcodes</p>
-</div>
+![Inverted Barcode](assets/inverted-barcodes.png)
 
 Decoding inverted barcode is not enabled by default. To decode the inverted barcodes, you have to enable `GTM_INVERTED` in the `GrayscaleTransformationMode`.
 
