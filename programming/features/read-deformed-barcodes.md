@@ -11,27 +11,11 @@ permalink: /programming/features/read-deformed-barcodes.html
 
 # Read Deformed Barcodes
 
-As shown below, the barcodes on the surface of some flexible packaging or cylindrical objects tend to be distorted and deformed.
+As shown below, barcodes on the surface of some flexible packaging or cylindrical objects tend to be distorted and deformed.
 
-<div align="center">
-   <p><img src="assets/deformed-barcodes.png" width="80%" alt="deformed-barcodes"></p>
-   <p>Deformed Barcodes</p>
-</div>
+![Deformed Barcodes](assets/deformed-barcodes.png)
 
-DBR may not be able to handle such cases well by default, but you can configure the anti-deformation mode via parameter [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) to decode the deformed barcodes. Since DBR does not turn on anti-deformation modes by default, you need to add `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html).
-
-Multiple modes can also be set at the same time. For example, if DRM_SKIP and DRM_GENERAL are configured at the same time:
-
-- The anti-deformation will not be enabled in the first round of barcode decoding
-- If the decoded barcode results don't reach the number of `expectedBarcodeCount`, the anti-deformation will be enabled in the second round of barcode decoding.
-
-If `DRM_GENERAL` of `DeformationResistingModes` still can't fulfill your requirements, you can try the following specific modes:
-
-- `DRM_BROAD_WARP`: Resists deformation when the barcode is warped gently.
-- `DRM_LOCAL_REFERENCE`: Resists deformation for barcodes with minor deformation in local modules.
-- `DRM_DEWRINKLE`: Resists deformation for barcodes on a wrinkled surface.
-
-**Code Snippet**
+By default, DBR may not handle such cases well. To get such images decoded, enable deformation resistance by adding `DRM_GENERAL` to [`DeformationResistingModes`]({{ site.parameters_reference }}deformation-resisting-modes.html) as shown in the code snippet below:
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -45,9 +29,9 @@ If `DRM_GENERAL` of `DeformationResistingModes` still can't fulfill your require
    >- Python
    >
 >```javascript
-// Obtain current runtime settings of `reader` instance.
+// Obtain the current runtime settings of DBR.
 let settings = await scanner.getRuntimeSettings();
-// Add DRM_GENERAL to the deformationResistingModes to decode deformed barcodes.
+// Add DRM_GENERAL to deformationResistingModes.
 settings.furtherModes.deformationResistingModes = [Dynamsoft.DBR.EnumDeformationResistingMode.DRM_GENERAL];
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
@@ -125,3 +109,9 @@ reader.update_runtime_settings(settings)
 > Note:
 >
 > `DeformationResistingModes` only works for QR Code and DataMatrix codes.
+
+If the mode `DRM_GENERAL` doesn't work, try one of the following:
+
+* `DRM_BROAD_WARP`: Resists deformation when the barcode is warped gently.
+* `DRM_LOCAL_REFERENCE`: Resists deformation for barcodes with minor deformation in local modules.
+* `DRM_DEWRINKLE`: Resists deformation for barcodes on a wrinkled surface.

@@ -15,7 +15,7 @@ Typically, barcodes are dark on a light background. But in some cases, the barco
 
 ![Inverted Barcode](assets/inverted-barcodes.png)
 
-The feature to decode such inverted barcodes is not enabled by default. To enable it, add the value `GTM_INVERTED` to `GrayscaleTransformationMode` as shown in the code snippet below:
+The feature to decode such inverted barcodes is not enabled by default. To enable it, add the value `GTM_INVERTED` to `GrayscaleTransformationModes` as shown in the code snippet below:
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -31,7 +31,7 @@ The feature to decode such inverted barcodes is not enabled by default. To enabl
 >```javascript
 // Obtain the current runtime settings of DBR.
 let settings = await scanner.getRuntimeSettings();
-// Add GTM_INVERTED to GrayscaleTransformationModes.
+// Add GTM_INVERTED to grayscaleTransformationModes.
 settings.furtherModes.grayscaleTransformationModes = [Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_ORIGINAL, Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_INVERTED];
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
