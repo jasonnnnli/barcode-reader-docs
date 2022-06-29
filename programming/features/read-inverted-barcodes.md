@@ -11,11 +11,11 @@ permalink: /programming/features/read-inverted-barcodes.html
 
 # Read Inverted Barcodes
 
-Generally, the barcode is dark on a light background. But in some situations, the barcodes are inverted - light barcodes on a dark background, as shown below.
+Typically, barcodes are dark on a light background. But in some cases, the barcodes are "inverted" -- light barcodes on a dark background, as shown in the image below.
 
 ![Inverted Barcode](assets/inverted-barcodes.png)
 
-Decoding inverted barcode is not enabled by default. To decode the inverted barcodes, you have to enable `GTM_INVERTED` in the `GrayscaleTransformationMode`.
+The feature to decode such inverted barcodes is not enabled by default. To enable it, add the value `GTM_INVERTED` to `GrayscaleTransformationMode` as shown in the code snippet below:
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -29,9 +29,9 @@ Decoding inverted barcode is not enabled by default. To decode the inverted barc
    >- Python
    >
 >```javascript
-// Obtain current runtime settings of `reader` instance.
+// Obtain the current runtime settings of DBR.
 let settings = await scanner.getRuntimeSettings();
-// Add GTM_INVERTED to GrayscaleTransformationModes to decode inverted barcodes.
+// Add GTM_INVERTED to GrayscaleTransformationModes.
 settings.furtherModes.grayscaleTransformationModes = [Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_ORIGINAL, Dynamsoft.DBR.EnumGrayscaleTransformationMode.GTM_INVERTED];
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
@@ -112,6 +112,6 @@ reader.update_runtime_settings(settings)
 
 **Remarks**
 
-- When only `GTM_GENERAL` is enabled in `GrayscaleTransformationModes`, the barcode reader only scans general barcodes.
-- When only `GTM_INVERTED` is enabled in `GrayscaleTransformationModes`, the barcode reader only scans inverted barcodes.
-- When `GTM_GENERAL` is enabled as the first mode and `GTM_INVERTED` is enabled as the second mode in `GrayscaleTransformationModes`, the barcode reader will try to decode general barcodes first. If the count of decoded barcodes does not reach the expected number, the barcode reader will then try decoding the inverted barcodes.
+- With only `GTM_GENERAL` enabled in `GrayscaleTransformationModes`, DBR scans only general black-on-white barcodes.
+- With only `GTM_INVERTED` enabled in `GrayscaleTransformationModes`, DBR scans only inverted barcodes.
+- When `GTM_GENERAL` is enabled as the first mode and `GTM_INVERTED` is enabled as the second mode in `GrayscaleTransformationModes`, DBR will try to decode general barcodes first. If the count of decoded barcodes does not reach the expected number, DBR will then try decoding the inverted barcodes.
