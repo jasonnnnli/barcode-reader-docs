@@ -1,12 +1,12 @@
 ---   
 layout: default-layout
 description: This article introduces two ways to configure DBR, RuntimeSettings and Json template, and their syntax rules.
-title: Use a template over RuntimeSettings
+title: Use Templates or RuntimeSettings
 keywords: DBR RuntimeSettings Json Template ImageParameter FormatSpecification
 needAutoGenerateSidebar: false
 ---
 
-# Use a template over RuntimeSettings
+# Use Templates or RuntimeSettings
 
 DBR provides two ways for configuration: via `RuntimeSettings` or via a JSON template.
 
@@ -16,7 +16,7 @@ DBR provides two ways for configuration: via `RuntimeSettings` or via a JSON tem
 
   However, bear in mind that `RuntimeSettings` doesn't provide all the available configuration options of the SDK.
 
-* [JSON template](#json-template)
+* [JSON Templates](#json-template)
 
   With a JSON template, you can make use of all the configuration options that DBR offers.
   
@@ -111,7 +111,7 @@ delete reader;
 NOT SURE C
 ```
 
-## JSON template
+## JSON Templates
 
 DBR also supports managing parameters via JSON configuration files. This method is suitable for cases where the parameter configurations are relatively fixed. The JSON template mainly includes:
 
