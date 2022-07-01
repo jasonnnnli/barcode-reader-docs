@@ -5,6 +5,7 @@ description: This article describes how to use customize the UI used by DBR JS.
 needAutoGenerateSidebar: true
 keywords: ui customization
 breadcrumbText: UI Customization
+noTitleIndex: false
 permalink: /programming/features/customize-the-ui.html
 ---
 
@@ -16,10 +17,10 @@ Typically, DBR JS reads barcodes directly from video frames. Finding and aiming 
 
 The `BarcodeScanner` class of DBR JS comes with a built-in UI which consists of the following elements:
 
-* An `HTMLVideoElement` that plays the video stream from the camera and allows the SDK to manipulate the video object (in our case, the camera); 
-* A laser-like moving `HTMLDivElement` that indicates that the SDK is scanning a certain area of the image for barcodes; 
-* Two built-in `HTMLSelectElement`s that offer the options to change the camera or change the resolution of the current camera; 
-* An `HTMLCanvasElement` on top of the video stream which is used to highlight the location of found barcodes and show other information if required; 
+* An `HTMLVideoElement` that plays the video stream from the camera and allows the SDK to manipulate the video object (in our case, the camera);
+* A laser-like moving `HTMLDivElement` that indicates that the SDK is scanning a certain area of the image for barcodes;
+* Two built-in `HTMLSelectElement`s that offer the options to change the camera or change the resolution of the current camera;
+* An `HTMLCanvasElement` on top of the video stream which is used to highlight the location of found barcodes and show other information if required;
 * Other assisting elements.
 
 All of these elements can be customized.
@@ -146,9 +147,7 @@ scanner.setVideoFit('contain');
 
 ### Customize the scan indicator
 
-We will try to replace the default laser-like indicator with someting else.
-
-First, we add the following code after the div with class `dce-video-container` :
+We will try to replace the default laser-like indicator with someting else by adding the following code after the div with class `dce-video-container` :
 
 ```html
 <div class="dce-scanarea" style="width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden;">
@@ -156,11 +155,11 @@ First, we add the following code after the div with class `dce-video-container` 
 </div>
 ```
 
-Note that we defined an animated div with the class "dce-scanlight". The class name will be recognized by the SDK so that it gets shown or hidden properly.
+The code defines an animated div with the class "dce-scanlight". The class name will be recognized by the SDK so that it gets shown or hidden properly.
 
 ### Customize the scanning region
 
-Typically, we want the user to focus on the barcode to read and the barcode is normally at the center of the video. The following code shows how to constrain the area to a centered square:
+Typically, we want the user to focus the camera on the barcode, which is usually in the center of the video frame. The following code shows how to constrain the area to a centered square:
 
 ```js
 scanner.onPlayed = async info => {
@@ -198,7 +197,7 @@ scanner.barcodeStrokeStyle = "rgba(73, 245, 73, 1)";
 
 ### Add a viewfinder frame
 
-Having a video playing on the page may seem a bit incongruous. we camm add a viewfinder frame around the video to make it better.
+Having a video playing on the page may seem a bit incongruous. we can add a viewfinder frame around the video to make it better.
 
 To do this, we add the following code inside the div `div-ui-container` :
 

@@ -59,7 +59,7 @@ The following code illustrates how it's done:
    >
 >
 ```javascript
-// Obtains current runtime settings of DBR.
+// Obtains the current runtime settings of DBR.
 let rs = await scanner.getRuntimeSettings();
 // Sets the termination phase.
 rs.terminatePhase = Dynamsoft.DBR.EnumTerminatePhase.TP_BARCODE_TYPE_DETERMINED;
@@ -148,7 +148,7 @@ The following code illustrates how to set `Timeout`:
 ```javascript
 (async() => {
     let scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
-    // Obtains current runtime settings of DBR.
+    // Obtains the current runtime settings of DBR.
     let rs = await scanner.getRuntimeSettings();
     // Sets timeout to 1000 milliseconds.
     rs.timeout = 1000;
