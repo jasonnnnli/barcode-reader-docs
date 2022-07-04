@@ -15,46 +15,31 @@ The following are a few of the parameters provided in a `FormatSpecification` ob
 * [BarcodeFormatIds, BarcodeFormatIds_2](#barcodeformatids-barcodeformatids2)
 * [MirrorMode](#mirrormode)
 * [RequireStartStopChars](#requirestartstopchars)
-
-  Specifies whether decoding requires start and stop characters.
-
 * [AllModuleDeviation](#allmoduledeviation)
-
-  Specifies the deviation of the bar size from the standard bar size.
-
 * [HeadModuleRatio, TailModuleRatio](#headmoduleratio-tailmoduleratio)
-
-  Specifies the number and size of custom bars for non-standard 1D barcodes at the head or tail.
-
 * [StandardFormat](#standardformat)
-
-  Specifies standard barcode formats for non-standard 1D character sets.
-
 * [AustralianPostEncodingTable](#australianpostencodingtable)
-
-  Specifies the decoding table to be used by the Customer Information Fields in the AustralianPost Code.
-
 * [MinQuietZoneWidth](#minquietzonewidth)
-
-  Specifies the minimum width of the barcode quiet zone.
-
-  > Quiet zone is the blank margin on both sides of the barcode that tells the barcode scanner where the barcode symbol starts and stops.
-
 * [ModuleSizeRangeArray](#modulesizerangearray)
-
-  Specifies the size range of module dimensions to search for barcodes.
-
 * [Others](#Others)
 
 ## BarcodeFormatIds, BarcodeFormatIds_2
 
-Specifies the barcode type for which the `FormatSpecification` object applies.
+Specifies the barcode type for which the `FormatSpecification` object applies. This is essential to make any format specific configuration. Read on to see how it is used in actual templates.
 
 ## MirrorMode
 
 This parameter specifies whether to decode mirror barcodes.
 
-Sometimes the image we get is a mirror image of the actual scene. For 2D barcodes, mirroring may cause the decoding to fail. In this case, we can configure `MirrorMode` to handle it. The default value of `MirrorMode` is `MM_BOTH` for `QRCode`, `DataMatrix`, `PDF417`, `AZTEC`, `Micro QR Code`, `Micro PDF417`, `DotCode`, `Pharmacode Two-Track`, and `MM_NORMAL` for other barcode types.
+Sometimes the image we get is a mirror image of the actual scene. For example, the following is a normal QR code
+
+![normal QR][1]
+
+and this is the same code when mirrored:
+
+![mirror QR][2]
+
+For 2D barcodes, mirroring may cause the decoding to fail. In this case, we can configure `MirrorMode` to handle it. The allowed values are
 
 | Enumeration    | Value | Note     |
 |-----------|--------|----------------------|
@@ -62,17 +47,13 @@ Sometimes the image we get is a mirror image of the actual scene. For 2D barcode
 | MM_MIRROR | 0x02   | Decode the mirror image.    |
 | MM_BOTH   | 0x04   | Try both the original and the mirror images. |
 
-Below are two sample diagrams of normal and mirror QR
+The default value of `MirrorMode` is
 
-Normal QR
+* `MM_BOTH` for `QRCode`, `DataMatrix`, `PDF417`, `AZTEC`, `Micro QR Code`, `Micro PDF417`, `DotCode`, `Pharmacode Two-Track`
+* `MM_NORMAL` for other barcode types.
 
-![normal QR][1] 
+In most cases, the default value will work fine. But assuming all your QR codes are mirrored, you can configure DBR like this:
 
-Mirror QR
-
-![mirror QR][2]
-
-Here is an JSON template where we configure the QR code type for mirroring
 ```javascript
 {
     "ImageParameter": {
@@ -92,7 +73,10 @@ Here is an JSON template where we configure the QR code type for mirroring
 ```
 
 ## RequireStartStopChars
-1D barcodes usually have fixed start and end characters. Normally, DBR can only decode a barcode properly if it finds the start and end characters. However, in some cases, the actual situation may be missing the start and end characters. RequireStartStopChars is designed to read these non-standard barcodes and is used to specify whether the start and end characters need to be found during 1D decoding. This parameter can be set to 0 or 1. 0 means no start and end characters are needed; 1 represents the need for a start and end.
+
+This parameter specifies whether decoding requires start and stop characters.
+
+1D barcodes usually have fixed start and end characters. Normally, DBR can only decode a barcode properly if it finds the start and end characters. However, in some cases, the actual barcode symbol may be missing the start and/or end characters. `RequireStartStopChars` is designed to read these non-standard barcodes and is used to specify whether the start and end characters need to be found during 1D decoding. This parameter can be set to 0 or 1. 0 means no start and end characters are needed; 1 represents the need for a start and end.
 
 The figure below shows a standard Code39 with start and end characters
 
@@ -123,6 +107,9 @@ Here is an JSON template where we don't need a start and end character to decode
 ```
 
 ## AllModuleDeviation
+
+  Specifies the deviation of the bar size from the standard bar size.
+
 
 This parameter specifies the width deviation value of a non-standard 1D barcode type, in moduleSize, with the default value of 0.
 
@@ -169,6 +156,9 @@ We can set AllModuleDeviation to 2, so that the deviation value of 2 moduleSize 
 ```
 
 ## HeadModuleRatio, TailModuleRatio
+
+  Specifies the number and size of custom bars for non-standard 1D barcodes at the head or tail.
+
 Normally, the start and stop characters of 1D barcodes have a standard fixed proportion, but in reality, there may also be situations where the proportion is not standard.
 
 In this situation, If there is a fixed deviation between standard proportion and the non-standard proportion, we could try to set the value of [`AllModuleDeviation`](##AllModuleDeviation) to customize the proportion; If there is an irregular deviation, you can customize the proportion using `HeadModuleRatio` and `TailModuleRatio`.
@@ -219,9 +209,15 @@ By default, DBR will not be able to read the above code128. In this case, in ord
 
 ## StandardFormat
 
+  Specifies standard barcode formats for non-standard 1D character sets.
+
+
 This parameter specifies the character set of the standard barcode type referenced by the non-standard 1D character set. It should be used together with [`AllModuleDeviation`](##AllModuleDeviation), [`HeadModuleRatio`](##HeadModuleRatio,TailModuleRatio), [`TailModuleRatio`](##HeadModuleRatio,TailModuleRatio), we will not explain this parameter in detail here.
 
 ## AustralianPostEncodingTable
+
+  Specifies the decoding table to be used by the Customer Information Fields in the AustralianPost Code.
+
 
 The AustralianPost Code has a section of customer information area, which can be decoded using two standard defined decoding tables (N table, C table). This parameter can be set to specify either N table or C table for decoding. Please refer to the AustralianPostcode standard documentation for specific definitions of these two code tables.
 
@@ -231,6 +227,11 @@ You also need to set `FormatSpecification.BarcodeFormatIds_2` to `BF2_AUSTRALIAN
 
 
 ## MinQuietZoneWidth
+
+  Specifies the minimum width of the barcode quiet zone.
+
+  > Quiet zone is the blank margin on both sides of the barcode that tells the barcode scanner where the barcode symbol starts and stops.
+
 
 There should be enough white space on both sides of the standard barcode as a quiet area. But in reality, there may not be enough white space. In this case, we can use the  `MinQuietZoneWidth` to set the minimum quiet area size, in ModuleSize, with a default value of 4. 
 
@@ -262,6 +263,9 @@ We can set MinQuietZoneWidth to 1 or less, as a result, the above sample image c
 ```
 
 ## ModuleSizeRangeArray
+
+  Specifies the size range of module dimensions to search for barcodes.
+
 
 This parameter specifies a certain modulesize range for barcode searching,  barcodes which do not meet the criteria will not be decoded,
 

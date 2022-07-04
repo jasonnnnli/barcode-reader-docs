@@ -21,53 +21,53 @@ faq_js: /barcode-reader-review/docs/web/programming/javascript/faq/
 
 comparison_tools: /barcode-reader-review/docs/introduction/comparison-tools/
 
-c_cplusplus: /barcode-reader-review/docs/programming/c-cplusplus/
-structs: /barcode-reader-review/docs/programming/c-cplusplus/struct/
+c_cplusplus: /barcode-reader-review/docs/server/programming/c-cplusplus/
+structs: /barcode-reader-review/docs/server/programming/c-cplusplus/struct/
 
-c: /barcode-reader-review/docs/programming/c/
-c_api: /barcode-reader-review/docs/programming/c/api-reference/
-c_methods: /barcode-reader-review/docs/programming/c/api-reference/methods/
-c_release_notes: /barcode-reader-review/docs/programming/c/release-notes/
+c: /barcode-reader-review/docs/server/programming/c/
+c_api: /barcode-reader-review/docs/server/programming/c/api-reference/
+c_methods: /barcode-reader-review/docs/server/programming/c/api-reference/methods/
+c_release_notes: /barcode-reader-review/docs/server/programming/c/release-notes/
 
-cpp: /barcode-reader-review/docs/programming/cplusplus/
-cpp_api: /barcode-reader-review/docs/programming/cplusplus/api-reference/
-cpp_methods: /barcode-reader-review/docs/programming/cplusplus/api-reference/cbarcodereader-methods/
-cpp_release_notes: /barcode-reader-review/docs/programming/cplusplus/release-notes/
+cpp: /barcode-reader-review/docs/server/programming/cplusplus/
+cpp_api: /barcode-reader-review/docs/server/programming/cplusplus/api-reference/
+cpp_methods: /barcode-reader-review/docs/server/programming/cplusplus/api-reference/cbarcodereader-methods/
+cpp_release_notes: /barcode-reader-review/docs/server/programming/cplusplus/release-notes/
 
 js: /barcode-reader-review/docs/web/programming/javascript/
 js_api: /barcode-reader-review/docs/web/programming/javascript/api-reference/
 js_release_notes: /barcode-reader-review/docs/web/programming/javascript/release-notes/
 
-dotnet: /barcode-reader-review/docs/programming/dotnet/
-dotnet_api: /barcode-reader-review/docs/programming/dotnet/api-reference/
-dotnet_methods: /barcode-reader-review/docs/programming/dotnet/api-reference/BarcodeReader/
-dotnet_class: /barcode-reader-review/docs/programming/dotnet/api-reference/class/
-dotnet_release_notes: /barcode-reader-review/docs/programming/dotnet/release-notes/
+dotnet: /barcode-reader-review/docs/server/programming/dotnet/
+dotnet_api: /barcode-reader-review/docs/server/programming/dotnet/api-reference/
+dotnet_methods: /barcode-reader-review/docs/server/programming/dotnet/api-reference/BarcodeReader/
+dotnet_class: /barcode-reader-review/docs/server/programming/dotnet/api-reference/class/
+dotnet_release_notes: /barcode-reader-review/docs/server/programming/dotnet/release-notes/
 
-oc: /barcode-reader-review/docs/programming/objectivec-swift/
-oc_api: /barcode-reader-review/docs/programming/objectivec-swift/api-reference/
-oc_release_notes: /barcode-reader-review/docs/programming/objectivec-swift/release-notes/
-oc_methods: /barcode-reader-review/docs/programming/objectivec-swift/api-reference/methods/
-oc_class: /barcode-reader-review/docs/programming/objectivec-swift/api-reference/class/
-oc_methods: /barcode-reader-review/docs/programming/objectivec-swift/api-reference/methods/
+oc: /barcode-reader-review/docs/mobile/programming/objectivec-swift/
+oc_api: /barcode-reader-review/docs/mobile/programming/objectivec-swift/api-reference/
+oc_release_notes: /barcode-reader-review/docs/mobile/programming/objectivec-swift/release-notes/
+oc_methods: /barcode-reader-review/docs/mobile/programming/objectivec-swift/api-reference/methods/
+oc_class: /barcode-reader-review/docs/mobile/programming/objectivec-swift/api-reference/class/
+oc_methods: /barcode-reader-review/docs/mobile/programming/objectivec-swift/api-reference/methods/
 
-java: /barcode-reader-review/docs/programming/java/
-java_api: /barcode-reader-review/docs/programming/java/api-reference/
-java_methods: /barcode-reader-review/docs/programming/java/api-reference/BarcodeReader/
-java_class: /barcode-reader-review/docs/programming/java/api-reference/class/
-java_release_notes: /barcode-reader-review/docs/programming/java/release-notes/
+java: /barcode-reader-review/docs/server/programming/java/
+java_api: /barcode-reader-review/docs/server/programming/java/api-reference/
+java_methods: /barcode-reader-review/docs/server/programming/java/api-reference/BarcodeReader/
+java_class: /barcode-reader-review/docs/server/programming/java/api-reference/class/
+java_release_notes: /barcode-reader-review/docs/server/programming/java/release-notes/
 
-android: /barcode-reader-review/docs/programming/android/
-android_api: /barcode-reader-review/docs/programming/android/api-reference/
-android_release_notes: /barcode-reader-review/docs/programming/android/release-notes/
-android_class: /barcode-reader-review/docs/programming/android/api-reference/class/
-android_methods: /barcode-reader-review/docs/programming/android/api-reference/BarcodeReader/
+android: /barcode-reader-review/docs/mobile/programming/android/
+android_api: /barcode-reader-review/docs/mobile/programming/android/api-reference/
+android_release_notes: /barcode-reader-review/docs/mobile/programming/android/release-notes/
+android_class: /barcode-reader-review/docs/mobile/programming/android/api-reference/class/
+android_methods: /barcode-reader-review/docs/mobile/programming/android/api-reference/BarcodeReader/
   
-python: /barcode-reader-review/docs/programming/python/
-python_api: /barcode-reader-review/docs/programming/python/api-reference/
-python_methods: /barcode-reader-review/docs/programming/python/api-reference/BarcodeReader/
-python_class: /barcode-reader-review/docs/programming/python/api-reference/class/
-python_release_notes: /barcode-reader-review/docs/programming/python/release-notes/
+python: /barcode-reader-review/docs/server/programming/python/
+python_api: /barcode-reader-review/docs/server/programming/python/api-reference/
+python_methods: /barcode-reader-review/docs/server/programming/python/api-reference/BarcodeReader/
+python_class: /barcode-reader-review/docs/server/programming/python/api-reference/class/
+python_release_notes: /barcode-reader-review/docs/server/programming/python/release-notes/
 
 parameters_reference: /barcode-reader-review/docs/parameters/reference/
 image_parameters: /barcode-reader-review/docs/parameters/reference/image-parameter/
