@@ -8,9 +8,9 @@ needAutoGenerateSidebar: false
 
 # Use Format Specific Configuration
 
-`FormatSpecification` is part of the configuration template and allows you to configure settings that apply only to the specified barcode format. Note that in order to use this feature, you must use a template instead of `RuntimeSettings`. Read more on [`RuntimeSettings` and Tempaltes](use-runtimesettings-or-templates.md).
+`FormatSpecification` is part of the configuration template and allows you to configure settings that apply only to the specified barcode format. Note that in order to use this feature, you must use a template instead of `RuntimeSettings`. Read more on [`RuntimeSettings` and templates](use-runtimesettings-or-templates.md).
 
-The following are a few of the parameters provided in a `FormatSpecification` object:
+This article covers the following parameters provided in a `FormatSpecification` object:
 
 * [BarcodeFormatIds, BarcodeFormatIds_2](#barcodeformatids-barcodeformatids2)
 * [MirrorMode](#mirrormode)
@@ -21,7 +21,6 @@ The following are a few of the parameters provided in a `FormatSpecification` ob
 * [AustralianPostEncodingTable](#australianpostencodingtable)
 * [MinQuietZoneWidth](#minquietzonewidth)
 * [ModuleSizeRangeArray](#modulesizerangearray)
-* [Others](#Others)
 
 ## BarcodeFormatIds, BarcodeFormatIds_2
 
@@ -58,7 +57,7 @@ In most cases, the default value will work fine. But assuming all your QR codes 
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is mirror mode demonstrate", 
+        "Description": "Read mirror barcodes.", 
         "FormatSpecificationNameArray": ["FP_1"]
     }, 
     "FormatSpecificationArray": [
@@ -74,25 +73,28 @@ In most cases, the default value will work fine. But assuming all your QR codes 
 
 ## RequireStartStopChars
 
-This parameter specifies whether decoding requires start and stop characters.
+This parameter specifies whether decoding requires start and stop symbols.
 
-1D barcodes usually have fixed start and end characters. Normally, DBR can only decode a barcode properly if it finds the start and end characters. However, in some cases, the actual barcode symbol may be missing the start and/or end characters. `RequireStartStopChars` is designed to read these non-standard barcodes and is used to specify whether the start and end characters need to be found during 1D decoding. This parameter can be set to 0 or 1. 0 means no start and end characters are needed; 1 represents the need for a start and end.
+1D barcodes usually have fixed start and end symbols. Normally, DBR can only decode a barcode properly if it finds the start and end symbols. However, in some cases, the actual barcode symbol may be missing the start and/or end symbols. `RequireStartStopChars` is designed to read these non-standard barcodes and is used to specify whether the start and end symbols are required for decoding. The allowed values are
 
-The figure below shows a standard Code39 with start and end characters
+* 0: start and stop symbols are optional
+* 1: start and stop symbols are required
+
+The figure below shows a standard Code39 with start and end symbols:
 
 ![standard-code39][3]
 
-Below is a Code39 with the same code value but no start and end characters
+This one shows the same barcode without start and end symbols:
 
 ![code39 without start and end pattern][4]
 
-Here is an JSON template where we don't need a start and end character to decode Code39
+The following template configures DBR to read Code39 barcodes that don't have start and/or end symbols:
 
 ```json
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is RequireStartStopChars demonstrate", 
+        "Description": "Read barcodes without start or end symbols.", 
         "FormatSpecificationNameArray": ["FP_1"]
     }, 
     "FormatSpecificationArray": [
@@ -108,37 +110,33 @@ Here is an JSON template where we don't need a start and end character to decode
 
 ## AllModuleDeviation
 
-  Specifies the deviation of the bar size from the standard bar size.
+This parameter specifies the deviation of the bar width from the standard bar width for 1D barcodes. The default value is 0.
 
+Occasionally, due to typographical errors, 1D barcodes may contain bars of non-standard widths. Such barcodes are considered invalid and ignored by DBR. If you want DBR to read these barcodes too, you can use the parameter `AllModuleDeviation`.
 
-This parameter specifies the width deviation value of a non-standard 1D barcode type, in moduleSize, with the default value of 0.
+Note that "all" in the parameter name means it only works if all bars (black & white) of the barcode are off (have the same deviation). For example, if the widths (in pixels) of bars for a standard barcodes are [6, 2, 4, 2], a deviation of 2 would mean the widths become [8, 4, 6, 4], whereas the widths [12, 4, 8, 4] would be considered correctly enlarged.
 
-In some cases, it is possible for the real 1D barcode width to have an X moduleSize deviation relative to the standard barcode width. By default, DBR will not be able to handle these non-standard cases. Thus, you need to set the AllModuleDeviation to a certain deviation value when facing a non-standard barcode.
+To utilize this parameter, you need to set the following parameters as well:
 
+1. `FormatSpecification.BarcodeFormatIds_2` should be set to `NON_STANDARD_BARCODE`, which indicates that the barcode to be read does not strictly follow any standard format.
 
-When this parameter is used, the following parameters should be used together  
-- `FormatSpecification.BarcodeFormatIds_2`  
-You need to set `FormatSpecification.BarcodeFormatIds_2` to `NON_STANDARD_BARCODE`, which indicates that you will now define a new non-standard barcode format.
-- `FormatSpecification.StandardFormat`    
-You need to set `StandardFormat` to a certain standard 1D barcode format, which specifics barcode format you are currently referring to as a non-standard character standard, such as `BF_CODE128`
-- `ImageParameter.BarcodeFormatIds_2`   
-You need to set `ImageParameter.BarcodeFormatIds_2` to `NON_STANDARD_BARCODE`, which means you will deal with just defined non-standard barcode.
+2. `FormatSpecification.StandardFormat` should be set to a standard 1D barcode format such as `BF_CODE128` on which DBR applies the deviation.
 
-To illustrate this with a practical example, below is a standard Code128, moduleSize 2px
+3. `ImageParameter.BarcodeFormatIds_2` should be set to `NON_STANDARD_BARCODE`, which means non-standard barcodes are to be read.
+
+The following shows a standard Code128 barcode with a moduleSize of 2px followed by a non-standard Code128 barcode which consists of bars with a deviation of 2px.
 
 ![standard-code128][5]
 
-Next is a non-standard Code128, each bar of which is 4px (2 module size) larger than the standard bar
-
 ![code128-deviation][6]
 
-We can set AllModuleDeviation to 2, so that the deviation value of 2 moduleSize will be used during decoding, as a result, the barcode value will be correctly extracted. The following Json template demonstrates the complete configuration.
+To read this non-standard barcode, we can set the deviation to 2 as shown in the following template:
 
 ```json
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is deviation demonstrate", 
+        "Description": "Read barcodes with width deviation.", 
         "FormatSpecificationNameArray": ["FP_1"],
         "BarcodeFormatIds_2": ["BF2_NONSTANDARD_BARCODE"]
     }, 
@@ -152,42 +150,38 @@ We can set AllModuleDeviation to 2, so that the deviation value of 2 moduleSize 
         }
     ], 
     "Version": "3.0"
-}   
+}
 ```
 
 ## HeadModuleRatio, TailModuleRatio
 
-  Specifies the number and size of custom bars for non-standard 1D barcodes at the head or tail.
+These parameters specify the exception bars used as the start or stop symbols of a non-standard 1D barcode.
 
-Normally, the start and stop characters of 1D barcodes have a standard fixed proportion, but in reality, there may also be situations where the proportion is not standard.
+The last parameter [`AllModuleDeviation`](#allmoduledeviation) handles barcodes consisting of all bars that deviate in the same way. If the bars that make up the start or end symbol of a barcode have irregular deviations, `HeadModuleRatio` and `TailModuleRatio` can be used to specify them.
 
-In this situation, If there is a fixed deviation between standard proportion and the non-standard proportion, we could try to set the value of [`AllModuleDeviation`](##AllModuleDeviation) to customize the proportion; If there is an irregular deviation, you can customize the proportion using `HeadModuleRatio` and `TailModuleRatio`.
+Just like [`AllModuleDeviation`](#allmoduledeviation), you need to set the following parameters to utilize `HeadModuleRatio` and `TailModuleRatio`:
 
-The following parameters are also needed to customize the head-tail proportion  
-- `FormatSpecification.BarcodeFormatIds_2`  
-You need to set `FormatSpecification.BarcodeFormatIds_2` to `NON_STANDARD_BARCODE`, which indicates that you will now define a new non-standard barcode format.
-- `FormatSpecification.StandardFormat`    
-You need to set `StandardFormat` to a certain standard 1D barcode format, which specifies the barcode format you are currently referring to as a non-standard character standard. In the case that `BF_CODE128` is set, subset (A, B and C) needs to specify in `Code128Subset`.
-- `ImageParameter.BarcodeFormatIds_2`   
-You need to set `ImageParameter.BarcodeFormatIds_2` to `NON_STANDARD_BARCODE`, which means you will deal with just defined non-standard barcode.
+1. `FormatSpecification.BarcodeFormatIds_2` should be set to `NON_STANDARD_BARCODE`, which indicates that the barcode to be read does not strictly follow any standard format.
 
-Here we use a non-standard Code128 for illustration.
-As shown in the figure below, The start character proportion is 2:1:1:3:3:1, which does not conform to the proportion of start characters as defined in the Code128 standard, and its stop character proportion is 2:3:3:2:2:2:2:3, which also does not conform to the stop character proportion.
+2. `FormatSpecification.StandardFormat` should be set to a standard 1D barcode format such as `BF_CODE128` on which DBR applies the deviation.
 
+3. `ImageParameter.BarcodeFormatIds_2` should be set to `NON_STANDARD_BARCODE`, which means non-standard barcodes are to be read.
+
+The image below is such a non-standard barcode: it has irregular start bars with a ratio of 2:1:1:3:3:1 and irregular end bars with a ratio of 2:3:3:2:2:2:3.
 
 ![nonstandard-start-end][7]
 
-Standard code128 with the same value is shown below
+If the barcode conforms to the standard (Code Set C), it should has start bars with a ratio of 2:1:1:2:3:2 and end bars with a ratio of 2:3:3:1:1:1:2 like this:
 
 ![standard-start-end][8]
 
-By default, DBR will not be able to read the above code128. In this case, in order to read the above non-standard code128, you could set  `HeadModuleRatio` and `TailModuleRatio` as `"211331"` and `"2332223"` respectively. And set `Code128Subset` to `"C"`. The complete JSON configuration is as follows
+The following template demostrates how to use `HeadModuleRatio` and `TailModuleRatio` to tell DBR about the irregular start and end symbols of the barcode:
 
 ```json
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is HeadModuleRatio and TailModuleRatio demonstrate", 
+        "Description": "Read barcodes with irregular start and end symbols.",
         "FormatSpecificationNameArray": ["FP_1"],
         "BarcodeFormatIds_2": ["BF2_NONSTANDARD_BARCODE"] 
     }, 
@@ -204,50 +198,64 @@ By default, DBR will not be able to read the above code128. In this case, in ord
         }
     ], 
     "Version": "3.0"
-}   
+}
 ```
 
 ## StandardFormat
 
-  Specifies standard barcode formats for non-standard 1D character sets.
-
-
-This parameter specifies the character set of the standard barcode type referenced by the non-standard 1D character set. It should be used together with [`AllModuleDeviation`](##AllModuleDeviation), [`HeadModuleRatio`](##HeadModuleRatio,TailModuleRatio), [`TailModuleRatio`](##HeadModuleRatio,TailModuleRatio), we will not explain this parameter in detail here.
+This parameter specifies a standard barcode format based on which a non-standard format is defined. See it in action with the parameter [`AllModuleDeviation`](#allmoduledeviation), [`HeadModuleRatio`](#headmoduleratio-tailmoduleratio) and [`TailModuleRatio`](#headmoduleratio-tailmoduleratio).
 
 ## AustralianPostEncodingTable
 
-  Specifies the decoding table to be used by the Customer Information Fields in the AustralianPost Code.
+Australia Post Barcodes contain a segment of customer information that can be decoded using one of two standard-defined decoding tables (CTable, NTable). This parameter is used to specify which table should be used.
 
-
-The AustralianPost Code has a section of customer information area, which can be decoded using two standard defined decoding tables (N table, C table). This parameter can be set to specify either N table or C table for decoding. Please refer to the AustralianPostcode standard documentation for specific definitions of these two code tables.
+|Name|Description|
+|---|---|
+|CTable|This table allows A..Z, a..z, 1..9, space and # sign.|
+|NTable|This table only allows digits.|
 
 This parameter can be set to "C" or "N" and the default value is "C".
 
-You also need to set `FormatSpecification.BarcodeFormatIds_2` to `BF2_AUSTRALIANPOST`.
-
-
-## MinQuietZoneWidth
-
-  Specifies the minimum width of the barcode quiet zone.
-
-  > Quiet zone is the blank margin on both sides of the barcode that tells the barcode scanner where the barcode symbol starts and stops.
-
-
-There should be enough white space on both sides of the standard barcode as a quiet area. But in reality, there may not be enough white space. In this case, we can use the  `MinQuietZoneWidth` to set the minimum quiet area size, in ModuleSize, with a default value of 4. 
-
-![barcode-quietzone-definition][9]
-
-Here is a sample image with a very narrow quite zone
-
-![barcode-narrow-wide-quietzone][11]
-
-We can set MinQuietZoneWidth to 1 or less, as a result, the above sample image can be properly decoded.
+You also need to set `FormatSpecification.BarcodeFormatIds_2` to `BF2_AUSTRALIANPOST` as shown in the template below:
 
 ```json
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is quiet zone demonstrate", 
+        "Description": "Specify which table to use for interpreting customre information.",
+        "FormatSpecificationNameArray": ["FP_1"],
+        "BarcodeFormatIds_2": ["BF2_AUSTRALIANPOST"] 
+    }, 
+    "FormatSpecificationArray": [
+        {
+            "Name": "FP_1", 
+            "BarcodeFormatIds_2": [                 
+                "BF2_AUSTRALIANPOST"
+            ],  
+            "AustralianPostEncodingTable": "C"                 
+        }
+    ], 
+    "Version": "3.0"
+}
+```
+
+## MinQuietZoneWidth
+
+Quiet zone is the blank margin on both sides of the barcode that tells the barcode reader where the barcode symbol starts and stops. Ideally, there should be enough space on both ends. However, real-life barcodes may have thinner margins than expected. To handle this, we can use `MinQuietZoneWidth` to specify the minimum width of the quiet zone.
+
+![barcode-quietzone-definition][9]
+
+Here is a sample image with a very narrow quite zone:
+
+![barcode-narrow-wide-quietzone][11]
+
+In this case, we can set `MinQuietZoneWidth` to 1 or 0:
+
+```json
+{
+    "ImageParameter": {
+        "Name": "ImageParameter1", 
+        "Description": "Read barcodes with think quiet zone.", 
         "FormatSpecificationNameArray":["FP_1"],
         "DeblurLevel": 1
     }, 
@@ -255,7 +263,7 @@ We can set MinQuietZoneWidth to 1 or less, as a result, the above sample image c
         {
             "Name": "FP_1", 
             "BarcodeFormatIds": ["BF_CODE_128"],                
-            "MinQuietZoneWidth":3
+            "MinQuietZoneWidth":1
         }
     ], 
     "Version": "3.0"
@@ -264,22 +272,17 @@ We can set MinQuietZoneWidth to 1 or less, as a result, the above sample image c
 
 ## ModuleSizeRangeArray
 
-  Specifies the size range of module dimensions to search for barcodes.
+The module size is the width of the thinnest possible bar for 1D barcodes or the width of the smallest building block for a 2D barcode. By default, DBR will try to locate and decode barcodes with any module size. In some cases, you may only be interested in barcodes with certain module sizes. In this case, you can use `ModuleSizeRangeArray` to specify a range of different module sizes for DBR to use when reading barcodes.
 
+The allowed values are from 0 to 0x7fffffff in pixels.
 
-This parameter specifies a certain modulesize range for barcode searching,  barcodes which do not meet the criteria will not be decoded,
-
-The default value is null, meaning that the moduleSize of the barcode is not limited
-
-You can set the range to [0,0x7fffffff] in pixels.
-
-JSON template
+The template below limits the module size to 10 ~ 100.
 
 ```json
 {
     "ImageParameter": {
         "Name": "ImageParameter1", 
-        "Description": "This is template demonstrate", 
+        "Description": "Limit the module size.", 
         "FormatSpecificationNameArray":["FP_1"]
     }, 
     "FormatSpecificationArray": [
@@ -297,16 +300,8 @@ JSON template
         }
     ], 
     "Version": "3.0"
-}   
+}
 ```
-
-
-
-## Others
-The usage of the other parameters in `FormatSpecification` will be covered in more detail in other related documentation than we will expand on in this article.
-- BarcodeAngleRangeArray, BarcodeBytesLengthRangeArray, BarcodeHeightRangeArray, BarcodeTextLengthRangeArray, BarcodeWidthRangeArray, BarcodeTextRegExPattern, MinResultConfidence.    
-
-Please refer to [Barcode Results][12]
 
 [1]:assets/format-specification/normal-qr.png
 
@@ -329,6 +324,3 @@ Please refer to [Barcode Results][12]
 [10]:assets/format-specification/barcode-with-wide-quietzone.png
 
 [11]:assets/format-specification/barcode-with-narrow-quietzone.png
-
-[12]:decode-result.html
-
