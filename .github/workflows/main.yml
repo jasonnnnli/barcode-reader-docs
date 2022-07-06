@@ -90,6 +90,8 @@ jobs:
           [ -d barcode-reader-docs-js-reviewing ] && rm -rf barcode-reader-docs-js-reviewing
           [ -d DBRDocRestructuredMobile ] && rm -rf DBRDocRestructuredMobile 
           [ -d barcode-reader-docs-mobile-reviewing ] && rm -rf barcode-reader-docs-mobile-reviewing
+          [ -d DBRDocRestructuredServer ] && rm -rf DBRDocRestructuredServer 
+          [ -d barcode-reader-docs-server-reviewing ] && rm -rf barcode-reader-docs-server-reviewing
           [ -d Docs-Template-Repo-preview ] && rm -rf Docs-Template-Repo-preview
           cd /home/ubuntu
 
@@ -99,30 +101,39 @@ jobs:
           mkdir -p DBRDocRestructured
           mkdir -p DBRDocRestructuredJS
           mkdir -p DBRDocRestructuredMobile
-          [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs.git barcode-reader-docs-reviewing
-          [ ! -d barcode-reader-docs-js-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs-js.git barcode-reader-docs-js-reviewing
-          [ ! -d barcode-reader-docs-mobile-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/Dynamsoft/barcode-reader-docs-mobile.git barcode-reader-docs-mobile-reviewing
+          mkdir -p DBRDocRestructuredServer
+          [ ! -d barcode-reader-docs-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/dynamsoft-docs/barcode-reader-docs.git barcode-reader-docs-reviewing
+          [ ! -d barcode-reader-docs-js-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/dynamsoft-docs/barcode-reader-docs-js.git barcode-reader-docs-js-reviewing
+          [ ! -d barcode-reader-docs-mobile-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/dynamsoft-docs/barcode-reader-docs-mobile.git barcode-reader-docs-mobile-reviewing
+          [ ! -d barcode-reader-docs-server-reviewing ] && git clone --depth 1 --branch reviewing https://github.com/dynamsoft-docs/barcode-reader-docs-server.git barcode-reader-docs-server-reviewing
           [ ! -d Docs-Template-Repo-preview ] && git clone --depth 1 --branch preview https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-preview
           cd barcode-reader-docs-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-reviewing/* ./DBRDocRestructured/
           cd barcode-reader-docs-js-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-js-reviewing/* ./DBRDocRestructuredJS/
           cd barcode-reader-docs-mobile-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-mobile-reviewing/* ./DBRDocRestructuredMobile/
+          cd barcode-reader-docs-server-reviewing && git pull && cd .. && cp -rfp ./barcode-reader-docs-server-reviewing/* ./DBRDocRestructuredServer/
           cd Docs-Template-Repo-preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-preview/* ./DBRDocRestructured/
           cd Docs-Template-Repo-preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-preview/* ./DBRDocRestructuredJS/
           cd Docs-Template-Repo-preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-preview/* ./DBRDocRestructuredMobile/
+          cd Docs-Template-Repo-preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-preview/* ./DBRDocRestructuredServer/
           sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
           -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructured/_config.yml
           sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
           -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructuredJS/_config.yml
           sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
           -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructuredMobile/_config.yml
+          sed -i -e "1,3s/blob\/master$/blob\/reviewing/" \
+          -e "1,3s/blob\/main$/blob\/reviewing/" /home/ubuntu/DBRDocRestructuredServer/_config.yml
           cd DBRDocRestructured && bundle exec jekyll build --incremental && cd ..
           cd DBRDocRestructuredMobile && bundle exec jekyll build --incremental && cd ..
           cd DBRDocRestructuredJS && bundle exec jekyll build --incremental && cd ..
+          cd DBRDocRestructuredServer && bundle exec jekyll build --incremental && cd ..
 
           mkdir -p ./DBRDocRestructured/_site/mobile/
+          mkdir -p ./DBRDocRestructured/_site/server/
           mkdir -p ./DBRDocRestructured/_site/web/
           mv ./DBRDocRestructuredJS/_site/* ./DBRDocRestructured/_site/web/
           mv ./DBRDocRestructuredMobile/_site/* ./DBRDocRestructured/_site/mobile/
+          mv ./DBRDocRestructuredServer/_site/* ./DBRDocRestructured/_site/server/
 
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
