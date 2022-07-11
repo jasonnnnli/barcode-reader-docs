@@ -247,7 +247,7 @@ Quiet zone is the blank margin on both sides of the barcode that tells the barco
 
 Here is a sample image with a very narrow quite zone:
 
-![barcode-narrow-wide-quietzone][11]
+![barcode-narrow-wide-quietzone][10]
 
 In this case, we can set `MinQuietZoneWidth` to 1 or 0:
 
@@ -321,6 +321,4 @@ The template below limits the module size to 10 ~ 100.
 
 [9]:assets/format-specification/barcode-quietzone-definition.png
 
-[10]:assets/format-specification/barcode-with-wide-quietzone.png
-
-[11]:assets/format-specification/barcode-with-narrow-quietzone.png
+[10]:assets/format-specification/barcode-with-narrow-quietzone.png
