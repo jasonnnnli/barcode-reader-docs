@@ -47,9 +47,23 @@ Obviously, the local thresholding result is much better. Now we will demonstrate
    >- C++
    >- C
    >
->```javascript
+>
+```javascript
+// Obtains the current runtime settings of DBR.
+let rs = await scanner.getRuntimeSettings();
+// Sets the text filter mode.
+rs.binarizationModes[0] = Dynamsoft.DBR.EnumBinarizationMode.BM_LOCAL_BLOCK;
+// Updates the settings.
+await scanner.updateRuntimeSettings(rs);
+// Fine-tunes some arguments of the first mode in `binarizationModes`
+scanner.setModeArgument("binarizationModes", 0, "BlockSizeX", "0");
+scanner.setModeArgument("binarizationModes", 0, "BlockSizeY", "0");
+scanner.setModeArgument("binarizationModes", 0, "EnableFillBinaryVacancy", "1");
+scanner.setModeArgument("binarizationModes", 0, "ThresholdCompensation", "10");
+await scanner.show();
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Set a binarization mode
@@ -62,7 +76,8 @@ reader.setModeArgument("binarizationModes", 0, "BlockSizeY", "0");
 reader.setModeArgument("binarizationModes", 0, "EnableFillBinaryVacancy", "1");
 reader.setModeArgument("binarizationModes", 0, "ThresholdCompensation", "10");
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -76,7 +91,8 @@ settings.scaleUpModes = @[@(EnumBinarizationModeLocalBlock)];
 [reader setModeArgument:@"binarizationModes" index:0 argumentName:@"EnableFillBinaryVacancy" argumentValue:"1" error:nil];
 [reader setModeArgument:@"binarizationModes" index:0 argumentName:@"ThresholdCompensation" argumentValue:"10" error:nil];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `reader` instance.
 let settings = try? reader.getRuntimeSettings()
 // Set a binarization mode
@@ -89,13 +105,18 @@ try? reader.setModeArgument("binarizationModes", index: 0, argumentName: "BlockS
 try? reader.setModeArgument("binarizationModes", index: 0, argumentName: "EnableFillBinaryVacancy", argumentValue: "1")
 try? reader.setModeArgument("binarizationModes", index: 0, argumentName: "ThresholdCompensation", argumentValue: "10")
 ```
->```python
+>
+```python
 ```
->```java
+>
+```java
 ```
->```c#
+>
+```c#
 ```
->```c++
+>
+```c++
 ```
->```c
+>
+```c
 ```
