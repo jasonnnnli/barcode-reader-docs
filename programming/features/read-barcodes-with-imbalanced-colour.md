@@ -51,9 +51,22 @@ As we can see, the gray image converted using only red channel is much better th
    >- C++
    >- C
    >
->```javascript
+>
+```javascript
+// Obtains the current runtime settings of DBR.
+let rs = await scanner.getRuntimeSettings();
+// Sets the text filter mode.
+rs.furtherModes.colourConversionModes[0] = Dynamsoft.DBR.EnumColourConversionMode.CICM_GENERAL;
+// Updates the settings.
+await scanner.updateRuntimeSettings(rs);
+// Fine-tunes some arguments of the first mode in `colourConversionModes`
+scanner.setModeArgument("colourConversionModes", 0, "RedChannelWeight", "1000");
+scanner.setModeArgument("colourConversionModes", 0, "GreenChannelWeight", "0");
+scanner.setModeArgument("colourConversionModes", 0, "BlueChannelWeight", "0");
+await scanner.show();
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Enable a colour conversion mode
@@ -65,7 +78,8 @@ reader.setModeArgument("colourConversionModes", 0, "RedChannelWeight", "1000");
 reader.setModeArgument("colourConversionModes", 0, "GreenChannelWeight", "0");
 reader.setModeArgument("colourConversionModes", 0, "BlueChannelWeight", "0");
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -78,7 +92,8 @@ settings.furtherModes.colourConversionModes = @[@(EnumColourConversionModeGenera
 [reader setModeArgument:@"colourConversionModes" index:0 argumentName:@"GreenChannelWeight" argumentValue:"0" error:nil];
 [reader setModeArgument:@"colourConversionModes" index:0 argumentName:@"BlueChannelWeight" argumentValue:"0" error:nil];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `reader` instance.
 let settings = try? reader.getRuntimeSettings()
 // Enable a colour conversion mode
@@ -90,13 +105,18 @@ try? reader.setModeArgument("colourConversionModes", index: 0, argumentName: "Re
 try? reader.setModeArgument("colourConversionModes", index: 0, argumentName: "GreenChannelWeight", argumentValue: "0")
 try? reader.setModeArgument("colourConversionModes", index: 0, argumentName: "BlueChannelWeight", argumentValue: "0")
 ```
->```python
+>
+```python
 ```
->```java
+>
+```java
 ```
->```csharp
+>
+```csharp
 ```
->```c++
+>
+```c++
 ```
->```c
+>
+```c
 ```

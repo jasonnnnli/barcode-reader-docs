@@ -35,11 +35,11 @@ In some scenarios, the barcode is very small relative to the entire image, and i
 ```javascript
 // Obtains the current runtime settings of DBR.
 let rs = await scanner.getRuntimeSettings();
-// Sets the text filter mode.
+// Sets the scale-up mode.
 rs.scaleUpModes[0] = Dynamsoft.DBR.EnumScaleUpMode.SUM_LINEAR_INTERPOLATION;
 // Updates the settings.
 await scanner.updateRuntimeSettings(rs);
-// Fine-tunes some arguments of the first mode in `ScaleUpModes`
+// Fine-tunes some arguments of the first mode in `scaleUpModes`
 scanner.setModeArgument("scaleUpModes", 0, "AcuteAngleWithXThreshold", "0");
 scanner.setModeArgument("scaleUpModes", 0, "ModuleSizeThreshold", "3");
 scanner.setModeArgument("scaleUpModes", 0, "TargetModuleSize", "8");
