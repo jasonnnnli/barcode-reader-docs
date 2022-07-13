@@ -11,40 +11,79 @@ When trying to read an image where a barcode is surrounded by a large number of 
 
 ## Sample Code
 
-The following code snippet shows how to set the parameter via RuntimeSettings to set text filterring function.
+The following code snippet shows how to set the text filtering function through the RuntimeSettings.
 
-<div class="sample-code-prefix"></div>
->- JavaScript
->- C
->- C++
->- C#
->- Java
->- Android
->- Objective-C
->- Swift
->- Python
+<div class="sample-code-prefix template2"></div>
+   >- Javascript
+   >- Android
+   >- Objective-C
+   >- Swift
+   >- Python
+   >- Java
+   >- C#
+   >- C++
+   >- C
+   >
 >
->1. 
 ```javascript
+// Obtains the current runtime settings of DBR.
+let rs = await scanner.getRuntimeSettings();
+// Sets the text filter mode.
+rs.furtherModes.textFilterModes[0] = Dynamsoft.DBR.EnumTextFilterMode.TFM_GENERAL_CONTOUR;
+// Updates the settings.
+await scanner.updateRuntimeSettings(rs);
+await scanner.show();
 ```
-2. 
-```c
-int iRet = -1;
-char errorBuf[512];
-iRet = DBR_InitLicense("YOUR-LICENSE-KEY", errorBuf, 512);
-if (iRet != DBR_OK)
-{
-    printf("%s\n", errorBuf);
-}
-void* reader = DBR_CreateInstance();
-PublicRuntimeSettings runtimeSettings;
-DBR_GetRuntimeSettings(reader, &runtimeSettings); //Get the current RuntimeSettings
-runtimeSettings.furtherModes.textFilterModes[0] = TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
-DBR_UpdateRuntimeSettings(reader, &runtimeSettings, errorBuf, 512); // Update RuntimeSettings with above setting
-DBR_DecodeFile(reader, "YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+>
+```java
+NOT SURE JAVA-ANDROID
+```
+>
+```objc
+NOT SURE OBJC
+```
+>
+```swift
+NOT SURE SWIFT
+```
+>
+```python
+error = BarcodeReader.init_license("YOUR-LICENSE-KEY")
+if error[0] != EnumErrorCode.DBR_OK:
+    print(error[1])
+dbr = BarcodeReader()
+settings = dbr.get_runtime_settings()
+settings.text_filter_modes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR
+dbr.update_runtime_settings(settings)
+text_results = dbr.decode_file("YOUR-IMAGE-FILE-PATH")
+# Add further process
+```
+>
+```java
+BarcodeReader.initLicense("YOUR-LICENSE-KEY");
+BarcodeReader reader = new BarcodeReader();
+PublicRuntimeSettings settings = reader.getRuntimeSettings(); //Get the current RuntimeSettings
+settings.furtherModes.textFilterModes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
+reader.updateRuntimeSettings(settings); // Update RuntimeSettings with above setting
+TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
 // Add further process
 ```
-3. 
+>
+```c#
+string errorMsg;
+EnumErrorCode iRet = BarcodeReader.InitLicense("YOUR-LICENSE-KEY", out errorMsg);
+if (iRet != EnumErrorCode.DBR_SUCCESS)
+{
+    Console.WriteLine(errorMsg);
+}
+BarcodeReader reader = new BarcodeReader();
+PublicRuntimeSettings settings = reader.GetRuntimeSettings(); //Get the current RuntimeSettings
+settings.FurtherModes.TextFilterModes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
+reader.UpdateRuntimeSettings(settings); // Update RuntimeSettings with above setting
+TextResult[] result = reader.DecodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+// Add further process
+```
+>
 ```cpp
 char errorBuf[512];
 int iRet = -1;
@@ -61,52 +100,20 @@ reader->UpdateRuntimeSettings(runtimeSettings, errorBuf, 512); // Update Runtime
 reader->DecodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
 // Add further process
 ```
-4. 
-```csharp
-string errorMsg;
-EnumErrorCode iRet = BarcodeReader.InitLicense("YOUR-LICENSE-KEY", out errorMsg);
-if (iRet != EnumErrorCode.DBR_SUCCESS)
+>
+```c
+int iRet = -1;
+char errorBuf[512];
+iRet = DBR_InitLicense("YOUR-LICENSE-KEY", errorBuf, 512);
+if (iRet != DBR_OK)
 {
-    Console.WriteLine(errorMsg);
+    printf("%s\n", errorBuf);
 }
-BarcodeReader reader = new BarcodeReader();
-PublicRuntimeSettings settings = reader.GetRuntimeSettings(); //Get the current RuntimeSettings
-settings.FurtherModes.TextFilterModes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
-reader.UpdateRuntimeSettings(settings); // Update RuntimeSettings with above setting
-TextResult[] result = reader.DecodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+void* reader = DBR_CreateInstance();
+PublicRuntimeSettings runtimeSettings;
+DBR_GetRuntimeSettings(reader, &runtimeSettings); //Get the current RuntimeSettings
+runtimeSettings.furtherModes.textFilterModes[0] = TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
+DBR_UpdateRuntimeSettings(reader, &runtimeSettings, errorBuf, 512); // Update RuntimeSettings with above setting
+DBR_DecodeFile(reader, "YOUR-IMAGE-FILE-PATH", ""); // Start decoding
 // Add further process
-```
-5. 
-```java
-BarcodeReader.initLicense("YOUR-LICENSE-KEY");
-BarcodeReader reader = new BarcodeReader();
-PublicRuntimeSettings settings = reader.getRuntimeSettings(); //Get the current RuntimeSettings
-settings.furtherModes.textFilterModes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR; // Set a TFM_GENERAL_CONTOUR mode to filter texts
-reader.updateRuntimeSettings(settings); // Update RuntimeSettings with above setting
-TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
-// Add further process
-```
-6. 
-```java
-
-```
-7. 
-```objc
-
-```
-8. 
-```swift
-
-```
-9. 
-```python
-error = BarcodeReader.init_license("YOUR-LICENSE-KEY")
-if error[0] != EnumErrorCode.DBR_OK:
-    print(error[1])
-dbr = BarcodeReader()
-settings = dbr.get_runtime_settings()
-settings.text_filter_modes[0] = EnumTextFilterMode.TFM_GENERAL_CONTOUR
-dbr.update_runtime_settings(settings)
-text_results = dbr.decode_file("YOUR-IMAGE-FILE-PATH")
-# Add further process
 ```

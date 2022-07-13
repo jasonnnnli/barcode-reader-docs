@@ -36,13 +36,14 @@ To update the setting via `PublicRuntimeSettings`:
    >- Android
    >- Objective-C
    >- Swift
-   >- C
-   >- C++
-   >- C#
-   >- Java
    >- Python
+   >- Java
+   >- C#
+   >- C++
+   >- C
    >
->```javascript
+>
+```javascript
 // Obtain current runtime settings of `reader` instance.
 let settings = await scanner.getRuntimeSettings();
 settings.region.regionTop = 10;
@@ -54,7 +55,8 @@ settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_ONED | Dynamsoft.
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 settings.region.regionTop = 10;
@@ -66,7 +68,8 @@ settings.barcodeFormatIds = EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -78,7 +81,8 @@ settings.region.regionMeasuredByPercentage = 1;
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
 settings.region.regionTop = 10
@@ -88,55 +92,6 @@ settings.region.regionRight = 90
 settings.region.regionMeasuredByPercentage = 1
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
-```
->```c
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
-// Obtain current runtime settings of `reader` instance.
-DBR_GetRuntimeSettings(reader, &settings);
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-// Update the settings.
-DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
-```
->```c++
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
-// Obtain current runtime settings of `reader` instance.
-reader.GetRuntimeSettings(&settings);
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-// Update the settings.
-reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
-```
->```c#
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.GetRuntimeSettings();
-settings.Region.RegionTop = 10;
-settings.Region.RegionBottom = 90;
-settings.Region.RegionLeft = 10;
-settings.Region.RegionRight = 90;
-settings.Region.RegionMeasuredByPercentage = 1;
-// Update the settings.
-reader.UpdateRuntimeSettings(settings);
-```
->```java
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.getRuntimeSettings();
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
-// Update the settings.
-reader.updateRuntimeSettings(settings);
 ```
 >
 ```python
@@ -150,8 +105,61 @@ settings.region.region_measured_by_percentage = 1
 # Update the settings.
 reader.update_runtime_settings(settings)
 ```
+>
+```java
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.getRuntimeSettings();
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
+settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
+// Update the settings.
+reader.updateRuntimeSettings(settings);
+```
+>
+```c#
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+settings.Region.RegionTop = 10;
+settings.Region.RegionBottom = 90;
+settings.Region.RegionLeft = 10;
+settings.Region.RegionRight = 90;
+settings.Region.RegionMeasuredByPercentage = 1;
+// Update the settings.
+reader.UpdateRuntimeSettings(settings);
+```
+>
+```c++
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
+// Obtain current runtime settings of `reader` instance.
+reader.GetRuntimeSettings(&settings);
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
+// Update the settings.
+reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
+```
+>
+```c
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
+// Obtain current runtime settings of `reader` instance.
+DBR_GetRuntimeSettings(reader, &settings);
+settings.region.regionTop = 10;
+settings.region.regionBottom = 90;
+settings.region.regionLeft = 10;
+settings.region.regionRight = 90;
+settings.region.regionMeasuredByPercentage = 1;
+// Update the settings.
+DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
+```
 
-JSON Template Example:
+To do the same with a JSON Template:
 
 ```json
 { 
@@ -172,7 +180,7 @@ JSON Template Example:
 
 ## Mulpitle Region Specification
 
-If you are going to specify more than one ROI, you have to upload the settings via a JSON template. You can apply specific barcode-decoding parameter settings for each region.
+If you need to specify more than one ROI, the only way is to use a JSON template. Furthermore, you can even configure different barcode-decoding parameter settings for each region.
 
 ```json
 {
@@ -182,6 +190,7 @@ If you are going to specify more than one ROI, you have to upload the settings v
    },
    "RegionDefinitionArray": [
       {
+         // Settings for ROI 1
          "Name": "RP_1",
          "BarcodeFormatIds": ["BF_CODE_39"],
          "Top": 20,
@@ -192,6 +201,7 @@ If you are going to specify more than one ROI, you have to upload the settings v
          "MeasuredByPercentage": 0
       },
       {
+         // Settings for ROI 2
          "Name": "RP_2",
          "BarcodeFormatIds": ["BF_CODE_93"],
          "BarcodeFormatIds_2": ["BF_DOTCODE"],

@@ -20,13 +20,14 @@ Specifying the barcode format is always the first step of barcode reader configu
    >- Android
    >- Objective-C
    >- Swift
-   >- C
-   >- C++
-   >- C#
-   >- Java
    >- Python
+   >- Java
+   >- C#
+   >- C++
+   >- C
    >
->```javascript
+>
+```javascript
 // Obtain current runtime settings of `reader` instance.
 let settings = await scanner.getRuntimeSettings();
 // Specify the barcode formats by enumeration values.
@@ -36,7 +37,8 @@ settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_ONED | Dynamsoft.
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Specify the barcode formats by enumeration values.
@@ -46,7 +48,8 @@ settings.barcodeFormatIds = EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -57,7 +60,8 @@ settings.barcodeFormatIds = EnumBarcodeFormatQRCODE | EnumBarcodeFormatONED;
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
 // There are two groups of barcode formats, BarcodeFormat and BarcodeFormat_2
@@ -68,20 +72,41 @@ settings.barcodeFormatIds = EnumBarcodeFormat.ONED | EnumBarcodeFormat.QRCODE
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
->```c
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
-// Obtain current runtime settings of `reader` instance.
-DBR_GetRuntimeSettings(reader, &settings);
-// There are two groups of barcode formats, BarcodeFormat and BarcodeFormat_2
-// The Majority of common barcodes like oneD barcode and QR code are stored in the first group of barcode format.
-// Some of the enumeration members are combined value of a group of barcodes like BF_ONED and BF_GS1_DATABAR
-// Use "|" to enable multiple barcode formats at one time.
-settings.barcodeFormatIds = BF_QR_CODE | BF_ONED;
-// Update the settings.
-DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
+>
+```python
+# Obtain current runtime settings of `reader` instance.
+settings = reader.get_runtime_settings()
+# Specify the barcode formats by enumeration values.
+# The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
+# Some special formats are listed in the second group (barcodeFormatIds_2).
+settings.barcode_format_ids = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE
+# Update the settings.
+reader.update_runtime_settings(settings)
 ```
->```c++
+>
+```java
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.getRuntimeSettings();
+// Specify the barcode formats by enumeration values.
+// The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
+// Some special formats are listed in the second group (barcodeFormatIds_2).
+settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
+// Update the settings.
+reader.updateRuntimeSettings(settings);
+```
+>
+```c#
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+// Specify the barcode formats by enumeration values.
+// The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
+// Some special formats are listed in the second group (barcodeFormatIds_2).
+settings.BarcodeFormatIds = (int)(EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_ONED);
+// Update the settings.
+reader.UpdateRuntimeSettings(settings);
+```
+>
+```c++
 PublicRuntimeSettings settings;
 char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
@@ -94,35 +119,19 @@ settings.barcodeFormatIds = BF_QR_CODE | BF_ONED;
 // Update the settings.
 reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
 ```
->```c#
+>
+```c
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.GetRuntimeSettings();
-// Specify the barcode formats by enumeration values.
-// The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
-// Some special formats are listed in the second group (barcodeFormatIds_2).
-settings.BarcodeFormatIds = (int)(EnumBarcodeFormat.BF_QR_CODE | EnumBarcodeFormat.BF_ONED);
+DBR_GetRuntimeSettings(reader, &settings);
+// There are two groups of barcode formats, BarcodeFormat and BarcodeFormat_2
+// The Majority of common barcodes like oneD barcode and QR code are stored in the first group of barcode format.
+// Some of the enumeration members are combined value of a group of barcodes like BF_ONED and BF_GS1_DATABAR
+// Use "|" to enable multiple barcode formats at one time.
+settings.barcodeFormatIds = BF_QR_CODE | BF_ONED;
 // Update the settings.
-reader.UpdateRuntimeSettings(settings);
-```
->```java
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.getRuntimeSettings();
-// Specify the barcode formats by enumeration values.
-// The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
-// Some special formats are listed in the second group (barcodeFormatIds_2).
-settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
-// Update the settings.
-reader.updateRuntimeSettings(settings);
-```
->```python
-# Obtain current runtime settings of `reader` instance.
-settings = reader.get_runtime_settings()
-# Specify the barcode formats by enumeration values.
-# The first group of barcode format (barcodeFormatIds) contains the majority of common barcode formats.
-# Some special formats are listed in the second group (barcodeFormatIds_2).
-settings.barcode_format_ids = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE
-# Update the settings.
-reader.update_runtime_settings(settings)
+DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
 ```
 
 ## Set Barcode Count
@@ -141,13 +150,14 @@ There are some suggestions on how to set the `expectedBarcodeCount`:
    >- Android
    >- Objective-C
    >- Swift
-   >- C
-   >- C++
-   >- C#
-   >- Java
    >- Python
+   >- Java
+   >- C#
+   >- C++
+   >- C
    >
->```javascript
+>
+```javascript
 // Obtain current runtime settings of `reader` instance.
 let settings = await scanner.getRuntimeSettings();
 // Set the expected barcode count
@@ -155,7 +165,8 @@ settings.expectedBarcodesCount = 0;
 // Update the settings.
 await scanner.updateRuntimeSettings(settings);
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Set the expected barcode count
@@ -163,7 +174,8 @@ settings.expectedBarcodesCount = 0;
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -172,7 +184,8 @@ settings.expectedBarcodesCount = 0;
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
 // Set the expected barcode count
@@ -180,17 +193,35 @@ settings.expectedBarcodesCount = 0;
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
->```c
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
+>
+```python
+# Obtain current runtime settings of `reader` instance.
+settings = reader.get_runtime_settings()
+# Set the expected barcode count
+settings.expectedBarcodesCount = 0;
+# Update the settings.
+reader.update_runtime_settings(settings)
+```
+>
+```java
 // Obtain current runtime settings of `reader` instance.
-DBR_GetRuntimeSettings(reader, &settings);
+PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Set the expected barcode count
 settings.expectedBarcodesCount = 0;
 // Update the settings.
-DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
+reader.updateRuntimeSettings(settings);
 ```
->```c++
+>
+```c#
+// Obtain current runtime settings of `reader` instance.
+PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+// Set the expected barcode count
+settings.expectedBarcodesCount = 0;
+// Update the settings.
+reader.UpdateRuntimeSettings(settings);
+```
+>
+```c++
 PublicRuntimeSettings settings;
 char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
@@ -200,27 +231,14 @@ settings.expectedBarcodesCount = 0;
 // Update the settings.
 reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
 ```
->```c#
+>
+```c
+PublicRuntimeSettings settings;
+char szErrorMsg[256] = {0};
 // Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.GetRuntimeSettings();
+DBR_GetRuntimeSettings(reader, &settings);
 // Set the expected barcode count
 settings.expectedBarcodesCount = 0;
 // Update the settings.
-reader.UpdateRuntimeSettings(settings);
-```
->```java
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.getRuntimeSettings();
-// Set the expected barcode count
-settings.expectedBarcodesCount = 0;
-// Update the settings.
-reader.updateRuntimeSettings(settings);
-```
->```python
-# Obtain current runtime settings of `reader` instance.
-settings = reader.get_runtime_settings()
-# Set the expected barcode count
-settings.expectedBarcodesCount = 0;
-# Update the settings.
-reader.update_runtime_settings(settings)
+DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
 ```
