@@ -32,21 +32,6 @@ let rs = await scanner.getRuntimeSettings();
 rs.furtherModes.textFilterModes[0] = Dynamsoft.DBR.EnumTextFilterMode.TFM_GENERAL_CONTOUR;
 // Updates the settings.
 await scanner.updateRuntimeSettings(rs);
-const interval = setInterval(async() => {
-    try {
-        // Shows the intermediate results (images) on the page.
-        let cvss = await scanner.getIntermediateCanvas();
-        if (cvss.length > 0) {
-            for (let cvs of cvss) {
-                document.body.appendChild(cvs);
-            }
-            scanner.destroyContext();
-            clearInterval(interval);
-        }
-    } catch (ex) {
-        console.error(ex);
-    }
-}, 1000);
 await scanner.show();
 ```
 >

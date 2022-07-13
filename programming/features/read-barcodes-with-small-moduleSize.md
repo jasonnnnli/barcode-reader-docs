@@ -18,7 +18,7 @@ A module is the narrowest "bar" in a 1D barcode, or the smallest "box" in a 2D b
    <p>Figure 1 – Module size of 1D and 2D barcodes</p>
 </div>
 
-In some scenarios, the barcode is very small relative to the entire image, and the barcode module size is also small, which makes it difficult for our library to read the barcode. In this case, we can configure one or more `ScaleUpMode` in `PublicRuntimeSettings.scaleUpModes` to enlarge the barcode area.
+In some scenarios, the barcode is very small relative to the entire image, and its module size is even smaller, which makes it difficult for our library to read the barcode. In this case, we can use the parameter `ScaleUpMode` in `PublicRuntimeSettings.scaleUpModes` to enlarge the barcode symboal for easier processing.
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -31,9 +31,22 @@ In some scenarios, the barcode is very small relative to the entire image, and t
    >- C++
    >- C
    >
->```javascript
+>
+```javascript
+// Obtains the current runtime settings of DBR.
+let rs = await scanner.getRuntimeSettings();
+// Sets the text filter mode.
+rs.scaleUpModes[0] = Dynamsoft.DBR.EnumScaleUpMode.SUM_LINEAR_INTERPOLATION;
+// Updates the settings.
+await scanner.updateRuntimeSettings(rs);
+// Fine-tunes some arguments of the first mode in `ScaleUpModes`
+scanner.setModeArgument("scaleUpModes", 0, "AcuteAngleWithXThreshold", "0");
+scanner.setModeArgument("scaleUpModes", 0, "ModuleSizeThreshold", "3");
+scanner.setModeArgument("scaleUpModes", 0, "TargetModuleSize", "8");
+await scanner.show();
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Enable a scale up mode
@@ -45,7 +58,8 @@ reader.setModeArgument("scaleUpModes", 0, "AcuteAngleWithXThreshold", "0");
 reader.setModeArgument("scaleUpModes", 0, "ModuleSizeThreshold", "3");
 reader.setModeArgument("scaleUpModes", 0, "TargetModuleSize", "8");
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -58,7 +72,8 @@ settings.scaleUpModes = @[@(EnumScaleUpModeLinearInterpolation)];
 [reader setModeArgument:@"scaleUpModes" index:0 argumentName:@"ModuleSizeThreshold" argumentValue:"3" error:nil];
 [reader setModeArgument:@"scaleUpModes" index:0 argumentName:@"TargetModuleSize" argumentValue:"8" error:nil];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `reader` instance.
 let settings = try? reader.getRuntimeSettings()
 // Enable a scale up mode
@@ -70,13 +85,18 @@ try? reader.setModeArgument("scaleUpModes", index: 0, argumentName: "AcuteAngleW
 try? reader.setModeArgument("scaleUpModes", index: 0, argumentName: "ModuleSizeThreshold", argumentValue: "3")
 try? reader.setModeArgument("scaleUpModes", index: 0, argumentName: "TargetModuleSize", argumentValue: "8")
 ```
->```python
+>
+```python
 ```
->```java
+>
+```java
 ```
->```c#
+>
+```c#
 ```
->```c++
+>
+```c++
 ```
->```c
+>
+```c
 ```
