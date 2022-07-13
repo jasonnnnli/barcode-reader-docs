@@ -21,13 +21,12 @@ In some scenes, the background of images may appear textured, such as a pattern 
 This may increase barcode localization time or even lead to localization errors. The texture detection feature of DBR works on images with textured backgrounds. The following two images demonstrate the binarized images used for localization without and with texture detection enabled:
 
 <div align="center">
-   <p><img src="assets/read-barcodes-with-texture/binary-before-texture-detect.png" alt="Sample barcode image with texture" width="50%"/>
+   <p><img src="assets/read-barcodes-with-texture/binary-before-texture-detect.png" alt="Sample barcode image with texture" width="50%"/></p>
    <p>Figure 2 – Binarized image without texture detection enabled</p>
 </div>
 
 <div align="center">
-   <img src="assets/read-barcodes-with-texture/binary-after-texture-detect.png" alt="Sample barcode image with texture" width="50%"/>
-   </p>
+   <p><img src="assets/read-barcodes-with-texture/binary-after-texture-detect.png" alt="Sample barcode image with texture" width="50%"/></p>
    <p>Figure 3 – Binarized image with texture detection enabled</p>
 </div>
 
@@ -44,9 +43,20 @@ We can configure one or more `TextureDetectionMode` in `PublicRuntimeSettings.fu
    >- C++
    >- C
    >
->```javascript
+>
+```javascript
+// Obtains the current runtime settings of DBR.
+let rs = await scanner.getRuntimeSettings();
+// Sets the text detection mode.
+rs.furtherModes.textureDetectionModes[0] = Dynamsoft.DBR.EnumTextureDetectionMode.TDM_GENERAL_WIDTH_CONCENTRATION;
+// Updates the settings.
+await scanner.updateRuntimeSettings(rs);
+// Fine-tunes `Sensitivity` of the first mode in `binarizationModes`
+scanner.setModeArgument("TextureDetectionModes", 0, "Sensitivity", "5");
+await scanner.show();
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Enable a texture detection mode
@@ -56,7 +66,8 @@ reader.updateRuntimeSettings(settings);
 // Fine-tune the `Sensitivity` parameter value of the first mode in `TextureDetectionModes`
 reader.setModeArgument("TextureDetectionModes", 0, "Sensitivity", "5");
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -67,7 +78,8 @@ settings.furtherModes.textureDetectionModes = @[@(EnumTextureDetectionModeGenera
 // Fine-tune the `Sensitivity` parameter value of the first mode in `TextureDetectionModes`
 [reader setModeArgument:@"TextureDetectionModes" index:0 argumentName:@"Sensitivity" argumentValue:"5" error:nil];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `reader` instance.
 let settings = try? reader.getRuntimeSettings()
 // Enable a texture detection mode
@@ -77,13 +89,18 @@ try? reader.updateRuntimeSettings(settings!)
 // Fine-tune the `Sensitivity` parameter value of the first mode in `TextureDetectionModes`
 try? reader.setModeArgument("TextureDetectionModes", index: 0, argumentName: "Sensitivity", argumentValue: "5")
 ```
->```python
+>
+```python
 ```
->```java
+>
+```java
 ```
->```csharp
+>
+```csharp
 ```
->```c++
+>
+```c++
 ```
->```c
+>
+```c
 ```

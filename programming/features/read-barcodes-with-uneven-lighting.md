@@ -45,13 +45,13 @@ Obviously, the local thresholding result is much better. Now we will demonstrate
    >- Java
    >- C#
    >- C++
-   >- C
+   >- C  
    >
 >
 ```javascript
 // Obtains the current runtime settings of DBR.
 let rs = await scanner.getRuntimeSettings();
-// Sets the text filter mode.
+// Sets the binarization mode.
 rs.binarizationModes[0] = Dynamsoft.DBR.EnumBinarizationMode.BM_LOCAL_BLOCK;
 // Updates the settings.
 await scanner.updateRuntimeSettings(rs);
