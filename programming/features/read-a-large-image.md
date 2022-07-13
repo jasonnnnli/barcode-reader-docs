@@ -11,11 +11,13 @@ permalink: /programming/features/read-a-large-image.html
 
 # How to read barcodes from large images
 
-In some cases, the captured image is very large, so DBR may require more memory and take longer to read the barcode. To speed up the barcode localization process and reduce memory overhead, you can configure `PublicRuntimeSettings.ScaleDownThreshold` parameter to shrink the image size. If the shorter side length of the image is larger than `ScaleDownThreshold`, the library will shrink the image by half until the shorter side is less than the threshold.
+In some cases, the captured image is very large, so DBR may require more memory and take longer to read the barcode. To speed up the barcode localization process and reduce memory overhead, you can configure `PublicRuntimeSettings.ScaleDownThreshold` parameter to shrink the image size. If the shorter side length of the image is larger than `ScaleDownThreshold`, the library will shrink the image (50% on each dimension) until the shorter side is less than the threshold.
+
 >Note:
 >
 >1. If the image size is large and the barcode [`module size`](read-barcodes-with-small-module-size.md) is small, shrinking the image size may result in unreadable barcodes.
->2. Don't worry about the location of decode barcodes, as DBR will eventually return the coordinates on the original image.
+>2. Don't worry about the location of the barcodes, as DBR will still return their coordinates in the original image.
+>3. For the JavaScript edition, a `BarcodeScanner` instance comes with a default `ScaleDownThreshold` of `2300`, which makes it easier to handle continuous video frames.
 
 <div class="sample-code-prefix template2"></div>
    >- JavaScript
@@ -28,9 +30,19 @@ In some cases, the captured image is very large, so DBR may require more memory 
    >- C++
    >- C
    >
->```javascript
+>
+```javascript
+let reader =await Dynamsoft.DBR.BarcodeReader.createInstance();
+// Obtains the current runtime settings of DBR.
+let rs = await reader.getRuntimeSettings();
+// Sets the threshold for scaling down.
+rs.scaleDownThreshold = 2000;
+// Updates the settings.
+await reader.updateRuntimeSettings(rs);
+await reader.show();
 ```
->```java
+>
+```java
 // Obtain current runtime settings of `reader` instance.
 PublicRuntimeSettings settings = reader.getRuntimeSettings();
 // Set a suitable scaleDownThreshold
@@ -38,7 +50,8 @@ settings.scaleDownThreshold = 1600;
 // Update the settings.
 reader.updateRuntimeSettings(settings);
 ```
->```objc
+>
+```objc
 NSError* err = nil;
 // Obtain current runtime settings of `reader` instance.
 iPublicRuntimeSettings* settings = [reader getRuntimeSettings:&err];
@@ -47,7 +60,8 @@ settings.scaleDownThreshold = 1600;
 // Update the settings.
 [reader updateRuntimeSettings:settings error:&err];
 ```
->```swift
+>
+```swift
 // Obtain current runtime settings of `reader` instance.
 let settings = try? reader.getRuntimeSettings()
 // Set a suitable scaleDownThreshold
@@ -55,13 +69,18 @@ settings!.scaleDownThreshold = 1600;
 // Update the settings.
 try? reader.updateRuntimeSettings(settings!)
 ```
->```python
+>
+```python
 ```
->```java
+>
+```java
 ```
->```csharp
+>
+```csharp
 ```
->```c++
+>
+```c++
 ```
->```c
+>
+```c
 ```
