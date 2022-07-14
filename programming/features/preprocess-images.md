@@ -49,36 +49,9 @@ This mode improves the binarization process by eliminating noise and filling hol
 
 If the image to be processed is more complicated, you can use the above image preprocessing modes in combination. After configuring multiple modes through [`ImagePreprocessingModes`]({{ site.parameters_reference }}image-preprocessing-modes.html#imagepreprocessingmodes), `DBR` will try each mode in sequence until the number of successful decoded codes meets the expected value (`ExpectedBarcodeCount`), or the algorithm combination is exhausted.
 
-
 ## Sample Code
-- Using RuntimeSetting
 
-```c++
-CBarcodeReader* reader = new CBarcodeReader();    
-reader->InitLicense("your-license");    
-PublicRuntimeSettings* runtimeSettings = new PublicRuntimeSettings();    
-reader->GetRuntimeSettings(runtimeSettings);
-runtimeSettings->furtherModes.imagePreprocessingModes[0] = IPM_GRAY_EQUALIZE;
-runtimeSettings->furtherModes.imagePreprocessingModes[1] = IPM_GRAY_SMOOTH;
-runtimeSettings->furtherModes.imagePreprocessingModes[2] = IPM_SHARPEN_SMOOTH;
-runtimeSettings->furtherModes.imagePreprocessingModes[3] = IPM_MORPHOLOGY;
-char sError[512];    
-reader->UpdateRuntimeSettings(runtimeSettings, sError, 512);
-reader->SetModeArgument("ImagePreprocessingModes", 0, "Sensitivity", "9", sError, 512);
-reader->SetModeArgument("ImagePreprocessingModes", 1, "SmoothBlockSizeX", "10", sError, 512);  
-reader->SetModeArgument("ImagePreprocessingModes", 1, "SmoothBlockSizeY", "10", sError, 512);
-reader->SetModeArgument("ImagePreprocessingModes", 2, "SharpenBlockSizeX", "5", sError, 512);  
-reader->SetModeArgument("ImagePreprocessingModes", 2, "SharpenBlockSizeY", "5", sError, 512);
-reader->SetModeArgument("ImagePreprocessingModes", 3, "MorphOperation", "Close", sError, 512);
-reader->SetModeArgument("ImagePreprocessingModes", 3, "MorphOperationKernelSizeX", "7", sError, 512);  
-reader->SetModeArgument("ImagePreprocessingModes", 3, "MorphOperationKernelSizeY", "7", sError, 512);
-reader->DecodeFile("file-path", "");
-TextResultArray* paryResult = NULL;    
-reader->GetAllTextResults(&paryResult);
-dynamsoft::dbr::CBarcodeReader::FreeTextResults(&paryResult);    
-delete runtimeSettings;    
-delete reader; 
-```
+- Using RuntimeSetting
 
 <div class="sample-code-prefix"></div>
 >- JavaScript
