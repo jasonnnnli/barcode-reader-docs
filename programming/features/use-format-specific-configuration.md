@@ -3,7 +3,10 @@ layout: default-layout
 description: This article describes how to configure the FormatSpecification parameter in a template to decode a particular barcode type
 title: Use Format Specific Configuration
 keywords: nonstandard barcode, specification, template
-needAutoGenerateSidebar: false
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
+noTitleIndex: true
+permalink: /programming/features/use-format-specific-configuration.html
 ---
 
 # Use Format Specific Configuration

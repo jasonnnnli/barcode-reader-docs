@@ -4,6 +4,7 @@ title: How to Filter and Sort Barcode Results
 description: This page shows how to filter and sort barcode results.
 keywords: filter, decode result, barcode confidence, result length, how-to guides
 needAutoGenerateSidebar: false
+permalink: /programming/features/filter-and-sort.html
 ---
 
 

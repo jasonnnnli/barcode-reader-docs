@@ -3,6 +3,10 @@ layout: default-layout
 description: This article introduces how to read barcodes from image with lots of text
 title: How to read barcodes from image with lots of text
 keywords: text filter
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
+noTitleIndex: true
+permalink: /programming/features/read-images-with-lots-of-text.html
 ---
 
 # How to Read Barcodes from Image With Lots of Text

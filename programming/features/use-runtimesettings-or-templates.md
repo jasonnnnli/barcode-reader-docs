@@ -3,7 +3,10 @@ layout: default-layout
 description: This article introduces two ways to configure DBR, RuntimeSettings and Json template, and their syntax rules.
 title: Use RuntimeSettings or Templates
 keywords: DBR RuntimeSettings Json Template ImageParameter FormatSpecification
-needAutoGenerateSidebar: false
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
+noTitleIndex: true
+permalink: /programming/features/use-runtimesettings-or-templates.html
 ---
 
 # Use RuntimeSettings or Templates

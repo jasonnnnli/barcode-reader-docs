@@ -3,7 +3,10 @@ layout: default-layout
 title: How to Use Intermediate Results
 description: This page shows how to use Intermediate Results.
 keywords: intermediate results, IntermediateResult, IntermediateResultType, how-to guides
-needAutoGenerateSidebar: false
+needAutoGenerateSidebar: true
+needGenerateH3Content: true
+noTitleIndex: true
+permalink: /programming/features/use-intermidiate-results.html
 --- 
 
 # How to Use Intermediate Results

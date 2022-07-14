@@ -4,6 +4,7 @@ title: How to Get Detailed Barcode Information
 description: This page shows how to get detailed barcode information.
 keywords: additional information, OneDCodeDetails, QRCodeDetails, PDF417Details, DataMatrixDetails, AztecDetails
 needAutoGenerateSidebar: false
+permalink: /programming/features/get-detailed-info.html
 ---
 
 
