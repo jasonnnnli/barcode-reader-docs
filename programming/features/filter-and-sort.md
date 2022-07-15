@@ -151,7 +151,6 @@ TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-WITH-QR-CODES", "IP_Fil
 ```
 6. 
 ```java
-BarcodeReader.initLicense("YOUR-LICENSE-KEY");
 BarcodeReader reader = new BarcodeReader();
 reader.initRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP_FilterBarcode\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"TextResultOrderModes\":[{\"Mode\":\"TROM_POSITION\"}], \"FormatSpecificationNameArray\": [\"FP_1\"]},\"FormatSpecification\":{\"Name\":\"FP_1\", \"MinResultConfidence\":50}}", EnumConflictMode.CM_OVERWRITE);
 // Start decoding
@@ -161,7 +160,6 @@ TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-WITH-QR-CODES");
 7. 
 ```objc
 NSError* err = nil;
-[DynamsoftBarcodeReader initLicense:@"YOUR-LICENSE-KEY"];
 DynamsoftBarcodeReader* reader = [[DynamsoftBarcodeReader alloc] init];
 [reader initRuntimeSettingsWithString:@"{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP_FilterBarcode\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"TextResultOrderModes\":[{\"Mode\":\"TROM_POSITION\"}], \"FormatSpecificationNameArray\": [\"FP_1\"]},\"FormatSpecification\":{\"Name\":\"FP_1\", \"MinResultConfidence\":50}}" conflictMode:EnumConflictModeOverwrite error:&err];
 // Start decoding
@@ -170,11 +168,10 @@ NSArray<iTextResult*>* result = [reader decodeFileWithName:@"YOUR-IMAGE-FILE-WIT
 ```
 8. 
 ```swift
-DynamsoftBarcodeReader.initLicense("YOUR-LICENSE-KEY")
 let reader = DynamsoftBarcodeReader()
-reader.initRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP_FilterBarcode\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"TextResultOrderModes\":[{\"Mode\":\"TROM_POSITION\"}], \"FormatSpecificationNameArray\": [\"FP_1\"]},\"FormatSpecification\":{\"Name\":\"FP_1\", \"MinResultConfidence\":50}}", EnumConflictMode.overwrite)
+reader.initRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP_FilterBarcode\", \"BarcodeFormatIds\":[\"BF_QR_CODE\"], \"TextResultOrderModes\":[{\"Mode\":\"TROM_POSITION\"}], \"FormatSpecificationNameArray\": [\"FP_1\"]},\"FormatSpecification\":{\"Name\":\"FP_1\", \"MinResultConfidence\":50}}", conflictMode:EnumConflictMode.overwrite)
 // Start decoding
-let result = try? reader.decodeFileWithName("YOUR-IMAGE-FILE-WITH-QR-CODES") 
+let result = try? reader.decodeFileWithName("YOUR-IMAGE-FILE-WITH-QR-CODES")
 // Add further process
 ```
 9. 

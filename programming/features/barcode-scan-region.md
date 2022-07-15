@@ -85,11 +85,11 @@ settings.region.regionMeasuredByPercentage = 1;
 ```swift
 // Obtain current runtime settings of `barcodeReader` instance.
 let settings = try? barcodeReader.getRuntimeSettings()
-settings.region.regionTop = 10
-settings.region.regionBottom = 90
-settings.region.regionLeft = 10
-settings.region.regionRight = 90
-settings.region.regionMeasuredByPercentage = 1
+settings?.region.regionTop = 10
+settings?.region.regionBottom = 90
+settings?.region.regionLeft = 10
+settings?.region.regionRight = 90
+settings?.region.regionMeasuredByPercentage = 1
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```

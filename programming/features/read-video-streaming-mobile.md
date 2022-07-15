@@ -101,6 +101,7 @@ Initialize Dynamsoft Barcode Reader and bind the Camera Enhancer to the Barcode 
 >```java
 public class MainActivity extends AppCompatActivity {
    BarcodeReader mBarcodeReader;
+   CameraEnhancer mCamera;
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       ...
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
       } catch (BarcodeReaderException e) {
          e.printStackTrace();
       }
+      mCamera = new CameraEnhancer(MainActivity.this);
       // Bind the instance of Camera to the BarcodeReader
       mBarcodeReader.setCameraEnhancer(mCamera);
    }
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 >```objc
 @property(nonatomic, strong) DynamsoftBarcodeReader *barcodeReader;
+@property(nonatomic, strong) DynamsoftCameraEnhancer *dce;
 ...
 - (void)configurationDBR{
    // Add function configureDBR and add the following code.
