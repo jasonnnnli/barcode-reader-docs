@@ -63,15 +63,37 @@ await scanner.updateRuntimeSettings(rs);
 ```
 >
 ```java
-NOT SURE JAVA-ANDROID
+// Creates a BarcodeReader instance.
+BarcodeReader reader = new BarcodeReader();
+// Obtains the current runtime settings.
+PublicRuntimeSettings rs = reader.getRuntimeSettings();
+// Sets the barcode format(s).
+rs.barcodeFormatIds = EnumBarcodeFormat.BF_QR_CODE;
+// Updates the settings.
+reader.updateRuntimeSettings(rs);
 ```
 >
 ```objc
-NOT SURE OBJC
+NSError* err = nil;
+// Creates a BarcodeReader instance.
+DynamsoftBarcodeReader* reader = [[DynamsoftBarcodeReader alloc] init];
+// Obtains the current runtime settings.
+iPublicRuntimeSettings* rs = [reader getRuntimeSettings:&err];
+// Sets the barcode format(s).
+rs.barcodeFormatIds = EnumBarcodeFormatQRCODE;
+// Updates the settings.
+[reader updateRuntimeSettings:rs error:&err];
 ```
 >
 ```swift
-NOT SURE SWIFT
+// Creates a BarcodeReader instance.
+let reader = DynamsoftBarcodeReader()
+// Obtains the current runtime settings.
+let rs = try? reader.getRuntimeSettings()
+// Sets the barcode format(s).
+rs?.barcodeFormatIds = EnumBarcodeFormatQRCODE
+// Updates the settings.
+try? reader.updateRuntimeSettings(rs)
 ```
 >
 ```python
@@ -155,15 +177,25 @@ await scanner.initRuntimeSettingsWithString(b);
 ```
 >
 ```java
-NOT SURE JAVA-ANDROID
+// Creates a BarcodeReader instance.
+BarcodeReader reader = new BarcodeReader();
+// Updates the settings with the string.
+reader.initRuntimeSettingsWithString("A-JSON-Template");
 ```
 >
 ```objc
-NOT SURE OBJC
+NSError* err = nil;
+// Creates a BarcodeReader instance.
+DynamsoftBarcodeReader* reader = [[DynamsoftBarcodeReader alloc] init];
+// Updates the settings with the string.
+[reader initRuntimeSettingsWithString:@"A-JSON-Template" error:&err];
 ```
 >
 ```swift
-NOT SURE SWIFT
+// Creates a BarcodeReader instance.
+let reader = DynamsoftBarcodeReader()
+// Updates the settings with the string.
+try? reader.initRuntimeSettingsWithString("A-JSON-Template")
 ```
 >
 ```python

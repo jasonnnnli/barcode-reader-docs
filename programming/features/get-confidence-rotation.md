@@ -131,7 +131,6 @@ for (int iIndex = 0; iIndex < result.length; iIndex++)
 ```
 6. 
 ```java
-BarcodeReader.initLicense("YOUR-LICENSE-KEY");
 BarcodeReader reader = new BarcodeReader();
 TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-PATH"); // Start decoding
 for (int iIndex = 0; iIndex < result.length; iIndex++)
@@ -145,7 +144,6 @@ for (int iIndex = 0; iIndex < result.length; iIndex++)
 7. 
 ```objc
 NSError *error = nil;
-[DynamsoftBarcodeReader initLicense:@"YOUR-LICENSE-KEY"];
 DynamsoftBarcodeReader* reader = [[DynamsoftBarcodeReader alloc] init];
 NSArray<iTextResult*>* result = [reader decodeFileWithName:@"YOUR-IMAGE-FILE-PATH" error:&err]; // Start decoding
 for (iTextResult* barcode in result)
@@ -158,7 +156,6 @@ for (iTextResult* barcode in result)
 ```
 8. 
 ```swift
-DynamsoftBarcodeReader.initLicense("YOUR-LICENSE-KEY")
 let reader = DynamsoftBarcodeReader()
 var result: [iTextResult]? = nil
 do {

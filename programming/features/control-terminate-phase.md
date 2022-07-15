@@ -127,8 +127,8 @@ rs.intermediateResultTypes =
 rs.intermediateResultSavingMode = EnumIntermediateResultSavingModeFileSystem;
 // Updates the settings.
 [reader updateRuntimeSettings:rs error:&err];
-[reader.setModeArgument:@"IntermediateResultSavingMode" index:0 argumentName:@"FolderPath" argumentValue:@"YOUR-FOLDER-PATH" error:&err];
-[reader.setModeArgument:@"IntermediateResultSavingMode" index:0 argumentName:@"RecordsetSizeOfLatestImages" argumentValue:@"1" error:&err];
+[reader setModeArgument:@"IntermediateResultSavingMode" index:0 argumentName:@"FolderPath" argumentValue:@"YOUR-FOLDER-PATH" error:&err];
+[reader setModeArgument:@"IntermediateResultSavingMode" index:0 argumentName:@"RecordsetSizeOfLatestImages" argumentValue:@"1" error:&err];
 // Decodes the image.
 [reader decodeFileWithName:@"YOUR-IMAGE-FILE-PATH" error:&err];
 ```
@@ -151,7 +151,7 @@ try? reader.updateRuntimeSettings(rs!)
 try? reader.setModeArgument("IntermediateResultSavingMode", index:0, argumentName:"FolderPath", argumentValue:"YOUR-FOLDER-PATH")
 try? reader.setModeArgument("IntermediateResultSavingMode", index:0, argumentName:"RecordsetSizeOfLatestImages", argumentValue:"1")
 // Decodes the image.
-reader.decodeFileWithName("YOUR-IMAGE-FILE-PATH")
+try? reader.decodeFileWithName("YOUR-IMAGE-FILE-PATH")
 ```
 >
 ```python
@@ -214,15 +214,34 @@ The following code illustrates how to set `Timeout`:
 ```
 >
 ```java
-NOT SURE JAVA-ANDROID
+BarcodeReader reader = new BarcodeReader();
+// Obtains the current runtime settings of DBR.
+PublicRuntimeSettings rs = reader.getRuntimeSettings();
+// Sets timeout to 1000 milliseconds.
+rs.timeout = 1000;
+// Updates the settings.
+reader.updateRuntimeSettings(rs);
 ```
 >
 ```objc
-NOT SURE OBJC
+NSError* err = nil;
+DBRBarcodeReader* reader = [[DBRBarcodeReader alloc] init];
+// Obtains the current runtime settings of DBR.
+iPublicRuntimeSettings* rs = [reader getRuntimeSettings:&err];
+// Sets timeout to 1000 milliseconds.
+rs.timeout = 1000;
+// Updates the settings.
+[reader updateRuntimeSettings:rs error:&err];
 ```
 >
 ```swift
-NOT SURE SWIFT
+let reader = DynamsoftBarcodeReader();
+// Obtains the current runtime settings of DBR.
+let rs = try? reader.getRuntimeSettings();
+// Sets timeout to 1000 milliseconds.
+rs?.timeout = 1000;
+// Updates the settings.
+try? reader.updateRuntimeSettings(rs!);
 ```
 >
 ```python
