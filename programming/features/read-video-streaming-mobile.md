@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
    CameraEnhancer mCamera;
    @Override
    protected void onCreate(Bundle savedInstanceState) {
+      // You have to add camera view to your layout file in "res>layout>activity_main.xml".
       DCECameraView cameraView = findViewById(R.id.cameraView);
       // Create an instance of Dynamsoft Camera Enhancer for video streaming.
       mCamera = new CameraEnhancer(MainActivity.this);
