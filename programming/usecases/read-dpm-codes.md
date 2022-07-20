@@ -136,5 +136,5 @@ text_results = dbr.decode_file("YOUR-IMAGE-FILE-WITH-DPM-CODES")
 # Add further process
 ```
 
-[1]:assets\dpm-decoding\DPM-sample1.png
-[2]:assets\dpm-decoding\DPM-sample2.png
+[1]:assets\read-dpm-codes\DPM-sample1.png
+[2]:assets\read-dpm-codes\DPM-sample2.png
