@@ -357,17 +357,13 @@ text_results = dbr.decode_file("YOUR-IMAGE-FILE-PATH")
 # Add further process
 ```
 
-```Json
-{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\",\"ImagePreprocessingModes\": [{\"Mode\": \"IPM_GRAY_EQUALIZE\",\"Sensitivity\": 9},{\"Mode\": \"IPM_GRAY_SMOOTH\",\"SmoothBlockSizeX\": 10,\"SmoothBlockSizeY\": 10},{\"Mode\": \"IPM_SHARPEN_SMOOTH\",\"SharpenBlockSizeX\": 5,\"SharpenBlockSizeY\": 5},{\"Mode\": \"IPM_MORPHOLOGY\",\"MorphOperation\": \"Close\",\"MorphOperationKernelSizeX\": 7,\"MorphOperationKernelSizeY\": 7}]}}     
-```
-
-[1]:assets/image-preprocessing/gray-equalize-sample-1.png
-[2]:assets/image-preprocessing/gray-equalize-sample-2.png
-[3]:assets/image-preprocessing/gray-smooth-sample-1.png
-[4]:assets/image-preprocessing/gray-smooth-sample-2.png
-[5]:assets/image-preprocessing/gray-smooth-sample-3.png
-[6]:assets/image-preprocessing/gray-smooth-sample-4.png
-[7]:assets/image-preprocessing/before-sharpen-sample.png
-[8]:assets/image-preprocessing/after-sharpen-sample.png
-[9]:assets/image-preprocessing/before-close-sample.png
-[10]:assets/image-preprocessing/after-close-sample.png
+[1]:assets/preprocess-images/gray-equalize-sample-1.png
+[2]:assets/preprocess-images/gray-equalize-sample-2.png
+[3]:assets/preprocess-images/gray-smooth-sample-1.png
+[4]:assets/preprocess-images/gray-smooth-sample-2.png
+[5]:assets/preprocess-images/gray-smooth-sample-3.png
+[6]:assets/preprocess-images/gray-smooth-sample-4.png
+[7]:assets/preprocess-images/before-sharpen-sample.png
+[8]:assets/preprocess-images/after-sharpen-sample.png
+[9]:assets/preprocess-images/before-close-sample.png
+[10]:assets/preprocess-images/after-close-sample.png
