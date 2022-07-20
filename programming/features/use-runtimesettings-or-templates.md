@@ -237,30 +237,62 @@ try? reader.initRuntimeSettingsWithString("A-JSON-Template")
 ```
 >
 ```python
-NOT SURE PYTHON
+error = BarcodeReader.init_license("YOUR-LICENSE-KEY")
+if error[0] != EnumErrorCode.DBR_OK:
+    print(error[1])
+dbr = BarcodeReader()
+dbr.init_runtime_settings_with_string('{"Version":"3.0", "ImageParameter":{"Name":"IP1","ImagePreprocessingModes": [{"Mode": "IPM_GRAY_EQUALIZE","Sensitivity": 9},{"Mode": "IPM_GRAY_SMOOTH","SmoothBlockSizeX": 10,"SmoothBlockSizeY": 10},{"Mode": "IPM_SHARPEN_SMOOTH","SharpenBlockSizeX": 5,"SharpenBlockSizeY": 5},{"Mode": "IPM_MORPHOLOGY","MorphOperation": "Close","MorphOperationKernelSizeX": 7,"MorphOperationKernelSizeY": 7}]}}')
+text_results = dbr.decode_file("YOUR-IMAGE-FILE-PATH")
+# Add further process
 ```
 >
 ```java
-NOT SURE JAVA
+BarcodeReader.initLicense("YOUR-LICENSE-KEY");
+BarcodeReader reader = new BarcodeReader();
+reader.initRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\",\"ImagePreprocessingModes\": [{\"Mode\": \"IPM_GRAY_EQUALIZE\",\"Sensitivity\": 9},{\"Mode\": \"IPM_GRAY_SMOOTH\",\"SmoothBlockSizeX\": 10,\"SmoothBlockSizeY\": 10},{\"Mode\": \"IPM_SHARPEN_SMOOTH\",\"SharpenBlockSizeX\": 5,\"SharpenBlockSizeY\": 5},{\"Mode\": \"IPM_MORPHOLOGY\",\"MorphOperation\": \"Close\",\"MorphOperationKernelSizeX\": 7,\"MorphOperationKernelSizeY\": 7}]}}", EnumConflictMode.CM_OVERWRITE);
+TextResult[] result = reader.decodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+// Add further process
 ```
 >
-```c#
-NOT SURE C#
+```csharp
+string errorMsg;
+EnumErrorCode iRet = BarcodeReader.InitLicense("YOUR-LICENSE-KEY", out errorMsg);
+if (iRet != EnumErrorCode.DBR_SUCCESS)
+{
+    Console.WriteLine(errorMsg);
+}
+BarcodeReader reader = new BarcodeReader();
+reader.InitRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\",\"ImagePreprocessingModes\": [{\"Mode\": \"IPM_GRAY_EQUALIZE\",\"Sensitivity\": 9},{\"Mode\": \"IPM_GRAY_SMOOTH\",\"SmoothBlockSizeX\": 10,\"SmoothBlockSizeY\": 10},{\"Mode\": \"IPM_SHARPEN_SMOOTH\",\"SharpenBlockSizeX\": 5,\"SharpenBlockSizeY\": 5},{\"Mode\": \"IPM_MORPHOLOGY\",\"MorphOperation\": \"Close\",\"MorphOperationKernelSizeX\": 7,\"MorphOperationKernelSizeY\": 7}]}}", EnumConflictMode.CM_OVERWRITE, out errorMsg);
+TextResult[] result = reader.DecodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+// Add further process
 ```
 >
-```c++
-// Creates a BarcodeReader instance.
-CBarcodeReader* reader = new CBarcodeReader();
+```cpp
 char errorBuf[512];
-dynamsoft::dbr::CBarcodeReader::InitLicense("YOUR-LICENSE-KEY", errorBuf, 512);
+int iRet = -1;
+iRet = dynamsoft::dbr::CBarcodeReader::InitLicense("YOUR-LICENSE-KEY", errorBuf, 512);
+if (iRet != DBR_OK)
+{
+    cout << errorBuf << endl;
+}
 CBarcodeReader* reader = new CBarcodeReader();
-char errorMessage[256];
-// Initilizes the reader directly with the template in a file.
-reader->InitRuntimeSettingsWithFile("{PATH-TO-YOUR-TEMPLATE}template.json", CM_OVERWRITE, errorMessage, 256);
+reader->InitRuntimeSettingsWithString("{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\",\"ImagePreprocessingModes\": [{\"Mode\": \"IPM_GRAY_EQUALIZE\",\"Sensitivity\": 9},{\"Mode\": \"IPM_GRAY_SMOOTH\",\"SmoothBlockSizeX\": 10,\"SmoothBlockSizeY\": 10},{\"Mode\": \"IPM_SHARPEN_SMOOTH\",\"SharpenBlockSizeX\": 5,\"SharpenBlockSizeY\": 5},{\"Mode\": \"IPM_MORPHOLOGY\",\"MorphOperation\": \"Close\",\"MorphOperationKernelSizeX\": 7,\"MorphOperationKernelSizeY\": 7}]}}", CM_OVERWRITE, errorBuf, 512);
+reader->DecodeFile("YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+// Add further process
 ```
 >
 ```c
-NOT SURE C
+int iRet = -1;
+char errorBuf[512];
+iRet = DBR_InitLicense("YOUR-LICENSE-KEY", errorBuf, 512);
+if (iRet != DBR_OK)
+{
+    printf("%s\n", errorBuf);
+}
+void* barcodeReader = DBR_CreateInstance();
+DBR_InitRuntimeSettingsWithString(barcodeReader, "{\"Version\":\"3.0\", \"ImageParameter\":{\"Name\":\"IP1\",\"ImagePreprocessingModes\": [{\"Mode\": \"IPM_GRAY_EQUALIZE\",\"Sensitivity\": 9},{\"Mode\": \"IPM_GRAY_SMOOTH\",\"SmoothBlockSizeX\": 10,\"SmoothBlockSizeY\": 10},{\"Mode\": \"IPM_SHARPEN_SMOOTH\",\"SharpenBlockSizeX\": 5,\"SharpenBlockSizeY\": 5},{\"Mode\": \"IPM_MORPHOLOGY\",\"MorphOperation\": \"Close\",\"MorphOperationKernelSizeX\": 7,\"MorphOperationKernelSizeY\": 7}]}}", CM_OVERWRITE, errorBuf, 512);
+DBR_DecodeFile(barcodeReader, "YOUR-IMAGE-FILE-PATH", ""); // Start decoding
+// Add further process
 ```
 
 ## Mixed Usage
