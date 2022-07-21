@@ -9,7 +9,9 @@ noTitleIndex: true
 permalink: /programming/features/barcode-scan-region.html
 ---
 
-# Read a Specific Area/Region
+# How to Read Barcodes from a Specific Area/Region
+
+## Read from a specific region of an image
 
 DBR will locate the code region and decode the entire image by default. However, if only specific regions are required when decoding the barcode, you can define a Region Of Interest (ROI) by the parameter `RegionDefinition`. After defining a specific region, DBR will only decode barcodes within that region. Of course, this is very conducive to increasing the speed.
 
@@ -27,34 +29,15 @@ DBR will locate the code region and decode the entire image by default. However,
 > - When using `PublicRuntimeSettings`, you can only specify one region.
 > - When using JSON template, you can either specify one or more regions.
 
-## Single Region Specification
+### Single Region Specification
 
 To update the setting via `PublicRuntimeSettings`:
 
 <div class="sample-code-prefix template2"></div>
-   >- JavaScript
    >- Android
    >- Objective-C
    >- Swift
-   >- Python
-   >- Java
-   >- C#
-   >- C++
-   >- C
    >
->
-```javascript
-// Obtain current runtime settings of `reader` instance.
-let settings = await scanner.getRuntimeSettings();
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_ONED | Dynamsoft.DBR.EnumBarcodeFormat.BF_QR_CODE;
-// Update the settings.
-await scanner.updateRuntimeSettings(settings);
-```
 >
 ```java
 // Obtain current runtime settings of `reader` instance.
@@ -93,71 +76,6 @@ settings?.region.regionMeasuredByPercentage = 1
 // Update the settings.
 try? barcodeReader.updateRuntimeSettings(settings!)
 ```
->
-```python
-# Obtain current runtime settings of `reader` instance.
-settings = reader.get_runtime_settings()
-settings.region.region_top = 10
-settings.region.region_bottom = 90
-settings.region.region_left = 10
-settings.region.region_right = 90
-settings.region.region_measured_by_percentage = 1
-# Update the settings.
-reader.update_runtime_settings(settings)
-```
->
-```java
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.getRuntimeSettings();
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-settings.barcodeFormatIds = EnumBarcodeFormat.BF_ONED | EnumBarcodeFormat.BF_QR_CODE;
-// Update the settings.
-reader.updateRuntimeSettings(settings);
-```
->
-```c#
-// Obtain current runtime settings of `reader` instance.
-PublicRuntimeSettings settings = reader.GetRuntimeSettings();
-settings.Region.RegionTop = 10;
-settings.Region.RegionBottom = 90;
-settings.Region.RegionLeft = 10;
-settings.Region.RegionRight = 90;
-settings.Region.RegionMeasuredByPercentage = 1;
-// Update the settings.
-reader.UpdateRuntimeSettings(settings);
-```
->
-```c++
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
-// Obtain current runtime settings of `reader` instance.
-reader.GetRuntimeSettings(&settings);
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-// Update the settings.
-reader.UpdateRuntimeSettings(&settings, szErrorMsg, 256);
-```
->
-```c
-PublicRuntimeSettings settings;
-char szErrorMsg[256] = {0};
-// Obtain current runtime settings of `reader` instance.
-DBR_GetRuntimeSettings(reader, &settings);
-settings.region.regionTop = 10;
-settings.region.regionBottom = 90;
-settings.region.regionLeft = 10;
-settings.region.regionRight = 90;
-settings.region.regionMeasuredByPercentage = 1;
-// Update the settings.
-DBR_UpdateRuntimeSettings(reader, &settings, szErrorMsg, 256);
-```
 
 To do the same with a JSON Template. Read more on [RuntimeSettings and templates](use-runtimesettings-or-templates.md#json-templates):
 
@@ -179,9 +97,9 @@ To do the same with a JSON Template. Read more on [RuntimeSettings and templates
 }
 ```
 
-## Multiple Region Specification
+### Multiple Region Specification
 
-If you need to specify more than one ROI, the only way is to use a JSON template. Furthermore, you can even configure different barcode-decoding parameter settings for each region. Read more on [RuntimeSettings and templates](use-runtimesettings-or-templates.md#json-templates):
+If you need to specify more than one ROI, the only way is to use a JSON template. Furthermore, you can even configure different barcode-decoding parameter settings for each region. Read more on [RuntimeSettings and templates](use-runtimesettings-or-templates.md#json-templates)
 
 ```json
 {
@@ -213,5 +131,28 @@ If you need to specify more than one ROI, the only way is to use a JSON template
       }
    ],
    "Version": "3.0"
+}
+```
+
+## Read from a specific region of a video stream
+
+If you are using DBR and DCE to read barcodes from a specific area of the video stream, you can simply define the scan area via DCE.
+
+> Note: <a href="https://www.dynamsoft.com/camera-enhancer/docs/introduction/" target="_blank"> Dynamsoft Camera Enhancer (DCE) </a> is designed to provide APIs for camera control, camera preview, and other advanced features.
+
+```java
+import com.dynamsoft.dce.CameraEnhancer;
+
+RegionDefinition scanRegion = new RegionDefinition();
+scanRegion.regionTop = 30;
+scanRegion.regionBottom = 70;
+scanRegion.regionRight = 15;
+scanRegion.regionLeft = 85;
+scanRegion.regionMeasuredByPercentage = 1;
+try {
+   // mCameraEnhancer is an instance of com.dynamsoft.dce.CameraEnhancer.
+   mCameraEnhancer.setScanRegion(scanRegion);
+} catch (CameraEnhancerException e) {
+   e.printStackTrace();
 }
 ```
