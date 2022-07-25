@@ -140,9 +140,14 @@ If you are using DBR and DCE to read barcodes from a specific area of the video 
 
 > Note: <a href="https://www.dynamsoft.com/camera-enhancer/docs/introduction/" target="_blank"> Dynamsoft Camera Enhancer (DCE) </a> is designed to provide APIs for camera control, camera preview, and other advanced features.
 
+<div class="sample-code-prefix template2"></div>
+   >- Android
+   >- Objective-C
+   >- Swift
+   >
+>
 ```java
 import com.dynamsoft.dce.CameraEnhancer;
-
 RegionDefinition scanRegion = new RegionDefinition();
 scanRegion.regionTop = 30;
 scanRegion.regionBottom = 70;
@@ -155,4 +160,25 @@ try {
 } catch (CameraEnhancerException e) {
    e.printStackTrace();
 }
+```
+>
+```objc
+NSError* err = nil;
+iRegionDefinition* scanRegion = [[iRegionDefinition alloc] init];
+scanRegion.regionTop = 10;
+scanRegion.regionBottom = 90;
+scanRegion.regionLeft = 10;
+scanRegion.regionRight = 90;
+scanRegion.regionMeasuredByPercentage = 1;
+[dce setScanRegion:scanRegion error:&err];
+```
+>
+```swift
+let scanRegion:iRegionDefinition? = nil
+scanRegion?.regionTop = 10
+scanRegion?.regionBottom = 90
+scanRegion?.regionLeft = 10
+scanRegion?.regionRight = 90
+scanRegion?.regionMeasuredByPercentage = 1
+dce.setScanRegion(region, error:nil)
 ```
