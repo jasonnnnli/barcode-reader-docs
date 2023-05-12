@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: How many concurrent instances I should purchase?
+title: How many concurrent instances should I purchase?
 keywords: Dynamsoft Barcode Reader, FAQ, DBR Introduction, General, concurrent, instance, license.
-description: How many concurrent instances I should purchase?
+description: How many concurrent instances should I purchase?
 needAutoGenerateSidebar: false
 permalink: /faq/general/purchase-concurrent-instance-license.html
 ---
 
-## How many concurrent instances I should purchase?
+## How many concurrent instances should I purchase?
 To make the most of our DBR instance, we suggest creating no more than the same number of threads as your CPU.
 
 For instance, if your CPU has 2 cores with 2 threads each, creating 4 DBR instances is a good idea.
