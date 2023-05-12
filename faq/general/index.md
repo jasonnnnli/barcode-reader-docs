@@ -49,4 +49,4 @@ permalink: /faq/general/index.html
 
 20. [How can I sort the barcodes of my image in reading order?](sort-barcodes-image.md)
 
-21. [How many concurrent instances I should purchase?](purchase-concurrent-instance-license)
+21. [How many concurrent instances I should purchase?](purchase-concurrent-instance-license.md)
